@@ -17,7 +17,8 @@ public class PlayerMovementControl : MonoBehaviour
     {
         float mH = Input.GetAxis("Horizontal");
         float mV = Input.GetAxis("Vertical");
-        rigidbody.velocity = (((transform.right * mH)*speed) + ((transform.forward * mV) * speed));
-        Debug.Log(transform.right * mH);
+        Vector3 temp = (((transform.right * mH) * speed) + ((transform.forward * mV) * speed));
+        rigidbody.velocity = new Vector3(temp.x, rigidbody.velocity.y, temp.z);
+        Debug.Log(transform.up);
     }
 }
