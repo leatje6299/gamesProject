@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Skybox
   m_Shader: {fileID: 4800000, guid: 9e2fd5bd8e6ed0a4b9214fff3caf6cd3, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _SCREENSPACE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -67,7 +67,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Screenspace: 0
+    - _Screenspace: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -76,8 +76,8 @@ Material:
     - _mult: 1
     - _pwer: 1
     m_Colors:
-    - _Bottom: {r: 0, g: 0, b: 0, a: 0}
+    - _Bottom: {r: 0.58348167, g: 0.59354854, b: 0.8301887, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Top: {r: 1, g: 1, b: 1, a: 0}
+    - _Top: {r: 0.22908506, g: 0.34428295, b: 0.49056602, a: 0}
   m_BuildTextureStacks: []
