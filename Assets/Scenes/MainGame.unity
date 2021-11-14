@@ -1151,6 +1151,7 @@ Transform:
   - {fileID: 20250748}
   - {fileID: 2039904773}
   - {fileID: 543450653423447100}
+  - {fileID: 2139902910}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1167,6 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  stats: {fileID: 0}
 --- !u!54 &852187754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1199,6 +1201,10 @@ MonoBehaviour:
   playerHunger: 0
   playerWater: 0
   canvas: {fileID: 1516079808}
+  inventory: 
+  selectedSlot: 0
+  fish: {fileID: 2139902909}
+  pole: {fileID: 1050764838}
 --- !u!1 &1027611973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1264,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1516079808}
+  stats: {fileID: 852187755}
+--- !u!1 &1050764838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6479727651795184067, guid: c63ae72f39cb0f44aa2f3d6332b9a435, type: 3}
+  m_PrefabInstance: {fileID: 6137830311934123845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1295316733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 852187755}
+  canvas: {fileID: 1516079808}
 --- !u!1 &1840695801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2400,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d1fd75ad91663794fabc2e0d6910df0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2493,6 +2506,87 @@ Transform:
   m_Father: {fileID: 1616348035}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2139902909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2139902910}
+  - component: {fileID: 2139902913}
+  - component: {fileID: 2139902912}
+  m_Layer: 0
+  m_Name: Fish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2139902910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139902909}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.774, y: 0.923, z: 1.316}
+  m_LocalScale: {x: 1, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 852187752}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2139902912
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139902909}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 47b5bfc1077164448a2a1270ca2eecbf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2139902913
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139902909}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &543450653423447100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5955814086602617721, guid: c63ae72f39cb0f44aa2f3d6332b9a435, type: 3}
@@ -2552,6 +2646,10 @@ PrefabInstance:
     - target: {fileID: 6479727651795184067, guid: c63ae72f39cb0f44aa2f3d6332b9a435, type: 3}
       propertyPath: m_Name
       value: FishingPole
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479727651795184067, guid: c63ae72f39cb0f44aa2f3d6332b9a435, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c63ae72f39cb0f44aa2f3d6332b9a435, type: 3}
