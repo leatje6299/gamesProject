@@ -5,6 +5,7 @@ using UnityEngine;
 public class CampFireScript : MonoBehaviour
 {
     public PlayerStatManagement stats;
+    public CanvasUpdate canvas;
     private bool timeout;
     // Start is called before the first frame update
 
@@ -12,7 +13,8 @@ public class CampFireScript : MonoBehaviour
     {
         if (timeout == false)
         {
-            stats.playerTemp += 0.1f;
+            stats.playerTemp += 0.1;
+            canvas.UpdateText();
             StartCoroutine(IncreaseTemp());
         }
     }

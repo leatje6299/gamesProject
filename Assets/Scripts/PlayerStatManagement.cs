@@ -9,24 +9,27 @@ public class PlayerStatManagement : MonoBehaviour
     public int playerWater;
     public CanvasUpdate canvas;
    // private enum Utenisls {FishingPole, Food, Water, None};
-    private List<int> inventory;
+    public int[] inventory;
+    public int selectedSlot;
+
+    public GameObject fish;
+    public GameObject pole;
     // Start is called before the first frame update
+   
     void Start()
     {
         playerTemp = 37.0f;
         playerHunger = 100;
         playerWater = 100;
- /*
-        inventory[0] = 0;
+
+        inventory = new int[5];
+        inventory[0] = 1;
         inventory[1] = 0;
+        inventory[2] = 0;
         inventory[3] = 0;
         inventory[4] = 0;
-        inventory[5] = 0;
-        inventory[6] = 0;
-        inventory[7] = 0;
-        inventory[8] = 0;
-        inventory[9] = 0;
- */
+
+        selectedSlot = 0;
 
         StartCoroutine(statTick());
     }
@@ -34,12 +37,52 @@ public class PlayerStatManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.mouseScrollDelta.y == 1)
+        {
+            if(selectedSlot == 4)
+            {
+                selectedSlot = 0;
+            } else
+            {
+                selectedSlot++;
+            }
+            equip();
+        } else if (Input.mouseScrollDelta.y == -1)
+        {
+            if (selectedSlot == 0)
+            {
+                selectedSlot = 4;
+            }
+            else
+            {
+                selectedSlot--;
+            }
+            equip();
+        }
+    }
+
+    private void equip()
+    {
+        if (inventory[selectedSlot] == 1)
+        {
+            pole.active = true;
+        } else
+        {
+            pole.active = false;
+        }
+        if (inventory[selectedSlot] == 2)
+        {
+            fish.active = true;
+        }
+        else
+        {
+            fish.active = false;
+        }
     }
     
     private IEnumerator statTick()
     {
-        playerTemp -= 0.2f;
+        playerTemp -= 0.2;
         playerHunger -= 1;
         playerWater -= 1;
         canvas.UpdateText();

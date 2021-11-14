@@ -6,6 +6,7 @@ public class PlayerMovementControl : MonoBehaviour
 {
     private Rigidbody rigidbody;
     public float speed = 10f;
+    public PlayerStatManagement stats;
 
     private void Start()
     {
@@ -19,6 +20,6 @@ public class PlayerMovementControl : MonoBehaviour
         float mV = Input.GetAxis("Vertical");
         Vector3 temp = (((transform.right * mH) * speed) + ((transform.forward * mV) * speed));
         rigidbody.velocity = new Vector3(temp.x, rigidbody.velocity.y, temp.z);
-        Debug.Log(transform.up);
     }
+  
 }
