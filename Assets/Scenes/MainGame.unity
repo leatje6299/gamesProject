@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.03
   m_LinearFogStart: 2.1
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_AmbientSkyColor: {r: 0, g: 0.037735857, b: 0.11320752, a: 1}
+  m_AmbientEquatorColor: {r: 0.5660378, g: 0.0026699959, b: 0.060184147, a: 1}
+  m_AmbientGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientIntensity: 0.29
+  m_AmbientMode: 1
+  m_SubtractiveShadowColor: {r: 0, g: 0.13155636, b: 0.4056604, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 280070a5b121f8d4692803c0b3f2bb69, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.73230976, g: 0.77423054, b: 0.7214997, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 61e26d968f9a6c6478eb46a598265284, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -543,10 +543,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ramp
       objectReference: {fileID: 0}
+    - target: {fileID: -7967271829032633551, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4fe2f4a7b434b2a408c31c2b7a5a5934, type: 2}
+    - target: {fileID: -7918335002988649766, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 493d8c3898a90eb4faf68aa27819c2b2, type: 2}
+    - target: {fileID: -6093592463355912122, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfd1388a149516140835a230b253028f, type: 2}
+    - target: {fileID: -5169578811043067064, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d63dff0dfdf3254a8fb1398ae4b22b5, type: 2}
+    - target: {fileID: -2475525649547054715, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 90268bc2be8cc3148949e8b25a341f60, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfd1388a149516140835a230b253028f, type: 2}
+    - target: {fileID: -804731622281664130, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfd1388a149516140835a230b253028f, type: 2}
+    - target: {fileID: -678588488315902003, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfd1388a149516140835a230b253028f, type: 2}
     - target: {fileID: 919132149155446097, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
       propertyPath: m_Name
       value: BetterBuilding2
       objectReference: {fileID: 0}
+    - target: {fileID: 2511811754567536238, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfd1388a149516140835a230b253028f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cef1c3d282672b41a42631db84cfcb1, type: 3}
 --- !u!1 &157725199
