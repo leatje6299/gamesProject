@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b5cb87fead9fc40a9a6673ae914306, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  numberOfSlots: 
+  numberOfSlots: 00000000000000000000000000000000
