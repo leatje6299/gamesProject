@@ -7,5 +7,5 @@ public class Inventory : ScriptableObject
 {
     [SerializeField]
     public int[] numberOfSlots; 
-
+    //wqeqwe
 }
