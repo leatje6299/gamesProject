@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovementControl : MonoBehaviour
 {
     private Rigidbody rigidbody;
-    public float speed = 10f;
+    public float speed = 2f;
     public PlayerStatManagement stats;
 
     private void Start()
