@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
+
 public class FishingSystem : MonoBehaviour
 {
-    public GameObject pole;
-    public Transform fishlineStart; //where the fishing line will start from raycast
+    public Inventory inventory;
+   // public GameObject pole;
+  // public Transform fishlineStart; //where the fishing line will start from raycast
 
+    
     //create min and max of fishing (too close to fish - scaring them! OR too far - out of range to fish!)
     public int minFishingDist;
     public int maxFishingDist;
@@ -15,6 +17,7 @@ public class FishingSystem : MonoBehaviour
     public bool isInterrupted;
     public bool fishOn;
     public bool canBeFished; //using a tag or smthg? 
+    public bool playerCanFish = true;
 
     private RaycastHit hit; //info about what the raycast that we made hit
 
@@ -22,7 +25,7 @@ public class FishingSystem : MonoBehaviour
     void Update()
     {
         //check that we have a pole and a line start set
-        if(pole == null || fishlineStart == null)
+        if(inventory.currentSlot == 0)
         {
             return;
         }
@@ -52,8 +55,10 @@ public class FishingSystem : MonoBehaviour
         //create Raycast
         Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
         //check if the ray hitting water (water isTrigger = yes)
-        if()
+        if(Physics.Raycast(_ray, fwd, 5))
         {
             Check();
         }
@@ -108,9 +113,30 @@ public class FishingSystem : MonoBehaviour
 
     private IEnumerator Fishing()
     {
+        float randomTime = Random.Range(5, 10);
+        yield return new WaitForSeconds(randomTime);
+
+        //Add UI for !
+        StartCoroutine(FishingTimer());
+        int keyNum = 0;
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            keyNum++;
+        }
+
+        if (keyNum >= 15)
+        {
+            StopCoroutine(FishingTimer());
+            //start fishing animation
+        }
+
         //create fishing timer
-        havent figured this stuff out yet
+
+    }
+    private IEnumerator FishingTimer()
+    {
+        yield return new WaitForSeconds(3);
     }
 }
-
+ 
 */
