@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class FishingSystem : MonoBehaviour
-{
+{ /*
     public Inventory inventory;
    // public GameObject pole;
   // public Transform fishlineStart; //where the fishing line will start from raycast
@@ -140,3 +140,4 @@ public class FishingSystem : MonoBehaviour
 }
  
 */
+}

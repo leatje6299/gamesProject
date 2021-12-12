@@ -20,12 +20,13 @@ public class Inventory : ScriptableObject
     public int currentSlot = 0;
 
     private void Awake()
-    {
+    { /*
         ItemType[] itemType;
 
-        itemType[0] = ItemType.Empty;
-        itemType[1] = ItemType.Empty;
-        itemType[2] = ItemType.Empty;
-        itemType[3] = ItemType.Empty;
+        itemType[0] = (ItemType)1;
+        itemType[1] = (ItemType)2;
+        itemType[2] = (ItemType)3;
+        itemType[3] = (ItemType)4;
+        */
     }
 }
