@@ -25,7 +25,7 @@ public class FishingSystem : MonoBehaviour
     void Update()
     {
         //check that we have a pole and a line start set
-        if(inventory.currentSlot == 0)
+        if(inventory == 0)
         {
             return;
         }
@@ -44,7 +44,7 @@ public class FishingSystem : MonoBehaviour
             return;
         }
         //Make sure the pole is in the hands of player
-        if(inventory != fishingPole)
+        if(inventory)
         {
             return;
         }
@@ -84,9 +84,9 @@ public class FishingSystem : MonoBehaviour
         {
             return;
         }
-        
+
         //check that the inventory is not full
-        if()
+        if (inventory.invFull == false)
         {
             return;
         }
@@ -138,6 +138,6 @@ public class FishingSystem : MonoBehaviour
         yield return new WaitForSeconds(3);
     }
 }
- 
-*/
+
+ */
 }
