@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void InvFull() //change this i got lost
+    public void InvFull()
     {
         for(int i = 0; i < items.Length; i++)
         {
