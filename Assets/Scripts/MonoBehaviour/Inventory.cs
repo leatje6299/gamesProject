@@ -48,9 +48,9 @@ public class Inventory : MonoBehaviour
                 invFull = false;
                 return;
             }
-            else if(items[i] != null)
+            else 
             {
-                i++;
+                invFull = true;
             }
         }
     }
