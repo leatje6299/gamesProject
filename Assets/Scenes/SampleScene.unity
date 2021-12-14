@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &35905687
 Light:
   m_ObjectHideFlags: 0
@@ -151,18 +151,18 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.990566, g: 0.804994, b: 0.76161444, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0
     m_NormalBias: 0.4
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
@@ -191,7 +191,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 130012117}
   - component: {fileID: 130012116}
   - component: {fileID: 130012119}
+  - component: {fileID: 130012120}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -388,6 +389,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 2014586066}
+--- !u!114 &130012120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130012115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4955087cbc5ca4ea4bfcd2c3e0c32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHitObj: {fileID: 0}
+  origin: {x: 0, y: 0, z: 0}
+  rad: 0.05
+  maxDist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1001 &140154546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -482,6 +502,10 @@ PrefabInstance:
     - target: {fileID: 3149327783881820540, guid: 85c70eea657f3e84d8d15ce4a06622b1, type: 3}
       propertyPath: m_Name
       value: ItemSlot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149327783881820540, guid: 85c70eea657f3e84d8d15ce4a06622b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c70eea657f3e84d8d15ce4a06622b1, type: 3}
@@ -679,9 +703,9 @@ GameObject:
   - component: {fileID: 990718091}
   - component: {fileID: 990718090}
   - component: {fileID: 990718089}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: WaterPlane
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1392,6 +1416,10 @@ PrefabInstance:
     - target: {fileID: 3149327783881820540, guid: 85c70eea657f3e84d8d15ce4a06622b1, type: 3}
       propertyPath: m_Name
       value: ItemSlot0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149327783881820540, guid: 85c70eea657f3e84d8d15ce4a06622b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6468702022221544935, guid: 85c70eea657f3e84d8d15ce4a06622b1, type: 3}
       propertyPath: m_Enabled
