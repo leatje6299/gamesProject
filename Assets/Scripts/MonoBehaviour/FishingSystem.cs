@@ -140,4 +140,70 @@ public class FishingSystem : MonoBehaviour
 }
 
  */
+
+    public SphereCast sphereCastScript;
+    public Rigidbody playerRigidBody;
+    private bool fishingStatus = false; //could use an integer for this or enum
+    private bool reaction = false;
+    private bool reeling = false;
+    void Update()
+    {
+        //check that we have a fishing pole
+        //
+        //
+        //
+
+        if (Input.GetKeyDown(KeyCode.F) && fishingStatus == false)
+        {
+            if (sphereCastScript.currentHitObj.tag == "Water")
+            {
+                InitiateFishing();
+            }
+        }
+        if (fishingStatus == true)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (reaction == true)
+                {
+                    reaction = false;
+                    StopCoroutine(ReactTime());
+                }
+            }
+            else
+            {
+                if(gameObject.GetComponent<Rigidbody>().velocity.magnitude != 0)
+                {
+                    Debug.Log("Fishing Interrupted");
+                    fishingStatus = false;
+                }
+            }
+        }
+    }
+
+    private void InitiateFishing()
+    {
+        Debug.Log("Fishing" );
+    }
+
+    private IEnumerator BiteWait(float time)
+    {
+        yield return new WaitForSeconds(time * Time.deltaTime);
+        Debug.Log("!");
+        StartCoroutine(ReactTime());
+    }
+    private IEnumerator ReactTime()
+    {
+        reaction = true;
+        yield return new WaitForSeconds(0.5f * Time.deltaTime);
+        reaction = false;
+    }
+    private IEnumerator ReelTime()
+    {
+        reeling = true;
+        yield return new WaitForSeconds(3 * Time.deltaTime);
+        reeling = false;
+        fishingStatus = false;
+    }
+
 }
