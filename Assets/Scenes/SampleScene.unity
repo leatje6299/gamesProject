@@ -228,12 +228,12 @@ GameObject:
   - component: {fileID: 62530218}
   - component: {fileID: 62530217}
   m_Layer: 5
-  m_Name: FadeImage (1)
+  m_Name: CentrePointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &62530216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 4, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62530217
 MonoBehaviour:
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 130012116}
   - component: {fileID: 130012119}
   - component: {fileID: 130012120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -403,11 +403,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHitObj: {fileID: 0}
   origin: {x: 0, y: 0, z: 0}
-  rad: 0.05
-  maxDist: 1
+  rad: 0.02
+  maxDist: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 51
 --- !u!1001 &140154546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315463571}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -781,7 +781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990718088}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.025, z: 0}
+  m_LocalPosition: {x: 0, y: -0.035, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 543450653350262217}
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 1374095276}
   - component: {fileID: 1374095275}
   - component: {fileID: 1374095274}
-  m_Layer: 1
+  m_Layer: 2
   m_Name: playerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 2014586070}
   - component: {fileID: 2014586069}
   - component: {fileID: 2014586067}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014586065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.61, y: 0.32, z: 8.07}
+  m_LocalPosition: {x: 7.61, y: 0.1007, z: 8.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1374095273}
@@ -1100,7 +1100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCastScript: {fileID: 130012120}
-  playerRigidBody: {fileID: 0}
 --- !u!114 &2014586068
 MonoBehaviour:
   m_ObjectHideFlags: 0

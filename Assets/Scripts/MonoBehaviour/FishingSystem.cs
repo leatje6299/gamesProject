@@ -142,10 +142,9 @@ public class FishingSystem : MonoBehaviour
  */
 
     public SphereCast sphereCastScript;
-    public Rigidbody playerRigidBody;
     private bool fishingStatus = false; //could use an integer for this or enum
     private bool reaction = false;
-    private bool reeling = false;
+    private int reeling = 0;
     void Update()
     {
         //check that we have a fishing pole
@@ -153,56 +152,76 @@ public class FishingSystem : MonoBehaviour
         //
         //
 
-        if (Input.GetKeyDown(KeyCode.F) && fishingStatus == false)
+        if (Input.GetKeyDown(KeyCode.F) && fishingStatus == false && sphereCastScript.currentHitObj != null)
         {
+            //Debug.Log("F detected");
             if (sphereCastScript.currentHitObj.tag == "Water")
             {
                 InitiateFishing();
             }
         }
-        if (fishingStatus == true)
+        if (fishingStatus)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if (reaction == true)
+                if (reaction)
                 {
                     reaction = false;
                     StopCoroutine(ReactTime());
+                    Debug.Log("Fish Inbound, SPAM F!");
+                    reeling++;
+                    StartCoroutine(ReelTime());
                 }
-            }
-            else
-            {
-                if(gameObject.GetComponent<Rigidbody>().velocity.magnitude != 0)
+                if (reeling > 0)
                 {
-                    Debug.Log("Fishing Interrupted");
-                    fishingStatus = false;
+                    if(reeling < 15)
+                    {
+                        reeling++;
+                    } else
+                    {
+                        Debug.Log("You Caught A Fish");
+                        StopCoroutine(ReelTime());
+                        reeling = 0;
+                        fishingStatus = false;
+
+                    }
                 }
             }
+            
         }
     }
 
     private void InitiateFishing()
     {
         Debug.Log("Fishing" );
+        fishingStatus = true;
+        StartCoroutine(BiteWait(5));
     }
 
     private IEnumerator BiteWait(float time)
     {
-        yield return new WaitForSeconds(time * Time.deltaTime);
-        Debug.Log("!");
+        yield return new WaitForSeconds(time);
+        Debug.Log(time);
         StartCoroutine(ReactTime());
     }
     private IEnumerator ReactTime()
     {
         reaction = true;
-        yield return new WaitForSeconds(0.5f * Time.deltaTime);
+        yield return new WaitForSeconds(1f);
+
+        if (reaction == true)
+        {
+            Debug.Log("You Left It too long");
+        }
+
         reaction = false;
     }
     private IEnumerator ReelTime()
     {
-        reeling = true;
-        yield return new WaitForSeconds(3 * Time.deltaTime);
-        reeling = false;
+        reeling = 1;
+        yield return new WaitForSeconds(6);
+        Debug.Log("the fish got away");
+        reeling = 0;
         fishingStatus = false;
     }
 
