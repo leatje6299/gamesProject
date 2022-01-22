@@ -14,4 +14,49 @@ public class ItemSlot
 public class ItemHolder : ScriptableObject
 {
     public List<ItemSlot> slots;
+
+    public void Add(Item itemToAdd, int count = 1)
+    {
+        if(itemToAdd.stackable)
+        {
+            //STACKABLE
+            //look for item in list
+            ItemSlot itemSlot = slots.Find(x => x.item == itemToAdd);
+            //if item was found => not null
+            if(itemSlot != null)
+            {
+                itemSlot.amount += count;
+            }
+            //if no item found => null
+            else
+            {
+                //we dont have it so we look for empty space
+                itemSlot = slots.Find(x => x.item == null);
+                if(itemSlot != null) //empty space found
+                {
+                    itemSlot.item = itemToAdd;
+                    itemSlot.amount = count;
+                }
+                else
+                {
+                    Debug.Log("Inventory full");
+                }
+            }
+        }
+        else
+        {
+            //NON STACKABLE 
+            //look for empty space
+            ItemSlot itemSlot = slots.Find(x => x.item == null);
+            //if we found empty space => itemslot != null
+            if (itemSlot != null)//empty space found
+            {
+                itemSlot.item = itemToAdd; //we add item
+            }
+            else
+            {
+                Debug.Log("Inventory Full");
+            }
+        }
+    }
 }
