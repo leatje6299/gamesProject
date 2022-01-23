@@ -65,18 +65,18 @@ public class PlayerStatManagement : MonoBehaviour
     {
         if (inventory[selectedSlot] == 1)
         {
-            pole.active = true;
+            pole.SetActive(true);
         } else
         {
-            pole.active = false;
+            pole.SetActive(false);
         }
         if (inventory[selectedSlot] == 2)
         {
-            fish.active = true;
+            fish.SetActive(true);
         }
         else
         {
-            fish.active = false;
+            fish.SetActive(false);
         }
     }
     

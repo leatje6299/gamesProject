@@ -73,6 +73,7 @@ public class ItemHolder : ScriptableObject
             ItemSlot itemSlot = slots.Find(x => x.item == itemToRemove);
             if(itemSlot != null)
             {
+                //if we have more than one only remove one but if last one remove item fully
                 if (itemSlot.amount > 1)
                 {
                     itemSlot.amount -= count;
@@ -85,6 +86,7 @@ public class ItemHolder : ScriptableObject
         }
         else
         {
+            //if we found the item and its not stackable => just need to clear it to remove it
             ItemSlot itemSlot = slots.Find(x => x.item == itemToRemove);
             if (itemSlot != null)
             {
