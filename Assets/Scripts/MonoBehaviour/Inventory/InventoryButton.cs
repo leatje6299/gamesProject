@@ -10,14 +10,12 @@ public class InventoryButton : MonoBehaviour
     [SerializeField]
     Text stackAmount;
 
-    int itemIndex;
-
-    public void SetIndex(int index)
+    /*public void SetIndex(int index)
     {
         itemIndex = index;
-    }
+    }*/
 
-    public void SetItem(ItemSlot slot)
+    public void ShowItem(ItemSlot slot)
     {
         itemIcon.gameObject.SetActive(true);
         itemIcon.sprite = slot.item.sprite;
@@ -35,7 +33,7 @@ public class InventoryButton : MonoBehaviour
     }
 
     //remove the item text & image with this function
-    public void Remove()
+    public void ClearItem()
     {
         itemIcon.sprite = null;
         itemIcon.gameObject.SetActive(false);

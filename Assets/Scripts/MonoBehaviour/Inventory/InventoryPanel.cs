@@ -22,20 +22,21 @@ public class InventoryPanel : MonoBehaviour
         {
             if(inventory.slots[i].item == null)
             {
-                buttons[i].Remove();
+                //if no item we clear button
+                buttons[i].ClearItem();
             }
             else
             {
-                buttons[i].SetItem(inventory.slots[i]);
+                buttons[i].ShowItem(inventory.slots[i]);
             }
         }
     }
 
-    private void SetIndex()
+    /*private void SetIndex()
     {
         for(int i = 0; i < inventory.slots.Count;i++)
         {
             buttons[i].SetIndex(i);
         }
-    }
+    }*/
 }
