@@ -9,4 +9,5 @@ public class Quest : ScriptableObject
     public string description;
     public bool isCompleted;
     public bool isActive;
+    public int phase;
 }

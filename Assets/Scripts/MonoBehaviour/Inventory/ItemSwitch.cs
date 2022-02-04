@@ -20,7 +20,6 @@ public class ItemSwitch : MonoBehaviour
     void Update()
     {
         SwitchItem();
-        Debug.Log(currentSlot.item);
     }
     
     void SelectItem()
