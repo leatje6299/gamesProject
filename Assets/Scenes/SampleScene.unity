@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryButton (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4498995295535537633, guid: 250f344885ec05f48b3d01351451c433, type: 3}
+      propertyPath: currentSlot
+      value: 
+      objectReference: {fileID: 1858228891}
     - target: {fileID: 4498995295535537637, guid: 250f344885ec05f48b3d01351451c433, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5657,6 +5661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryButton (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4498995295535537633, guid: 250f344885ec05f48b3d01351451c433, type: 3}
+      propertyPath: currentSlot
+      value: 
+      objectReference: {fileID: 1858228891}
     - target: {fileID: 4498995295535537637, guid: 250f344885ec05f48b3d01351451c433, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5863,6 +5871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4498995295535537633, guid: 250f344885ec05f48b3d01351451c433, type: 3}
+      propertyPath: currentSlot
+      value: 
+      objectReference: {fileID: 1858228891}
     - target: {fileID: 4498995295535537637, guid: 250f344885ec05f48b3d01351451c433, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6026,6 +6038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryButton (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4498995295535537633, guid: 250f344885ec05f48b3d01351451c433, type: 3}
+      propertyPath: currentSlot
+      value: 
+      objectReference: {fileID: 1858228891}
     - target: {fileID: 4498995295535537637, guid: 250f344885ec05f48b3d01351451c433, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6123,6 +6139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4498995295535537633, guid: 250f344885ec05f48b3d01351451c433, type: 3}
+      propertyPath: currentSlot
+      value: 
+      objectReference: {fileID: 1858228891}
     - target: {fileID: 4498995295535537637, guid: 250f344885ec05f48b3d01351451c433, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6871,6 +6891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4498995295535537633, guid: 250f344885ec05f48b3d01351451c433, type: 3}
+      propertyPath: currentSlot
+      value: 
+      objectReference: {fileID: 1858228891}
     - target: {fileID: 4498995295535537637, guid: 250f344885ec05f48b3d01351451c433, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

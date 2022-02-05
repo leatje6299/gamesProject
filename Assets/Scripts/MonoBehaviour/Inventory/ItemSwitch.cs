@@ -7,13 +7,15 @@ public class ItemSwitch : MonoBehaviour
     [SerializeField]
     ItemHolder inventory;
 
-    ItemSlot currentSlot;
-    int currentSlotIndex = 0;
+    private ItemSlot currentSlot;
+    private int currentSlotIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         SelectItem();
+        currentSlot = getCurrentSlot();
+        print("item switch " + currentSlot);
     }
 
     // Update is called once per frame
@@ -66,7 +68,7 @@ public class ItemSwitch : MonoBehaviour
         }
     }
 
-    ItemSlot getCurrentItem()
+    public ItemSlot getCurrentSlot()
     {
         return currentSlot;
     }

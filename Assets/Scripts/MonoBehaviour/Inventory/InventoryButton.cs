@@ -10,10 +10,33 @@ public class InventoryButton : MonoBehaviour
     [SerializeField]
     Text stackAmount;
 
+    public ItemSwitch currentSlot;
+    ItemSlot slot;
+
     /*public void SetIndex(int index)
     {
         itemIndex = index;
     }*/
+
+    public void Start()
+    {
+        print(slot);
+        print("start:" + currentSlot.getCurrentSlot());
+    }
+
+    public void Update()
+    {
+        if (slot == null)
+        {
+            return;
+        }
+        else
+        {
+            slot = currentSlot.getCurrentSlot();
+            print(slot);
+            print("hello");
+        }
+    }
 
     public void ShowItem(ItemSlot slot)
     {

@@ -7,7 +7,7 @@ public class Journal : MonoBehaviour
     public List<Quest> quests;
     public List<Quest> activeQuests;
     public int curPhase = 1;
-    bool allQuestCompleted;
+    private bool allQuestCompleted;
     public Quest quest1;
 
     public void Start()

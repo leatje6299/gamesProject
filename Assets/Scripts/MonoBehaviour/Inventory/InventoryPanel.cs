@@ -5,9 +5,9 @@ using UnityEngine;
 public class InventoryPanel : MonoBehaviour
 {
     [SerializeField]
-    ItemHolder inventory;
+    private ItemHolder inventory;
     [SerializeField]
-    List<InventoryButton> buttons;
+    private List<InventoryButton> buttons;
 
     // Start is called before the first frame update
     private void Start()
