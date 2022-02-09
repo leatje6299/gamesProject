@@ -6,6 +6,8 @@ public class JournalScript : MonoBehaviour
 {
     public static bool OpenJournal = false;
     public GameObject JournalUI;
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
