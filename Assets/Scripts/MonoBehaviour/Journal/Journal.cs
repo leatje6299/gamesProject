@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//SCRIPT BY LEA
 public class Journal : MonoBehaviour
 {
     public List<Quest> quests;

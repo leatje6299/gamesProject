@@ -13,7 +13,7 @@ public class CampFireScript : MonoBehaviour
     {
         if (timeout == false)
         {
-            stats.playerTemp += 0.1;
+            stats.playerTemp += 0.1f;
             canvas.UpdateText();
             StartCoroutine(IncreaseTemp());
         }

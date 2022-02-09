@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//SCRIPT BY LEA
 
 public class InventoryButton : MonoBehaviour
 {
@@ -11,31 +12,22 @@ public class InventoryButton : MonoBehaviour
     Text stackAmount;
 
     public ItemSwitch currentSlot;
-    ItemSlot slot;
+    private ItemSlot slot;
 
     /*public void SetIndex(int index)
     {
         itemIndex = index;
     }*/
 
-    public void Start()
-    {
-        print(slot);
-        print("start:" + currentSlot.getCurrentSlot());
-    }
-
     public void Update()
     {
-        if (slot == null)
-        {
-            return;
-        }
-        else
-        {
-            slot = currentSlot.getCurrentSlot();
-            print(slot);
-            print("hello");
-        }
+        HighlightCurrentItem();
+    }
+
+    public void HighlightCurrentItem()
+    {
+        slot = currentSlot.getCurrentSlot();
+        slot.amount += 100;
     }
 
     public void ShowItem(ItemSlot slot)

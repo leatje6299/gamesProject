@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerStatManagement : MonoBehaviour
 {
-    public double playerTemp;
+    public float playerTemp;
     public int playerHunger;
     public int playerWater;
-    public CanvasUpdate canvas;
+    //public CanvasUpdate canvas;
    // private enum Utenisls {FishingPole, Food, Water, None};
     public int[] inventory;
     public int selectedSlot;
@@ -82,10 +82,10 @@ public class PlayerStatManagement : MonoBehaviour
     
     private IEnumerator statTick()
     {
-        playerTemp -= 0.2;
+        playerTemp -= 0.2f;
         playerHunger -= 1;
         playerWater -= 1;
-        canvas.UpdateText();
+        //canvas.UpdateText();
         yield return new WaitForSeconds(4);
         StartCoroutine(statRestart());
     }
@@ -93,5 +93,10 @@ public class PlayerStatManagement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         StartCoroutine(statTick());
+    }
+
+    public float getPlayerTemp()
+    {
+        return playerTemp;
     }
 }
