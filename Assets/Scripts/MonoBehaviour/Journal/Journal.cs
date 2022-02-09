@@ -104,12 +104,12 @@ public class Journal : MonoBehaviour
             {
                 quest2.text = activeQuests[i + 1].description;
             }
-            if (activeQuests[i + 2] != null)
+            /*if (activeQuests[i + 2] != null)
             {
                 quest3.text = activeQuests[i + 2].description;
                 print("quest3");
 
-            }
+            }*/
         }
     }
 }
