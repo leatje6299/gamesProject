@@ -98,7 +98,6 @@ public class Journal : MonoBehaviour
             if (activeQuests[i] != null)
             {
                 quest1.text = activeQuests[i].description;
-                print("quest1");
             }
             if (activeQuests[i + 1] != null)
             {
@@ -107,8 +106,6 @@ public class Journal : MonoBehaviour
             if (activeQuests[i + 2] != null)
             {
                 quest3.text = activeQuests[i + 2].description;
-                print("quest3");
-
             }
         }
     }

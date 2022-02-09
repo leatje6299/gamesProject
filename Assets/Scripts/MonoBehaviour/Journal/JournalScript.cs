@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class JournalScript : MonoBehaviour
 {
-    public static bool OpenJournal = false;
-    public GameObject JournalUI;
+    public static bool openJournal = false;
+    public GameObject journalUI;
+    public GameObject inventory;
+    public GameObject stats;
 
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if(OpenJournal)
+            if(openJournal)
             {
                 Close();
             }
@@ -25,15 +27,19 @@ public class JournalScript : MonoBehaviour
 
     void Close()
     {
-        JournalUI.SetActive(false);
+        journalUI.SetActive(false);
         Time.timeScale = 1f;
-        OpenJournal = false;
+        openJournal = false;
+        inventory.SetActive(true);
+        stats.SetActive(true);
     }
 
     void Open()
     {
-        JournalUI.SetActive(true);
+        journalUI.SetActive(true);
         Time.timeScale = 1f;
-        OpenJournal = true;
+        openJournal = true;
+        inventory.SetActive(false);
+        stats.SetActive(false);
     }
 }
