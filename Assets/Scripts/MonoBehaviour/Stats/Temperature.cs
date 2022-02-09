@@ -15,7 +15,6 @@ public class Temperature : MonoBehaviour
     private void Update()
     {
         updatedTemperature = tempStat.getPlayerTemp();
-        print(updatedTemperature);
         temperatureBar.fillAmount = updatedTemperature / maxTemperature;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //SCRIPT BY LEA
 public class Journal : MonoBehaviour
 {
@@ -8,13 +9,23 @@ public class Journal : MonoBehaviour
     public List<Quest> activeQuests;
     public int curPhase = 1;
     private bool allQuestCompleted;
-    public Quest quest1;
+
+    [SerializeField]
+    private Text quest1;
+    [SerializeField]
+    private Text quest2;
+    [SerializeField]
+    private Text quest3;
 
     public void Start()
     {
         activeQuests.Clear();
-        QuestCompleted(quest1);
-        print("start" + activeQuests.Count);
+        getActiveQuests();
+    }
+
+    public void Update()
+    {
+        showActiveQuests();
     }
 
     public void QuestCompleted(Quest curQuest)
@@ -76,6 +87,29 @@ public class Journal : MonoBehaviour
             {
                 activeQuests.Add(quests[i]);
             }    
+        }
+    }
+
+    public void showActiveQuests()
+    {
+        print("size" + activeQuests.Count);
+        for (int i = 0; i < activeQuests.Count; i += 3)
+        {
+            if (activeQuests[i] != null)
+            {
+                quest1.text = activeQuests[i].description;
+                print("quest1");
+            }
+            if (activeQuests[i + 1] != null)
+            {
+                quest2.text = activeQuests[i + 1].description;
+            }
+            if (activeQuests[i + 2] != null)
+            {
+                quest3.text = activeQuests[i + 2].description;
+                print("quest3");
+
+            }
         }
     }
 }

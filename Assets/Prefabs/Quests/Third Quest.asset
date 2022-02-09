@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b634647cb2b9e1044bf146934dd33608, type: 3}
-  m_Name: Second Quest
+  m_Name: Third Quest
   m_EditorClassIdentifier: 
-  title: Second
-  description: You have to collect items qweqwipoeipoqweioqwpeiwoqeioqwpieoqwieoqwioeiwqoeiqwpoeipoqwieopqwiopeiwqpo
+  title: That
+  description: Nothing
   isCompleted: 0
   isActive: 1
-  phase: 1
+  phase: 2
