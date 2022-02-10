@@ -5,9 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform playerBody;
+    public Transform cameraTransform;
+    public PlayerMovementControl movementScript;
 
-    private float mouseSensitivity = 1000f;
-    private float xRotation = 0f;
+
 
     private void Start()
     {
@@ -16,15 +17,16 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void LateUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        
+        float mouseY = Input.GetAxis("Mouse Y") * movementScript.mouseSensitivity * Time.deltaTime;
+        print(mouseY);
+        transform.LookAt(playerBody);
+        print(transform.localPosition);
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -70f, 70f);
+        transform.position.x = 
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
     }
 }
