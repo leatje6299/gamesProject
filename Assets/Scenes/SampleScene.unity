@@ -5750,8 +5750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalUI: {fileID: 1555350768}
-  inventory: {fileID: 624484445}
-  stats: {fileID: 896225081}
+  inventory: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!1 &690962869
 GameObject:
   m_ObjectHideFlags: 0
@@ -6547,9 +6547,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f7dfcc90fccf134e920d20cb86f7ec1, type: 2}
   activeQuests: []
   curPhase: 1
-  quest1: {fileID: 1312722174}
-  quest2: {fileID: 1432174058}
-  quest3: {fileID: 1521015472}
+  quest1: {fileID: 0}
+  quest2: {fileID: 0}
+  quest3: {fileID: 0}
 --- !u!1001 &1645093341
 PrefabInstance:
   m_ObjectHideFlags: 0
