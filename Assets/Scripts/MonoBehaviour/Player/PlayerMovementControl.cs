@@ -6,6 +6,7 @@ public class PlayerMovementControl : MonoBehaviour
 {
     protected CharacterController _characterController;
     public PlayerStatManagement stats;
+    private Transform _camera;
 
     public bool skating = false;
     private Vector3 SkatingVector = new Vector2(0, 0);
@@ -15,28 +16,31 @@ public class PlayerMovementControl : MonoBehaviour
     public float mouseSensitivity = 1000f;
     private float xRotation = 0f;
 
+    private void Awake()
+    {
+        _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        _characterController = gameObject.GetComponent<CharacterController>();
+    }
     private void Start()
     {
-        _characterController= gameObject.GetComponent<CharacterController>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
     void FixedUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        
-
-        transform.Rotate(Vector3.up * mouseX);
-
-        float mH = Input.GetAxis("Horizontal"); //side to side
-        float mV = Input.GetAxis("Vertical"); //forwards and backwards
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
         bool shifted = Input.GetButton("Fire3");
 
-        if (skating) skatingCalculator(mH, mV, shifted);
+        transform.rotation = Quaternion.Euler(0,_camera.rotation.y,0);
+
+        if (skating) { skatingCalculator(horizontal, vertical, shifted); }
         else {
-            Vector3 temp = ((transform.right * mH) + (transform.forward * mV));
-            _characterController.Move(new Vector3(temp.x, -9.81f, temp.z) * Time.deltaTime * speed);
+            Vector3 moveVect = ((transform.right * horizontal) + (transform.forward * vertical));
+            _characterController.Move(new Vector3(moveVect.x, -9.81f, moveVect.z) * Time.deltaTime * speed);
         }
+        
+       
     }
 
     void skatingCalculator(float mH, float mV, bool shifted)
