@@ -94,7 +94,7 @@ public class PlayerMovementControl : MonoBehaviour
         if (hit.gameObject.tag == "Ice")
         {
             skating = true;
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 playerAudio.PlayOneShot(iceSkate);
             }
