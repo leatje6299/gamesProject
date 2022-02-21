@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerMovementControl : MonoBehaviour
 {
+    private AudioSource playerAudio;
+    public AudioClip walkOnSnow;
+    public AudioClip walkOnIce;
+    public AudioClip iceSkate;
+
     protected CharacterController _characterController;
     public PlayerStatManagement stats;
     private Transform _camera;
@@ -20,6 +25,7 @@ public class PlayerMovementControl : MonoBehaviour
     {
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _characterController = gameObject.GetComponent<CharacterController>();
+        playerAudio = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -88,11 +94,19 @@ public class PlayerMovementControl : MonoBehaviour
         if (hit.gameObject.tag == "Ice")
         {
             skating = true;
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
+            {
+                playerAudio.PlayOneShot(iceSkate);
+            }
             return;
         }
         if (hit.gameObject.tag == "Snow")
         {
             skating = false;
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
+            {
+                playerAudio.PlayOneShot(walkOnSnow);
+            }
             return;
         }
         
