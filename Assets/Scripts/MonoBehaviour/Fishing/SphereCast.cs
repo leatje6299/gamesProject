@@ -13,14 +13,6 @@ public class SphereCast : MonoBehaviour
     private float curDist;
     public LayerMask layerMask;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         origin = transform.position;

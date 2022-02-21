@@ -12,11 +12,6 @@ public class FishingSystem : MonoBehaviour
     private int reeling = 0;
     void Update()
     {
-        //check that we have a fishing pole
-        //
-        //
-        //
-
         if (Input.GetKeyDown(KeyCode.F) && fishingStatus == false && sphereCastScript.currentHitObj != null)
         {
             //Debug.Log("F detected");
