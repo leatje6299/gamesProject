@@ -99,4 +99,14 @@ public class PlayerStatManagement : MonoBehaviour
     {
         return playerTemp;
     }
+
+    public float getPlayerHunger()
+    {
+        return playerHunger;
+    }
+
+    public float getPlayerThirst()
+    {
+        return playerWater;
+    }
 }
