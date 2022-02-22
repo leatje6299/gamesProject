@@ -13,7 +13,7 @@ public class SphereCast : MonoBehaviour
     private float curDist;
     public LayerMask layerMask;
 
-    void Update()
+    void LateUpdate()
     {
         origin = transform.position;
         direction = transform.forward;
@@ -28,6 +28,7 @@ public class SphereCast : MonoBehaviour
             currentHitObj = null;
             curDist = maxDist;
         }
+        print(currentHitObj);
     }
 
     private void OnDrawGizmosSelected()
