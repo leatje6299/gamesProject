@@ -6,7 +6,7 @@ public class PlayerStatManagement : MonoBehaviour
 {
     public float playerTemp;
     public int playerHunger;
-    public int playerWater;
+    public float playerWater;
 
    
     void Start()
@@ -46,5 +46,10 @@ public class PlayerStatManagement : MonoBehaviour
     public float getPlayerThirst()
     {
         return playerWater;
+    }
+
+    public void setPlayerThirst(float thirstAmount)
+    {
+        playerWater += thirstAmount;
     }
 }

@@ -28,7 +28,6 @@ public class SphereCast : MonoBehaviour
             currentHitObj = null;
             curDist = maxDist;
         }
-        print(currentHitObj);
     }
 
     private void OnDrawGizmosSelected()
