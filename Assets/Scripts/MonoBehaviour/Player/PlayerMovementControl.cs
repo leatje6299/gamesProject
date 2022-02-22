@@ -38,7 +38,8 @@ public class PlayerMovementControl : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         bool shifted = Input.GetButton("Fire3");
 
-        transform.rotation = Quaternion.Euler(0,_camera.rotation.y,0);
+        //transform.rotation = _camera.transform.localRotation.y;
+        transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
 
         if (skating) { skatingCalculator(horizontal, vertical, shifted); }
         else {
@@ -86,7 +87,9 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void skatingMove()
     {
+        SkatingVector = SkatingVector + new Vector3(0, -0.5f, 0);
         _characterController.Move(SkatingVector.normalized * skatingSpeed * Time.deltaTime);
+       
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
