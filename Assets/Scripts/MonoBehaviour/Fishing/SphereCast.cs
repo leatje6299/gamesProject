@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SphereCast : MonoBehaviour
 {
-    public GameObject currentHitObj;
+    public GameObject currentHitObj = null;
 
     public Vector3 origin;
     public float rad;

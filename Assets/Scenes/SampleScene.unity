@@ -476,7 +476,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130012115}
-  m_LocalRotation: {x: 0.13623598, y: 2.8080097e-10, z: 3.8650357e-11, w: 0.99067646}
+  m_LocalRotation: {x: 0.13623598, y: -2.8080108e-10, z: -3.864984e-11, w: 0.99067646}
   m_LocalPosition: {x: 85.41, y: 13.74, z: 96.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7494,7 +7494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d58d171153517a41b3a58ad40a276bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastScript: {fileID: 130012119}
+  sphereCast: {fileID: 130012120}
   KeyBindHelp: {fileID: 735377170}
 --- !u!114 &1484859630
 MonoBehaviour:
@@ -8108,7 +8108,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792891971}
-  m_LocalRotation: {x: 0.11824123, y: -0.000000019102362, z: 0.0000000022746436, w: 0.9929849}
+  m_LocalRotation: {x: 0.11824123, y: 0.000000019102368, z: -0.0000000022746443, w: 0.9929849}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8307,10 +8307,6 @@ MonoBehaviour:
   playerTemp: 0
   playerHunger: 0
   playerWater: 0
-  inventory: 
-  selectedSlot: 0
-  fish: {fileID: 0}
-  pole: {fileID: 0}
 --- !u!1 &1905772795
 GameObject:
   m_ObjectHideFlags: 0
