@@ -48,8 +48,6 @@ public class PlayerMovementControl : MonoBehaviour
             Vector3 moveVect = ((transform.right * horizontal) + (transform.forward * vertical));
             _characterController.Move(new Vector3(moveVect.x, -9.81f, moveVect.z) * Time.deltaTime * speed);
         }
-        
-       
     }
 
     void skatingCalculator(float mH, float mV, bool shifted, bool boost)
@@ -98,7 +96,6 @@ public class PlayerMovementControl : MonoBehaviour
     {
         SkatingVector = SkatingVector + new Vector3(0, -0.1f, 0);
         _characterController.Move(SkatingVector.normalized * skatingSpeed * Time.deltaTime);
-       
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

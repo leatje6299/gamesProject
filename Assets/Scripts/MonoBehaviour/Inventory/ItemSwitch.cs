@@ -15,7 +15,6 @@ public class ItemSwitch : MonoBehaviour
     {
         SelectItem();
         currentSlot = getCurrentSlot();
-        print("item switch " + currentSlot);
     }
 
     // Update is called once per frame
