@@ -20,6 +20,7 @@ public class PlayerMovementControl : MonoBehaviour
 
     public float mouseSensitivity = 1000f;
     private float xRotation = 0f;
+    private bool boostCoolDown = false;
 
     private void Awake()
     {
@@ -36,12 +37,13 @@ public class PlayerMovementControl : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        bool shifted = Input.GetButton("Fire3");
+        bool shifted = Input.GetButton("Fire3"); 
+        bool boosting = Input.GetButton("Fire1");
 
         //transform.rotation = _camera.transform.localRotation.y;
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
 
-        if (skating) { skatingCalculator(horizontal, vertical, shifted); }
+        if (skating) { skatingCalculator(horizontal, vertical, shifted, boosting); }
         else {
             Vector3 moveVect = ((transform.right * horizontal) + (transform.forward * vertical));
             _characterController.Move(new Vector3(moveVect.x, -9.81f, moveVect.z) * Time.deltaTime * speed);
@@ -50,7 +52,7 @@ public class PlayerMovementControl : MonoBehaviour
        
     }
 
-    void skatingCalculator(float mH, float mV, bool shifted)
+    void skatingCalculator(float mH, float mV, bool shifted, bool boost)
     {
         if (!skating) return; //Guard Statement for Skating
 
@@ -58,6 +60,13 @@ public class PlayerMovementControl : MonoBehaviour
         SkatingVector.Normalize();
         SkatingVector *= 5;
         SkatingVector += temp;
+
+        if(boostCoolDown == false && boost == true)
+        {
+            boostCoolDown = true;
+            skatingSpeed += 20f;
+            startBoostCoolDown();
+        }
 
         if (skatingSpeed > 20)
         {
@@ -87,7 +96,7 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void skatingMove()
     {
-        SkatingVector = SkatingVector + new Vector3(0, -0.5f, 0);
+        SkatingVector = SkatingVector + new Vector3(0, -0.1f, 0);
         _characterController.Move(SkatingVector.normalized * skatingSpeed * Time.deltaTime);
        
     }
@@ -113,5 +122,15 @@ public class PlayerMovementControl : MonoBehaviour
             return;
         }
         
+    }
+
+    private void startBoostCoolDown()
+    {
+        StartCoroutine(BoostCoolDown());
+    }
+    private IEnumerator BoostCoolDown()
+    {
+        yield return new WaitForSeconds(5);
+        boostCoolDown = false;
     }
 }
