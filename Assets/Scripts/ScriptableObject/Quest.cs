@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //SCRIPT BY LEA
 [CreateAssetMenu(fileName = "Quest", menuName = "Assets/Quest")]
 public class Quest : ScriptableObject

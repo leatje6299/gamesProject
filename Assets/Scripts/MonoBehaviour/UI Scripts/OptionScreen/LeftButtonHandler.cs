@@ -1,16 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeftButtonHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject choiceCanvas;
+    [SerializeField] private Image leftImage;
+    public BothButtonHandler state;
+    private int curState;
 
-    public void ButtonClicked()
+    public void Start()
     {
-        choiceCanvas.SetActive(false);
-        Time.timeScale = 1;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        
+    }
+
+    public void SetLeftImage(Sprite newLeftImage)
+    {
+        leftImage.sprite = newLeftImage;
+    }
+
+    public void LeftButtonClicked()
+    {
+        curState = state.GetCurState();
+        if (curState == 0)
+        {
+            print("put jacket into inventory");
+        }
+    }
+
+    public void Update()
+    {
+        curState = state.GetCurState();
     }
 }

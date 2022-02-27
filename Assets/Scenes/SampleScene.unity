@@ -638,14 +638,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31043077, g: 0.33330077, b: 0.6037736, a: 1}
+  m_Color: {r: 0.30980393, g: 0.33333334, b: 0.6039216, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 73c2c5a1d4492fd40b5562818d650157, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -720,6 +720,7 @@ GameObject:
   - component: {fileID: 311102550}
   - component: {fileID: 311102549}
   - component: {fileID: 311102552}
+  - component: {fileID: 311102553}
   m_Layer: 5
   m_Name: Choice 1
   m_TagString: Untagged
@@ -792,9 +793,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 311102553}
+        m_TargetAssemblyTypeName: BothButtonHandler, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 311102552}
         m_TargetAssemblyTypeName: LeftButtonHandler, Assembly-CSharp
-        m_MethodName: ButtonClicked
+        m_MethodName: LeftButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -854,7 +867,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9a6b83bf847954392ad3a59f0a4529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choiceCanvas: {fileID: 0}
+  leftImage: {fileID: 172194999}
+  state: {fileID: 311102553}
+--- !u!114 &311102553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311102547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b686f8ce78e2c9478f12ad05426cca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curState: 0
+  leftImage: {fileID: 311102552}
+  rightImage: {fileID: 801897168}
+  leftIm01: {fileID: 21300000, guid: 73c2c5a1d4492fd40b5562818d650157, type: 3}
+  rightIm01: {fileID: 21300000, guid: 80ce06704bc08bf4da8e71ef329b21f3, type: 3}
+  choiceCanvas: {fileID: 1555350768}
 --- !u!1 &337639657
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,7 +5867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80ce06704bc08bf4da8e71ef329b21f3, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6695,6 +6727,7 @@ GameObject:
   - component: {fileID: 801897166}
   - component: {fileID: 801897165}
   - component: {fileID: 801897168}
+  - component: {fileID: 801897169}
   m_Layer: 5
   m_Name: Choice 2
   m_TagString: Untagged
@@ -6767,9 +6800,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 801897169}
+        m_TargetAssemblyTypeName: BothButtonHandler, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 801897168}
         m_TargetAssemblyTypeName: RightButtonHandler, Assembly-CSharp
-        m_MethodName: ButtonClicked
+        m_MethodName: RightButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6829,7 +6874,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5748173088bb5488da39f6c5d697c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choiceCanvas: {fileID: 0}
+  rightImage: {fileID: 609159532}
+  state: {fileID: 801897169}
+--- !u!114 &801897169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801897163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b686f8ce78e2c9478f12ad05426cca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curState: 0
+  leftImage: {fileID: 311102552}
+  rightImage: {fileID: 801897168}
+  leftIm01: {fileID: 21300000, guid: 73c2c5a1d4492fd40b5562818d650157, type: 3}
+  rightIm01: {fileID: 21300000, guid: 80ce06704bc08bf4da8e71ef329b21f3, type: 3}
+  choiceCanvas: {fileID: 1555350768}
 --- !u!1 &806252337
 GameObject:
   m_ObjectHideFlags: 0
@@ -7360,7 +7424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &996803782
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7678,7 +7742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1177489706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7693,10 +7757,10 @@ RectTransform:
   m_Father: {fileID: 1484859628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85, y: -56.25}
+  m_SizeDelta: {x: 170, y: 37.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1177489707
 MonoBehaviour:
@@ -8187,7 +8251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCast: {fileID: 130012120}
-  keyBindHelp: {fileID: 0}
+  keyBindHelp: {fileID: 735377170}
 --- !u!114 &1484859630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9009,7 +9073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1882414416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9720,8 +9784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7ba3c3a9d3ed2489a6e2cf5574a8ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereCast: {fileID: 0}
-  choiceCanvas: {fileID: 0}
+  sphereCast: {fileID: 130012120}
+  choiceCanvas: {fileID: 1555350768}
 --- !u!1 &2065960835
 GameObject:
   m_ObjectHideFlags: 0
