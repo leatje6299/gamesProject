@@ -21,21 +21,42 @@ public class TutorialManager : MonoBehaviour
         }
         if(popUpIndex == 0)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 popUpIndex += 1;
             }
         }
         else if(popUpIndex == 1)
         {
-            if(Input.GetKeyDown(KeyCode.LeftShift))
+            if(Input.GetKeyDown(KeyCode.Space))
             {
                 popUpIndex += 1;
             }
         }
         else if (popUpIndex == 2)
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                popUpIndex += 1;
+            }
+        }
+        else if (popUpIndex == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                popUpIndex += 1;
+            }
+        }
+        else if(popUpIndex == 4)
+        {
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                popUpIndex += 1;
+            }
+        }
+        else if(popUpIndex == 5)
+        {
+            if(Input.GetKeyDown(KeyCode.F))
             {
                 popUpIndex += 1;
             }

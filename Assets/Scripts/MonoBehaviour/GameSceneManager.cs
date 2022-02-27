@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
+    private AudioSource source;
+    public AudioClip click;
     public static void loadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
