@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class InventoryButton : MonoBehaviour
 {
     [SerializeField]
-    Image itemIcon;
+    private Image itemIcon;
     [SerializeField]
-    Text stackAmount;
+    private Text stackAmount;
 
     public ItemSwitch currentSlot;
     private ItemSlot slot;
@@ -27,7 +27,6 @@ public class InventoryButton : MonoBehaviour
     public void HighlightCurrentItem()
     {
         slot = currentSlot.getCurrentSlot();
-        slot.amount += 100;
     }
 
     public void ShowItem(ItemSlot slot)

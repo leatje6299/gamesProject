@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class LeftButtonHandler : MonoBehaviour
 {
     [SerializeField] private Image leftImage;
+    [SerializeField] private ItemHolder item;
+    [SerializeField] private Item jacket;
+    [SerializeField] private PlayerStatManagement temp;
+
     public BothButtonHandler state;
     private int curState;
-
-    public void Start()
-    {
-        
-    }
 
     public void SetLeftImage(Sprite newLeftImage)
     {
@@ -22,9 +21,11 @@ public class LeftButtonHandler : MonoBehaviour
     public void LeftButtonClicked()
     {
         curState = state.GetCurState();
-        if (curState == 0)
+        if (curState == 1)
         {
             print("put jacket into inventory");
+            item.Add(jacket);
+            temp.setTempTick(1f);
         }
     }
 

@@ -7,7 +7,9 @@ public class HelpScreen : MonoBehaviour
 {
     public SphereCast sphereCast;
     [SerializeField]
-    private Text keyBindHelp;
+    private Text keyBindHelp1;
+    [SerializeField]
+    private Text keyBindHelp2;
     private GameObject currentHit;
 
     private void Update()
@@ -17,17 +19,18 @@ public class HelpScreen : MonoBehaviour
         
         if(sphereCast.currentHitObj.tag == "Water")
         {
-            keyBindHelp.text = "Press F to fish";
+            keyBindHelp1.text = "Press F to fish";
             return;
         }
         if (sphereCast.currentHitObj.tag == "Chest")
         {
-            keyBindHelp.text = "Press F to open";
+            keyBindHelp1.text = "Press F to open";
             return;
         }
         else
         {
-            keyBindHelp.text = "Press shift to ";
+            keyBindHelp1.text = "Press shift to slow down";
+            keyBindHelp2.text = "Press CTRL for a boost";
             return;
         }
     }

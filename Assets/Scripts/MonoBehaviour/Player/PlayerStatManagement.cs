@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class PlayerStatManagement : MonoBehaviour
 {
-    public float playerTemp;
-    public int playerHunger;
-    public float playerWater;
+    private float playerTemp;
+    private int playerHunger;
+    private float playerWater;
 
-   
+    private float tempTick;
+    private int hungerTick;
+    private float waterTick;
+
     void Start()
     {
         playerTemp = 37.0f;
         playerHunger = 100;
-        playerWater = 100;
+        playerWater = 100f;
+
+        tempTick = 2f;
+        hungerTick = 1;
+        waterTick = 1f;
 
         StartCoroutine(statTick());
     }
     
     private IEnumerator statTick()
     {
-        playerTemp -= 0.2f;
-        playerHunger -= 1;
-        playerWater -= 1;
+        playerTemp -= tempTick;
+        playerHunger -= hungerTick;
+        playerWater -= waterTick;
 
         yield return new WaitForSeconds(4);
         StartCoroutine(statRestart());
@@ -51,5 +58,10 @@ public class PlayerStatManagement : MonoBehaviour
     public void setPlayerThirst(float thirstAmount)
     {
         playerWater += thirstAmount;
+    }
+
+    public void setTempTick(float newTempTick)
+    {
+        tempTick = newTempTick;
     }
 }

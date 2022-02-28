@@ -10,7 +10,7 @@ public class InventoryPanel : MonoBehaviour
     private List<InventoryButton> buttons;
 
     // Start is called before the first frame update
-    private void Start()
+    private void Update()
     {
         Show();
     }
