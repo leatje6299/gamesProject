@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BothButtonHandler : MonoBehaviour
 {
-    public int curState;
+    public float curState;
     public LeftButtonHandler leftImage;
     public RightButtonHandler rightImage;
 
@@ -53,8 +53,8 @@ public class BothButtonHandler : MonoBehaviour
 
     public void Start()
     {
-        curState = 0;
-        if (curState == 0)
+        curState = 0.5f;
+        if (curState == 0.5f)
         {
             leftImage.SetLeftImage(leftIm01);
             rightImage.SetRightImage(rightIm01);
@@ -64,7 +64,7 @@ public class BothButtonHandler : MonoBehaviour
         }
     }
 
-    public int GetCurState()
+    public float GetCurState()
     {
         return curState;
     }

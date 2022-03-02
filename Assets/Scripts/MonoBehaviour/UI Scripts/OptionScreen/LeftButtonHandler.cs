@@ -11,7 +11,7 @@ public class LeftButtonHandler : MonoBehaviour
     [SerializeField] private PlayerStatManagement temp;
 
     public BothButtonHandler state;
-    private int curState;
+    private float curState;
 
     public void SetLeftImage(Sprite newLeftImage)
     {
@@ -20,8 +20,8 @@ public class LeftButtonHandler : MonoBehaviour
 
     public void LeftButtonClicked()
     {
-        curState = state.GetCurState();
-        if (curState == 1)
+        
+        if (curState <= 1f)
         {
             print("put jacket into inventory");
             item.Add(jacket);
