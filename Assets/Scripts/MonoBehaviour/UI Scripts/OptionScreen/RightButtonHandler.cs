@@ -16,7 +16,7 @@ public class RightButtonHandler : MonoBehaviour
 
     public void RightButtonClicked()
     {
-        if(curState <= 1)
+        if(curState <= 1f)
         {
             print("increase skate speed");
             //ADD CODE FOR INCREASED BOOST SPEED ON SKATE
