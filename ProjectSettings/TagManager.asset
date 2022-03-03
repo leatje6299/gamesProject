@@ -9,6 +9,7 @@ TagManager:
   - Snow
   - Chest
   - ChoiceCanvas
+  - SnowBall
   layers:
   - Default
   - TransparentFX

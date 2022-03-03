@@ -49,7 +49,6 @@ public class SnowballSpawn : MonoBehaviour
         // You can also take off half the bounds of the thing you want in the box, so it doesn't extend outside.
         // Right now, the center of the prefab could be right on the extents of the box
         Vector3 randomPosition = new Vector3(Random.Range(-cubeSize.x / 2, cubeSize.x / 2), Random.Range(-cubeSize.y / 2, cubeSize.y / 2), Random.Range(-cubeSize.z / 2, cubeSize.z / 2));
-        print(cubeCenter + randomPosition);
 
         return cubeCenter + randomPosition;
     }

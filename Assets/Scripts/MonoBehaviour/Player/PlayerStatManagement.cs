@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStatManagement : MonoBehaviour
 {
-    private float playerTemp;
+    public float playerTemp;
     private int playerHunger;
     private float playerWater;
 

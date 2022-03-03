@@ -54,7 +54,7 @@ public class PlayerMovementControl : MonoBehaviour
     {
         if (!skating) return; //Guard Statement for Skating
 
-        Vector3 temp = (transform.forward * mV);
+        Vector3 temp = (transform.forward * mV + transform.right * mH * 0.1f);
         SkatingVector.Normalize();
         SkatingVector *= 5;
         SkatingVector += temp;
@@ -65,6 +65,13 @@ public class PlayerMovementControl : MonoBehaviour
             skatingSpeed += 20f;
             startBoostCoolDown();
         }
+
+        if (skatingSpeed > 0 && shifted) //Guard Statement for rapid Slow
+        {
+            skatingSpeed -= 0.25f;
+            skatingMove();
+            return;
+        } //if Shift pressed, slow down Quickly
 
         if (skatingSpeed > 20)
         {
@@ -80,14 +87,7 @@ public class PlayerMovementControl : MonoBehaviour
             return;
         } //if pressing forward, move forward
 
-        if (skatingSpeed < 0) return; //Guard Statement for speed being <0
 
-        if (shifted)
-        {
-            skatingSpeed -= 0.1f;
-            skatingMove();
-            return;
-        } //if Shift pressed, slow down Quickly
 
         skatingSpeed -= 0.05f;  //default Slow Down
         skatingMove(); 
@@ -118,7 +118,15 @@ public class PlayerMovementControl : MonoBehaviour
             }
             return;
         }
-        
+
+        if (hit.gameObject.tag == "SnowBall")
+        {
+            Vector3 colliderTransform = hit.transform.position;
+            Vector3 colliderDirection = (transform.position - colliderTransform).normalized;
+
+            SkatingVector = colliderDirection;
+            skatingSpeed = 5;
+        }
     }
 
     private void startBoostCoolDown()
@@ -129,5 +137,10 @@ public class PlayerMovementControl : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         boostCoolDown = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
     }
 }

@@ -12,7 +12,7 @@ public class CampFireScript : MonoBehaviour
     {
         if (timeout == false)
         {
-            stats.setTempTick(-0.1f);
+            stats.playerTemp += 1f;
             StartCoroutine(IncreaseTemp());
         }
     }
