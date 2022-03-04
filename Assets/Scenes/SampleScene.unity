@@ -390,7 +390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130012115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 886.85205, y: 14.5, z: 155.2}
+  m_LocalPosition: {x: 888.328, y: 13.524, z: 154.048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5705,14 +5705,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468531756}
-  m_LocalRotation: {x: -0.11195195, y: 0.7020523, z: -0.11321404, w: -0.69409794}
-  m_LocalPosition: {x: 886.85205, y: 14.5, z: 155.2}
+  m_LocalRotation: {x: 0.11259615, y: -0.6980846, z: 0.11257183, w: 0.6980885}
+  m_LocalPosition: {x: 888.328, y: 13.524, z: 154.048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 576142731}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.323, y: -90, z: -0.002}
 --- !u!1 &572712634
 GameObject:
   m_ObjectHideFlags: 0
@@ -9025,6 +9025,8 @@ GameObject:
   - component: {fileID: 1892047122}
   - component: {fileID: 1892047121}
   - component: {fileID: 1892047125}
+  - component: {fileID: 1892047126}
+  - component: {fileID: 1892047127}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Chest
@@ -9121,6 +9123,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 1885725814}
+--- !u!114 &1892047126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892047120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f9b793492b96d40abc1530faa1c1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkOnSnow: {fileID: 0}
+  walkOnIce: {fileID: 0}
+  iceSkate: {fileID: 0}
+  stats: {fileID: 0}
+  skating: 1
+  mouseSensitivity: 1000
+--- !u!143 &1892047127
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892047120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1905772795
 GameObject:
   m_ObjectHideFlags: 0
@@ -9335,8 +9373,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014586065}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 884.9, y: 14.4, z: 155.2}
+  m_LocalRotation: {x: 0, y: -0.67365766, z: 0, w: 0.73904353}
+  m_LocalPosition: {x: 888.328, y: 13.524, z: 154.048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1858228890}
@@ -9345,7 +9383,7 @@ Transform:
   - {fileID: 1885725813}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -84.7, z: 0}
 --- !u!114 &2014586067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9375,7 +9413,7 @@ MonoBehaviour:
   walkOnIce: {fileID: 8300000, guid: 2a53aa9987fb6ce468e8ead4eade3883, type: 3}
   iceSkate: {fileID: 8300000, guid: 1a3175a39db75ae40acf7780c1bd3a10, type: 3}
   stats: {fileID: 0}
-  skating: 0
+  skating: 1
   mouseSensitivity: 1000
 --- !u!136 &2014586069
 CapsuleCollider:
@@ -9386,7 +9424,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2014586065}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.2
   m_Height: 1.7
   m_Direction: 1
@@ -9760,7 +9798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981837550235939489}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.952, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children: []
   m_Father: {fileID: 2014586066}
