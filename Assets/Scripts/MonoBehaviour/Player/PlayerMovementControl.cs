@@ -136,4 +136,8 @@ public class PlayerMovementControl : MonoBehaviour
         yield return new WaitForSeconds(5);
         boostCoolDown = false;
     }
+    private IEnumerator KnockBackCooldown()
+    {
+        yield return new WaitForSeconds(2);
+    }
 }
