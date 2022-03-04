@@ -46,7 +46,7 @@ public class PlayerMovementControl : MonoBehaviour
         if (skating) { skatingCalculator(horizontal, vertical, shifted, boosting); }
         else {
             Vector3 moveVect = ((transform.right * horizontal) + (transform.forward * vertical));
-            _characterController.Move(new Vector3(moveVect.x, -9.81f, moveVect.z) * Time.deltaTime * speed);
+            _characterController.Move(new Vector3(moveVect.x, 0f, moveVect.z) * Time.deltaTime * speed);
         }
     }
 
@@ -54,12 +54,14 @@ public class PlayerMovementControl : MonoBehaviour
     {
         if (!skating) return; //Guard Statement for Skating
 
-        Vector3 temp = (transform.forward * mV + transform.right * mH * 0.1f);
+        Vector3 temp = (transform.forward * mV);
         SkatingVector.Normalize();
         SkatingVector *= 5;
         SkatingVector += temp;
 
-        if(boostCoolDown == false && boost == true)
+        // + transform.right * mH * 0.1f
+
+        if (boostCoolDown == false && boost == true)
         {
             boostCoolDown = true;
             skatingSpeed += 20f;
@@ -94,7 +96,7 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void skatingMove()
     {
-        SkatingVector = SkatingVector + new Vector3(0, -0.1f, 0);
+        SkatingVector = SkatingVector + new Vector3(0, 0f, 0);
         _characterController.Move(SkatingVector.normalized * skatingSpeed * Time.deltaTime);
     }
 
@@ -118,7 +120,7 @@ public class PlayerMovementControl : MonoBehaviour
             }
             return;
         }
-
+        /*
         if (hit.gameObject.tag == "SnowBall")
         {
             Vector3 colliderTransform = hit.transform.position;
@@ -127,6 +129,7 @@ public class PlayerMovementControl : MonoBehaviour
             SkatingVector = colliderDirection;
             skatingSpeed = 5;
         }
+        */
     }
 
     private void startBoostCoolDown()
@@ -137,10 +140,5 @@ public class PlayerMovementControl : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         boostCoolDown = false;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
     }
 }
