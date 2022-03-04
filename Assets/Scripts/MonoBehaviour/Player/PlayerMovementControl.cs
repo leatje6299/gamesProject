@@ -10,7 +10,6 @@ public class PlayerMovementControl : MonoBehaviour
     public AudioClip iceSkate;
 
     protected CharacterController _characterController;
-    public PlayerStatManagement stats;
     private Transform _camera;
 
     public bool skating = false;
@@ -24,6 +23,7 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void Awake()
     {
+        skating = true;
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _characterController = gameObject.GetComponent<CharacterController>();
         playerAudio = GetComponent<AudioSource>();
@@ -44,22 +44,17 @@ public class PlayerMovementControl : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
 
         if (skating) { skatingCalculator(horizontal, vertical, shifted, boosting); }
-        else {
-            Vector3 moveVect = ((transform.right * horizontal) + (transform.forward * vertical));
-            _characterController.Move(new Vector3(moveVect.x, 0f, moveVect.z) * Time.deltaTime * speed);
-        }
     }
 
     void skatingCalculator(float mH, float mV, bool shifted, bool boost)
     {
         if (!skating) return; //Guard Statement for Skating
 
-        Vector3 temp = (transform.forward * mV);
+        Vector3 temp = (transform.forward * mV + transform.right * mH * 0.1f);
         SkatingVector.Normalize();
         SkatingVector *= 5;
         SkatingVector += temp;
 
-        // + transform.right * mH * 0.1f
 
         if (boostCoolDown == false && boost == true)
         {
@@ -82,7 +77,7 @@ public class PlayerMovementControl : MonoBehaviour
             return;
         } //if speed is at max, slow down
   
-        if (mV > 0)
+        if (mV > 0 || mH > 0)
         {
             skatingSpeed += 0.03f;
             skatingMove();
@@ -96,7 +91,7 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void skatingMove()
     {
-        SkatingVector = SkatingVector + new Vector3(0, 0f, 0);
+        print(SkatingVector);
         _characterController.Move(SkatingVector.normalized * skatingSpeed * Time.deltaTime);
     }
 
@@ -120,16 +115,16 @@ public class PlayerMovementControl : MonoBehaviour
             }
             return;
         }
-        /*
+        
         if (hit.gameObject.tag == "SnowBall")
         {
             Vector3 colliderTransform = hit.transform.position;
             Vector3 colliderDirection = (transform.position - colliderTransform).normalized;
-
-            SkatingVector = colliderDirection;
+            colliderDirection.y = 0;
+            SkatingVector = colliderDirection * 2;
             skatingSpeed = 5;
         }
-        */
+       
     }
 
     private void startBoostCoolDown()
