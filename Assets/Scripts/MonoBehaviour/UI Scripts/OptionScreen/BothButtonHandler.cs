@@ -60,7 +60,7 @@ public class BothButtonHandler : MonoBehaviour
             rightImage.SetRightImage(rightIm01);
 
             textBoxL.text = "Your body temperature will decrease slower";
-            textBoxR.text = "Your speed boost is increased";
+            textBoxR.text = "Better skates for increased speed!";
         }
     }
 

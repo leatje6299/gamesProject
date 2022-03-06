@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class RightButtonHandler : MonoBehaviour
 {
     [SerializeField] private Image rightImage;
+    [SerializeField] private ItemHolder item;
+    [SerializeField] private Item skate;
     public BothButtonHandler state;
     private float curState;
 
@@ -16,10 +18,11 @@ public class RightButtonHandler : MonoBehaviour
 
     public void RightButtonClicked()
     {
-        if(curState <= 1f)
+        if (curState <= 1f)
         {
-            print("increase skate speed");
-            //ADD CODE FOR INCREASED BOOST SPEED ON SKATE
+            print("put skate into inventory");
+            item.Add(skate);
+            //add code
         }
     }
 
