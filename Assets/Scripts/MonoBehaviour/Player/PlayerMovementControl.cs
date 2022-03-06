@@ -62,7 +62,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         Vector3 temp = (transform.forward * mV + transform.right * mH * 0.1f);
         SkatingVector.Normalize();
-        SkatingVector *= 5;
+        SkatingVector *= 30;
         SkatingVector += temp;
 
 

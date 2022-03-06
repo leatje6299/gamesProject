@@ -7,6 +7,7 @@ public class SnowballScript : MonoBehaviour
 {
     private Vector3 baseScale;
     private Vector3 targetScale;
+    private int age = 0;
 
     private float speed = 0.7f;
 
@@ -21,12 +22,18 @@ public class SnowballScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        age++;
+        if(age > 10000)
+        {
+            Destroy(gameObject);
+            return;
+        }
         StartCoroutine(scaleDown());
     }
 
     private IEnumerator scaleDown()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(8f);
         //melt the snow away after x amount of time
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, speed * Time.deltaTime);
     }
