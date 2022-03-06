@@ -13,6 +13,7 @@ public class PlayerMovementControl : MonoBehaviour
     private Transform _camera;
 
     public bool skating = false;
+    private bool ableSkate = true;
     private Vector3 SkatingVector = new Vector2(0, 0);
     private float skatingSpeed = 0f;
     private float speed = 5f;
@@ -27,23 +28,32 @@ public class PlayerMovementControl : MonoBehaviour
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _characterController = gameObject.GetComponent<CharacterController>();
         playerAudio = GetComponent<AudioSource>();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     private void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    void FixedUpdate()
+    void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         bool shifted = Input.GetButton("Fire3"); 
-        bool boosting = Input.GetButton("Fire1");
+        bool boosting = Input.GetButtonDown("Fire1");
 
         //transform.rotation = _camera.transform.localRotation.y;
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
-
-        if (skating) { skatingCalculator(horizontal, vertical, shifted, boosting); }
+        if (!ableSkate)
+        {
+            horizontal = 0;
+            vertical = 0;
+            shifted = false;
+            boosting = false;
+        }
+        if (skating) skatingCalculator(horizontal, vertical, shifted, boosting);
     }
 
     void skatingCalculator(float mH, float mV, bool shifted, bool boost)
@@ -59,39 +69,39 @@ public class PlayerMovementControl : MonoBehaviour
         if (boostCoolDown == false && boost == true)
         {
             boostCoolDown = true;
-            skatingSpeed += 20f;
+            skatingSpeed += 10f;
             startBoostCoolDown();
         }
 
         if (skatingSpeed > 0 && shifted) //Guard Statement for rapid Slow
         {
-            skatingSpeed -= 0.25f;
+            skatingSpeed -= 0.025f;
             skatingMove();
             return;
         } //if Shift pressed, slow down Quickly
 
         if (skatingSpeed > 20)
         {
-            skatingSpeed -= 0.03f;
+            skatingSpeed -= 0.003f;
             skatingMove();
             return;
         } //if speed is at max, slow down
   
         if (mV > 0 || mH > 0)
         {
-            skatingSpeed += 0.03f;
+            skatingSpeed += 0.003f;
             skatingMove();
             return;
         } //if pressing forward, move forward
 
 
+        if (skatingSpeed < 0)return;
 
-        skatingSpeed -= 0.05f;  //default Slow Down
+        skatingSpeed -= 0.005f;  //default Slow Down
         skatingMove(); 
     }
     void skatingMove()
     {
-        print(SkatingVector);
         _characterController.Move(SkatingVector.normalized * skatingSpeed * Time.deltaTime);
     }
 
@@ -123,6 +133,7 @@ public class PlayerMovementControl : MonoBehaviour
             colliderDirection.y = 0;
             SkatingVector = colliderDirection * 2;
             skatingSpeed = 5;
+            startKnockBackCooldown();
         }
        
     }
@@ -136,8 +147,15 @@ public class PlayerMovementControl : MonoBehaviour
         yield return new WaitForSeconds(5);
         boostCoolDown = false;
     }
+
+    private void startKnockBackCooldown()
+    {
+        StartCoroutine(KnockBackCooldown());
+    }
     private IEnumerator KnockBackCooldown()
     {
+        ableSkate = false;
         yield return new WaitForSeconds(2);
+        ableSkate = true;
     }
 }
