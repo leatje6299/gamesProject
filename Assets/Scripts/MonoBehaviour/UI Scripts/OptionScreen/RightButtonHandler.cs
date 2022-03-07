@@ -8,6 +8,7 @@ public class RightButtonHandler : MonoBehaviour
     [SerializeField] private Image rightImage;
     [SerializeField] private ItemHolder item;
     [SerializeField] private Item skate;
+    [SerializeField] private PlayerStatManagement stats;
     public BothButtonHandler state;
     private float curState;
 
@@ -23,6 +24,7 @@ public class RightButtonHandler : MonoBehaviour
             print("put skate into inventory");
             item.Add(skate);
             //add code
+            stats.setStaminaTick(1f);
         }
     }
 

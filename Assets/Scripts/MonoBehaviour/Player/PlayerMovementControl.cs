@@ -10,6 +10,7 @@ public class PlayerMovementControl : MonoBehaviour
     public AudioClip iceSkate;
 
     protected CharacterController _characterController;
+    [SerializeField] private PlayerStatManagement stats;
     private Transform _camera;
 
     public bool skating = false;
@@ -43,6 +44,10 @@ public class PlayerMovementControl : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         bool shifted = Input.GetButton("Fire3"); 
         bool boosting = Input.GetButtonDown("Fire1");
+        if(boosting && !boostCoolDown)
+        {
+            stats.setStaminaPlayer(-10f);
+        }
 
         //transform.rotation = _camera.transform.localRotation.y;
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
