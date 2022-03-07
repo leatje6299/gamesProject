@@ -14,8 +14,11 @@ public class TextOnCollision : MonoBehaviour
         }
     }
 
-    private void onTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        helpText.text = "";
+        if (other.gameObject.tag == "Player")
+        {
+            helpText.text = "";
+        }
     }
 }
