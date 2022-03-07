@@ -11,29 +11,34 @@ public class StatsUpdate : MonoBehaviour
     public float maxTemperature;
 
     //hunger
-    public float updatedHunger;
-    public Image hungerBar;
-    public float maxHunger;
+    public float updatedStamina;
+    public Image staminaBar;
+    public float maxStamina;
 
     //thirst
     public float updatedThirst;
     public Image thirstBar;
     public float maxThirst;
 
-    public PlayerStatManagement tempStat;
+    public PlayerStatManagement stat;
+
+    private void Start()
+    {
+        maxStamina = 100f;
+    }
 
     private void Update()
     {
         //temp
-        updatedTemperature = tempStat.getPlayerTemp();
+        updatedTemperature = stat.getPlayerTemp();
         temperatureBar.fillAmount = updatedTemperature / maxTemperature;
 
-        //hunger 
-        updatedHunger = tempStat.getPlayerHunger();
-        hungerBar.fillAmount = updatedHunger / maxHunger;
+        //stamina 
+        updatedStamina = stat.getPlayerStamina();
+        staminaBar.fillAmount = updatedStamina / maxStamina;
 
         //thirst
-        updatedThirst = tempStat.getPlayerThirst();
-        thirstBar.fillAmount = updatedThirst / maxThirst;
+        //updatedThirst = stat.getPlayerThirst();
+        //thirstBar.fillAmount = updatedThirst / maxThirst;
     }
 }

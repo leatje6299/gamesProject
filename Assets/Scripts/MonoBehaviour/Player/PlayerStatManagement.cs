@@ -24,7 +24,7 @@ public class PlayerStatManagement : MonoBehaviour
         tempTick = 2f;
         hungerTick = 1;
         waterTick = 1f;
-        staminaTick = 2f;
+        staminaTick = 10f;
 
         StartCoroutine(statTick());
     }
@@ -35,6 +35,8 @@ public class PlayerStatManagement : MonoBehaviour
         playerHunger -= hungerTick;
         playerWater -= waterTick;
         playerStamina -= staminaTick;
+
+        print(playerStamina);
 
         yield return new WaitForSeconds(4);
         StartCoroutine(statRestart());

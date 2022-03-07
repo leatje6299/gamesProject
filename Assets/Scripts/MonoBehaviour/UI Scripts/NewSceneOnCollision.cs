@@ -11,6 +11,8 @@ public class NewSceneOnCollision : MonoBehaviour
         {
             //end scene
             SceneManager.LoadScene(2);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }

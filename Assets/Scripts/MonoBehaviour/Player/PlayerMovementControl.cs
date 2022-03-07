@@ -47,7 +47,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if(boosting && !boostCoolDown)
         {
-            stats.setStaminaPlayer(-10f);
+            stats.setStaminaPlayer(4f);
         }
 
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
