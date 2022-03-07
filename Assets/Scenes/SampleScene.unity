@@ -8805,6 +8805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BetterBuilding2
       objectReference: {fileID: 0}
+    - target: {fileID: 4426124508519224341, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
 --- !u!1 &1700653219
@@ -9611,6 +9615,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63677ae7938b67a44acb29f8545836f9, type: 3}
       propertyPath: m_Name
       value: WaterBottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63677ae7938b67a44acb29f8545836f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 63677ae7938b67a44acb29f8545836f9, type: 3}
       propertyPath: m_TagString
