@@ -6666,12 +6666,12 @@ MonoBehaviour:
   temperatureBar: {fileID: 1905772798}
   maxTemperature: 40
   updatedStamina: 0
-  staminaBar: {fileID: 0}
+  staminaBar: {fileID: 771335610}
   maxStamina: 0
   updatedThirst: 0
   thirstBar: {fileID: 900764437}
   maxThirst: 100
-  stat: {fileID: 0}
+  stat: {fileID: 1885725814}
 --- !u!114 &771335610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7123,12 +7123,12 @@ MonoBehaviour:
   temperatureBar: {fileID: 1905772798}
   maxTemperature: 40
   updatedStamina: 0
-  staminaBar: {fileID: 0}
+  staminaBar: {fileID: 771335610}
   maxStamina: 0
   updatedThirst: 0
   thirstBar: {fileID: 900764437}
   maxThirst: 100
-  stat: {fileID: 0}
+  stat: {fileID: 1885725814}
 --- !u!114 &900764437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7186,7 +7186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &907129859
 Transform:
   m_ObjectHideFlags: 0
@@ -9261,8 +9261,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892047120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 882.78, y: 5.32, z: 141.74}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 611.584, y: 7.345, z: 127.814}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1041243802}
   m_RootOrder: 1
@@ -9335,12 +9335,12 @@ MonoBehaviour:
   temperatureBar: {fileID: 1905772798}
   maxTemperature: 40
   updatedStamina: 0
-  staminaBar: {fileID: 0}
+  staminaBar: {fileID: 771335610}
   maxStamina: 0
   updatedThirst: 0
   thirstBar: {fileID: 900764437}
   maxThirst: 100
-  stat: {fileID: 0}
+  stat: {fileID: 1885725814}
 --- !u!114 &1905772798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9531,7 +9531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 63677ae7938b67a44acb29f8545836f9, type: 3}
       propertyPath: m_TagString
-      value: Chest
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63677ae7938b67a44acb29f8545836f9, type: 3}
