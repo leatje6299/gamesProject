@@ -412,7 +412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!114 &130012119
 MonoBehaviour:
@@ -575,7 +575,7 @@ Transform:
   - {fileID: 7744210901164731566}
   - {fileID: 8915917183475660943}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &212479756 stripped
 RectTransform:
@@ -5729,7 +5729,7 @@ Transform:
   m_Children:
   - {fileID: 576142731}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 18.323, y: -90, z: -0.002}
 --- !u!1 &572712634
 GameObject:
@@ -5912,7 +5912,7 @@ Transform:
   - {fileID: 1112335938}
   - {fileID: 1495569941}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &609159530
 GameObject:
@@ -6037,7 +6037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624484445
 GameObject:
@@ -6219,7 +6219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641760263
 GameObject:
@@ -6320,7 +6320,7 @@ RectTransform:
   - {fileID: 1882414416}
   - {fileID: 1026452869}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6450,7 +6450,7 @@ Transform:
   m_Children:
   - {fileID: 35905688}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &735377168
 GameObject:
@@ -6666,12 +6666,12 @@ MonoBehaviour:
   temperatureBar: {fileID: 1905772798}
   maxTemperature: 40
   updatedStamina: 0
-  staminaBar: {fileID: 771335610}
+  staminaBar: {fileID: 0}
   maxStamina: 0
   updatedThirst: 0
   thirstBar: {fileID: 900764437}
   maxThirst: 100
-  stat: {fileID: 1885725814}
+  stat: {fileID: 0}
 --- !u!114 &771335610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7123,12 +7123,12 @@ MonoBehaviour:
   temperatureBar: {fileID: 1905772798}
   maxTemperature: 40
   updatedStamina: 0
-  staminaBar: {fileID: 771335610}
+  staminaBar: {fileID: 0}
   maxStamina: 0
   updatedThirst: 0
   thirstBar: {fileID: 900764437}
   maxThirst: 100
-  stat: {fileID: 1885725814}
+  stat: {fileID: 0}
 --- !u!114 &900764437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7523,7 +7523,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1002854043 stripped
 MonoBehaviour:
@@ -7643,7 +7643,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041243801
 GameObject:
@@ -7675,7 +7675,7 @@ Transform:
   - {fileID: 907129859}
   - {fileID: 1892047124}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063764724
 GameObject:
@@ -8190,7 +8190,7 @@ Transform:
   - {fileID: 572712635}
   - {fileID: 826389102}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425931818
 GameObject:
@@ -8750,6 +8750,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 250f344885ec05f48b3d01351451c433, type: 3}
+--- !u!1001 &1664709580
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 608.755
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 127.587
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.936947
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.34947154
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -40.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902105635352743599, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426124508519224341, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
+      propertyPath: m_Name
+      value: BetterBuilding2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fbd61b6de1000a4888c82527731a2bb, type: 3}
 --- !u!1 &1700653219
 GameObject:
   m_ObjectHideFlags: 0
@@ -9365,12 +9422,12 @@ MonoBehaviour:
   temperatureBar: {fileID: 1905772798}
   maxTemperature: 40
   updatedStamina: 0
-  staminaBar: {fileID: 771335610}
+  staminaBar: {fileID: 0}
   maxStamina: 0
   updatedThirst: 0
   thirstBar: {fileID: 900764437}
   maxThirst: 100
-  stat: {fileID: 1885725814}
+  stat: {fileID: 0}
 --- !u!114 &1905772798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9610,7 +9667,7 @@ Transform:
   - {fileID: 413145822}
   - {fileID: 1885725813}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -84.7, z: 0}
 --- !u!114 &2014586067
 MonoBehaviour:
