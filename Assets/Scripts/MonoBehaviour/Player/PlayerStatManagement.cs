@@ -36,8 +36,6 @@ public class PlayerStatManagement : MonoBehaviour
         playerWater -= waterTick;
         playerStamina -= staminaTick;
 
-        print(playerStamina);
-
         yield return new WaitForSeconds(4);
         StartCoroutine(statRestart());
     }
