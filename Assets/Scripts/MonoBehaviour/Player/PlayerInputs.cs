@@ -20,6 +20,7 @@ public class PlayerInputs : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 //GameObject choiceCanvas = GameObject.FindGameObjectWithTag("ChoiceCanvas");
+                Destroy(sphereCast.currentHitObj.gameObject);
                 choiceCanvas.SetActive(true);
             }
 
