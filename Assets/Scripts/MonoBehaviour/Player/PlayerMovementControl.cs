@@ -81,7 +81,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (skatingSpeed > 0 && shifted) //Guard Statement for rapid Slow
         {
-            skatingSpeed -= 0.025f;
+            skatingSpeed -= 0.04f;
             skatingMove();
             return;
         } //if Shift pressed, slow down Quickly
