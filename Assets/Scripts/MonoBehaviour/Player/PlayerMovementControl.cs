@@ -44,12 +44,12 @@ public class PlayerMovementControl : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         bool shifted = Input.GetButton("Fire3"); 
         bool boosting = Input.GetButtonDown("Fire1");
+
         if(boosting && !boostCoolDown)
         {
             stats.setStaminaPlayer(-10f);
         }
 
-        //transform.rotation = _camera.transform.localRotation.y;
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
         if (!ableSkate)
         {
@@ -73,6 +73,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (boostCoolDown == false && boost == true)
         {
+            print("Yay");
             boostCoolDown = true;
             skatingSpeed += 10f;
             startBoostCoolDown();
@@ -107,7 +108,8 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void skatingMove()
     {
-        _characterController.Move(SkatingVector.normalized * skatingSpeed * Time.deltaTime);
+
+        _characterController.Move(new Vector3(SkatingVector.normalized.x * skatingSpeed * Time.deltaTime, -9.8f ,SkatingVector.normalized.z * skatingSpeed * Time.deltaTime));
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

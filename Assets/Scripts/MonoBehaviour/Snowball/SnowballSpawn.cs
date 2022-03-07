@@ -31,7 +31,7 @@ public class SnowballSpawn : MonoBehaviour
     }
     void Update()
     {
-        if(Random.Range(1,1000) < 2)
+        if(Random.Range(1,1000) < 5)
         {
             SpawnSnowBall();
         }
