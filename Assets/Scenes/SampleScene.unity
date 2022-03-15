@@ -10751,8 +10751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkOnSnow: {fileID: 8300000, guid: 3cf9ccac632f11d4496d184f605dd09f, type: 3}
-  walkOnIce: {fileID: 8300000, guid: 2a53aa9987fb6ce468e8ead4eade3883, type: 3}
   iceSkate: {fileID: 8300000, guid: 1a3175a39db75ae40acf7780c1bd3a10, type: 3}
+  boostSound: {fileID: 8300000, guid: fd0a016f52bc7d34f90382eaaa3359d4, type: 3}
   stats: {fileID: 1885725814}
   skating: 1
   mouseSensitivity: 1000
@@ -10795,7 +10795,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014586065}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

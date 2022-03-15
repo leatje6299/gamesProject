@@ -6,8 +6,8 @@ public class PlayerMovementControl : MonoBehaviour
 {
     private AudioSource playerAudio;
     public AudioClip walkOnSnow;
-    public AudioClip walkOnIce;
     public AudioClip iceSkate;
+    public AudioClip boostSound;
 
     protected CharacterController _characterController;
     [SerializeField] private PlayerStatManagement stats;
@@ -76,6 +76,7 @@ public class PlayerMovementControl : MonoBehaviour
             print("Yay");
             boostCoolDown = true;
             skatingSpeed += 10f;
+            playerAudio.PlayOneShot(boostSound);
             startBoostCoolDown();
         }
 
@@ -119,7 +120,12 @@ public class PlayerMovementControl : MonoBehaviour
             skating = true;
             if (Input.GetKeyDown(KeyCode.W))
             {
-                playerAudio.PlayOneShot(iceSkate);
+                print(skatingSpeed);
+                if (skatingSpeed >= 1)
+                {
+                    playerAudio.PlayOneShot(iceSkate);
+                    StartCoroutine(playIceSound());
+                }
             }
             return;
         }
@@ -128,7 +134,9 @@ public class PlayerMovementControl : MonoBehaviour
             skating = false;
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
             {
+                playerAudio.clip = walkOnSnow;
                 playerAudio.PlayOneShot(walkOnSnow);
+                StartCoroutine(playSnowSound());
             }
             return;
         }
@@ -164,5 +172,13 @@ public class PlayerMovementControl : MonoBehaviour
         ableSkate = false;
         yield return new WaitForSeconds(2);
         ableSkate = true;
+    }
+    private IEnumerator playIceSound()
+    {
+        yield return new WaitForSeconds(30);
+    }
+    private IEnumerator playSnowSound()
+    {
+        yield return new WaitForSeconds(3);
     }
 }
