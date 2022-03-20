@@ -11,9 +11,12 @@ public class GameSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
