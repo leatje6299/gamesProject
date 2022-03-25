@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovementControl : MonoBehaviour
 {
+    private PlayerControls playerControls;
+
     private AudioSource playerAudio;
     public AudioClip walkOnSnow;
     public AudioClip iceSkate;
@@ -25,6 +28,7 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void Awake()
     {
+        playerControls = new PlayerControls();
         skating = true;
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _characterController = gameObject.GetComponent<CharacterController>();
@@ -32,6 +36,15 @@ public class PlayerMovementControl : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //InputSystem.Enable();
+    }
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+    private void OnDisable() 
+    {
+        playerControls.Disable();
     }
     private void Start()
     {
@@ -40,25 +53,19 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        bool shifted = Input.GetButton("Fire3"); 
-        bool boosting = Input.GetButtonDown("Fire1");
 
+        bool shifted = playerControls.Game.Slow.ReadValue<bool>();
+        bool boosting = playerControls.Game.Boost.ReadValue<bool>();
+        Vector2 moveDirection = playerControls.Game.Move.ReadValue<Vector2>();
+        
         if(boosting && !boostCoolDown)
         {
             stats.setStaminaPlayer(4f);
         }
+        
 
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
-        if (!ableSkate)
-        {
-            horizontal = 0;
-            vertical = 0;
-            shifted = false;
-            boosting = false;
-        }
-        if (skating) skatingCalculator(horizontal, vertical, shifted, boosting);
+        if (skating) skatingCalculator(moveDirection.x, moveDirection.y, shifted, boosting);
     }
 
     void skatingCalculator(float mH, float mV, bool shifted, bool boost)
@@ -73,7 +80,6 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (boostCoolDown == false && boost == true)
         {
-            print("Yay");
             boostCoolDown = true;
             skatingSpeed += 10f;
             playerAudio.PlayOneShot(boostSound);
