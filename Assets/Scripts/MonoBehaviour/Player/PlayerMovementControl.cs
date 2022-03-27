@@ -36,7 +36,6 @@ public class PlayerMovementControl : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        //InputSystem.Enable();
     }
     private void OnEnable()
     {
@@ -53,16 +52,15 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void Update()
     {
-
-        bool shifted = playerControls.Game.Slow.ReadValue<bool>();
-        bool boosting = playerControls.Game.Boost.ReadValue<bool>();
+        bool shifted = playerControls.Game.Slow.ReadValue<float>() > 0;
+        bool boosting = playerControls.Game.Boost.ReadValue<float>() > 0;
         Vector2 moveDirection = playerControls.Game.Move.ReadValue<Vector2>();
         
         if(boosting && !boostCoolDown)
         {
-            stats.setStaminaPlayer(4f);
+            stats.setStaminaPlayer(4f);  
         }
-        
+
 
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
         if (skating) skatingCalculator(moveDirection.x, moveDirection.y, shifted, boosting);
@@ -115,12 +113,12 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void skatingMove()
     {
-
         _characterController.Move(new Vector3(SkatingVector.normalized.x * skatingSpeed * Time.deltaTime, -9.8f ,SkatingVector.normalized.z * skatingSpeed * Time.deltaTime));
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        /* this is broken...
         if (hit.gameObject.tag == "Ice")
         {
             skating = true;
@@ -146,7 +144,7 @@ public class PlayerMovementControl : MonoBehaviour
             }
             return;
         }
-        
+        */
         if (hit.gameObject.tag == "SnowBall")
         {
             Vector3 colliderTransform = hit.transform.position;
