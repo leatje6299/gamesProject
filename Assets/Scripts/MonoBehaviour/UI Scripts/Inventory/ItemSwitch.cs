@@ -4,11 +4,27 @@ using UnityEngine;
 //SCRIPT BY LEA
 public class ItemSwitch : MonoBehaviour
 {
+    private PlayerControls playerControls;
     [SerializeField]
-    ItemHolder inventory;
+    private ItemHolder inventory;
 
     private ItemSlot currentSlot;
     private int currentSlotIndex = 0;
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +53,8 @@ public class ItemSwitch : MonoBehaviour
 
     void SwitchItem()
     {
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f) //forwards
+        float scrollValue = playerControls.Game.InventoryScroll.ReadValue<float>();
+        if (scrollValue > 0f) //forwards
         {
             if(currentSlotIndex >= inventory.slots.Count - 1)
             {
@@ -51,7 +68,7 @@ public class ItemSwitch : MonoBehaviour
             }
             //Debug.Log("Scroll up");
         }
-        if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f) //backwards
+        if (scrollValue < 0f) //backwards
         {
             if(currentSlotIndex <= 0)
             {
