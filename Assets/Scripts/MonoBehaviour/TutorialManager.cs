@@ -4,7 +4,13 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
     private int popUpIndex;
+    private AudioSource newAudio;
+    public AudioClip progressSound;
 
+    void Start()
+    {
+        newAudio = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,6 +44,7 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 popUpIndex += 1;
+                newAudio.PlayOneShot(progressSound);
             }
         }
         else if (popUpIndex == 3)
@@ -45,6 +52,7 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 popUpIndex += 1;
+                newAudio.PlayOneShot(progressSound);
             }
         }
         else if(popUpIndex == 4)
@@ -52,6 +60,7 @@ public class TutorialManager : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.P))
             {
                 popUpIndex += 1;
+                newAudio.PlayOneShot(progressSound);
             }
         }
         else if(popUpIndex == 5)
@@ -59,6 +68,7 @@ public class TutorialManager : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 popUpIndex += 1;
+                newAudio.PlayOneShot(progressSound);
             }
         }
         else if (popUpIndex == 6)
