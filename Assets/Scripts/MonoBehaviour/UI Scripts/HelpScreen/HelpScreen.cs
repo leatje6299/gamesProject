@@ -29,8 +29,8 @@ public class HelpScreen : MonoBehaviour
         }
         else
         {
-            keyBindHelp1.text = "Press shift to slow down";
-            keyBindHelp2.text = "Press CTRL for a boost";
+            keyBindHelp1.text = "Press CTRL to slow down";
+            keyBindHelp2.text = "Press shift for a boost";
             return;
         }
     }
