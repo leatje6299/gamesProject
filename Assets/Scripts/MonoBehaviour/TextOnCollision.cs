@@ -10,7 +10,7 @@ public class TextOnCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            helpText.text = "Retrieve lost notes in an abandoned building and exit the place";
+            //helpText.text = "Retrieve lost notes in an abandoned building and exit the place";
         }
     }
 
