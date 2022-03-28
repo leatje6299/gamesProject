@@ -65,6 +65,7 @@ public class PlayerMovementControl : MonoBehaviour
             stats.setStaminaPlayer(4f);  
         }
 
+        //print(shifted);
 
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
         if (skating) skatingCalculator(mV, mH, shifted, boosting);
@@ -91,7 +92,8 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (skatingSpeed > 0 && shifted) //Guard Statement for rapid Slow
         {
-            skatingSpeed -= 0.04f;
+            print("SLOW");
+            skatingSpeed -= 0.1f;
             skatingMove();
             return;
         } //if Shift pressed, slow down Quickly
@@ -102,10 +104,17 @@ public class PlayerMovementControl : MonoBehaviour
             skatingMove();
             return;
         } //if speed is at max, slow down
-  
+
+        if (skatingSpeed < 0.1 &&(mV > 0 || mH > 0))
+        {
+            skatingSpeed += 4f;
+            skatingMove();
+            return;
+        }
+
         if (mV > 0 || mH > 0)
         {
-            skatingSpeed += 0.003f;
+            skatingSpeed += 0.03f;
             skatingMove();
             return;
         } //if pressing forward, move forward
