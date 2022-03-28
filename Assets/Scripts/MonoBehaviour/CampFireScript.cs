@@ -12,7 +12,8 @@ public class CampFireScript : MonoBehaviour
     {
         if (timeout == false)
         {
-            stats.playerTemp += 1f;
+            stats.playerTemp += 3f;
+            stats.playerTemp = Mathf.Clamp(stats.playerTemp, -5, 45);
             StartCoroutine(IncreaseTemp());
         }
     }

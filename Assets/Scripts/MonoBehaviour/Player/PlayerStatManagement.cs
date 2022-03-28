@@ -7,7 +7,7 @@ public class PlayerStatManagement : MonoBehaviour
     public float playerTemp;
     private int playerHunger;
     private float playerWater;
-    private float playerStamina;
+    public float playerStamina;
 
     private float tempTick;
     private int hungerTick;
