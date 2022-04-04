@@ -11288,7 +11288,7 @@ GameObject:
   - component: {fileID: 1145437293210457375}
   m_Layer: 3
   m_Name: SnowPlane
-  m_TagString: Snow
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12222,7 +12222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3939499828618435577}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.82, y: 0, z: 0}
+  m_LocalPosition: {x: 17.82, y: -33.44, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 205433297}
@@ -12483,7 +12483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921797272684253260}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 184, y: 2.06, z: 125}
+  m_LocalPosition: {x: 184, y: 1, z: 125}
   m_LocalScale: {x: 18855.6, y: 12367.299, z: 12367.299}
   m_Children: []
   m_Father: {fileID: 205433297}
@@ -12579,7 +12579,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca93784b2bb46d949966b7a53f914d7d, type: 2}
+  - {fileID: 2100000, guid: 30f8c7e999a946840a00023a742ae75a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
