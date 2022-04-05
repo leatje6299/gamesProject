@@ -10,6 +10,10 @@ TagManager:
   - Chest
   - ChoiceCanvas
   - SnowBall
+  - ResearchNote
+  - ResearchNote2
+  - ResearchNote3
+  - ResearchNote4
   layers:
   - Default
   - TransparentFX

@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class NoteSystem : MonoBehaviour
 {
-    public GameObject notesText;
-    public static int notes;
-    // Update is called once per frame
     void Update()
     {
-        notesText.GetComponent<Text>().text = "Notes Collected: " + notes;
+        if(this.gameObject.activeSelf)
+        {
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
