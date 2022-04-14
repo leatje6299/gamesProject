@@ -54,7 +54,7 @@ public class PlayerMovementControl : MonoBehaviour
     void Update()
     {
         maxSpeed = stats.playerTemp / 2;
-        bool shifted = playerControls.Game.Slow.ReadValue<float>() > 0;
+        bool slow = playerControls.Game.Slow.ReadValue<float>() > 0;
         bool boosting = playerControls.Game.Boost.ReadValue<float>() > 0;
         Vector2 moveDirection = playerControls.Game.Move.ReadValue<Vector2>();
         float mV = moveDirection.x;
@@ -66,13 +66,14 @@ public class PlayerMovementControl : MonoBehaviour
         }
 
         //print(shifted);
+        //print(skatingSpeed);
 
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
-        if (skating) skatingCalculator(mV, mH, shifted, boosting);
+        if (skating) skatingCalculator(mV, mH, slow, boosting);
         else _characterController.Move(transform.forward * mH * Time.deltaTime * 3+ transform.right * mV * Time.deltaTime * 3);
     }
 
-    void skatingCalculator(float mH, float mV, bool shifted, bool boost)
+    void skatingCalculator(float mH, float mV, bool slow, bool boost)
     {
         if (!skating) return; //Guard Statement for Skating
 
@@ -84,13 +85,14 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (boostCoolDown == false && boost == true && stats.playerStamina > 0)
         {
+            print("Boost");
             boostCoolDown = true;
             skatingSpeed += 10f;
             playerAudio.PlayOneShot(boostSound);
             startBoostCoolDown();
         }
 
-        if (skatingSpeed > 0 && shifted) //Guard Statement for rapid Slow
+        if (skatingSpeed > 0 && slow) //Guard Statement for rapid Slow
         {
             print("SLOW");
             skatingSpeed -= 0.1f;

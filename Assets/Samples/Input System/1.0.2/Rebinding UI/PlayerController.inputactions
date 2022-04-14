@@ -126,6 +126,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a974338a-7695-4fd6-8c20-c8ae419c6328",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2c9d67f0-6bcb-425d-a91c-bc8c321c02e3",
                     "path": "<Keyboard>/f",
                     "interactions": "",
