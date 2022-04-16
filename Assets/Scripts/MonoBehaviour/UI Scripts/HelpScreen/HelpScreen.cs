@@ -30,7 +30,7 @@ public class HelpScreen : MonoBehaviour
             keyBindHelpMiddle.text = "[F] Open";
             return;
         }
-        if(sphereCast.currentHitObj.tag == "ResearchNote" || sphereCast.currentHitObj.tag == "ResearchNote2" || sphereCast.currentHitObj.tag == "ResearchNote3" || sphereCast.currentHitObj.tag == "ResearchNote4")
+        if(sphereCast.currentHitObj.tag == "ResearchNote")
         {
             keyBindHelpMiddle.text = "[F] Pick up";
             return;

@@ -14,6 +14,7 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private GameObject choiceCanvas;
     [SerializeField] private ItemHolder item;
     [SerializeField] private Item snack;
+    [SerializeField] private Item note;
     [SerializeField] private PlayerStatManagement stamina;
 
     private void Awake()
@@ -56,6 +57,14 @@ public class PlayerInputs : MonoBehaviour
             if(playerControls.Game.Use.ReadValue<float>() > 0)
             {
                 stamina.setStaminaPlayer(-20); //add 20 to stamina of player if eat
+                Destroy(sphereCast.currentHitObj);
+            }
+        }
+        if(sphereCast.currentHitObj.tag == "ResearchNote")
+        {
+            if(playerControls.Game.Interact.ReadValue<float>() > 0)
+            {
+                item.Add(note);
                 Destroy(sphereCast.currentHitObj);
             }
         }
