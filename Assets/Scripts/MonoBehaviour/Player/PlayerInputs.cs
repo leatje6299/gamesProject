@@ -10,7 +10,11 @@ public class PlayerInputs : MonoBehaviour
 
     public SphereCast sphereCast;
     private GameObject currentHit;
+
     [SerializeField] private GameObject choiceCanvas;
+    [SerializeField] private ItemHolder item;
+    [SerializeField] private Item snack;
+    [SerializeField] private PlayerStatManagement stamina;
 
     private void Awake()
     {
@@ -41,6 +45,19 @@ public class PlayerInputs : MonoBehaviour
                 choiceCanvas.SetActive(true);
             }
 
+        }
+        if(sphereCast.currentHitObj.tag == "Snack")
+        {
+            if(playerControls.Game.Interact.ReadValue<float>() > 0)
+            {
+                item.Add(snack);
+                Destroy(sphereCast.currentHitObj);
+            }
+            if(playerControls.Game.Use.ReadValue<float>() > 0)
+            {
+                stamina.setStaminaPlayer(-20); //add 20 to stamina of player if eat
+                Destroy(sphereCast.currentHitObj);
+            }
         }
     }
 }

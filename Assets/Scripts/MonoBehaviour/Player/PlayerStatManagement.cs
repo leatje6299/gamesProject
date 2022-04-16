@@ -10,20 +10,14 @@ public class PlayerStatManagement : MonoBehaviour
     public float playerStamina;
 
     private float tempTick;
-    private int hungerTick;
-    private float waterTick;
     private float staminaTick;
 
     void Start()
     {
         playerTemp = 37.0f;
-        playerHunger = 100;
-        playerWater = 100f;
         playerStamina = 100f;
 
         tempTick = 2f;
-        hungerTick = 1;
-        waterTick = 1f;
         staminaTick = 10f;
 
         StartCoroutine(statTick());
@@ -32,8 +26,6 @@ public class PlayerStatManagement : MonoBehaviour
     private IEnumerator statTick()
     {
         playerTemp -= tempTick;
-        playerHunger -= hungerTick;
-        playerWater -= waterTick;
         playerStamina -= staminaTick;
 
         yield return new WaitForSeconds(4);
@@ -48,21 +40,6 @@ public class PlayerStatManagement : MonoBehaviour
     public float getPlayerTemp()
     {
         return playerTemp;
-    }
-
-    public float getPlayerHunger()
-    {
-        return playerHunger;
-    }
-
-    public float getPlayerThirst()
-    {
-        return playerWater;
-    }
-
-    public void setPlayerThirst(float thirstAmount)
-    {
-        playerWater += thirstAmount;
     }
 
     public void setTempTick(float newTempTick)

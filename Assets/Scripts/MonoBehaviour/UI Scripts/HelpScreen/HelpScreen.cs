@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//Script by Lea
 
 public class HelpScreen : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class HelpScreen : MonoBehaviour
         {
             keyBindHelpMiddle.text = "[F] Pick up";
             return;
+        }
+        if(sphereCast.currentHitObj.tag == "Snack")
+        {
+            keyBindHelpMiddle.text = "[F] Pick up \r\n [E] Eat";
         }
         else
         {

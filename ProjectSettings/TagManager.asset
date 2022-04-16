@@ -14,6 +14,7 @@ TagManager:
   - ResearchNote2
   - ResearchNote3
   - ResearchNote4
+  - Snack
   layers:
   - Default
   - TransparentFX

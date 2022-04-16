@@ -57,6 +57,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""24d3c85a-5eef-4f41-893d-118c8c260395"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -169,6 +177,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""InventoryScroll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf7beb59-0447-4104-8c52-0aa8c30e669e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -182,6 +201,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Game_Boost = m_Game.FindAction("Boost", throwIfNotFound: true);
         m_Game_Interact = m_Game.FindAction("Interact", throwIfNotFound: true);
         m_Game_InventoryScroll = m_Game.FindAction("InventoryScroll", throwIfNotFound: true);
+        m_Game_Use = m_Game.FindAction("Use", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -236,6 +256,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Game_Boost;
     private readonly InputAction m_Game_Interact;
     private readonly InputAction m_Game_InventoryScroll;
+    private readonly InputAction m_Game_Use;
     public struct GameActions
     {
         private @PlayerControls m_Wrapper;
@@ -245,6 +266,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Boost => m_Wrapper.m_Game_Boost;
         public InputAction @Interact => m_Wrapper.m_Game_Interact;
         public InputAction @InventoryScroll => m_Wrapper.m_Game_InventoryScroll;
+        public InputAction @Use => m_Wrapper.m_Game_Use;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -269,6 +291,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @InventoryScroll.started -= m_Wrapper.m_GameActionsCallbackInterface.OnInventoryScroll;
                 @InventoryScroll.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnInventoryScroll;
                 @InventoryScroll.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnInventoryScroll;
+                @Use.started -= m_Wrapper.m_GameActionsCallbackInterface.OnUse;
+                @Use.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnUse;
+                @Use.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnUse;
             }
             m_Wrapper.m_GameActionsCallbackInterface = instance;
             if (instance != null)
@@ -288,6 +313,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @InventoryScroll.started += instance.OnInventoryScroll;
                 @InventoryScroll.performed += instance.OnInventoryScroll;
                 @InventoryScroll.canceled += instance.OnInventoryScroll;
+                @Use.started += instance.OnUse;
+                @Use.performed += instance.OnUse;
+                @Use.canceled += instance.OnUse;
             }
         }
     }
@@ -299,5 +327,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnBoost(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnInventoryScroll(InputAction.CallbackContext context);
+        void OnUse(InputAction.CallbackContext context);
     }
 }
