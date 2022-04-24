@@ -9,7 +9,7 @@ public class ItemSwitch : MonoBehaviour
     private ItemHolder inventory;
 
     private ItemSlot currentSlot;
-    private int currentSlotIndex = 0;
+    private int currentSlotIndex = 1;
 
     private void Awake()
     {
@@ -30,7 +30,6 @@ public class ItemSwitch : MonoBehaviour
     void Start()
     {
         SelectItem();
-        currentSlot = getCurrentSlot();
     }
 
     // Update is called once per frame
@@ -66,7 +65,7 @@ public class ItemSwitch : MonoBehaviour
                 currentSlotIndex++;
                 currentSlot = inventory.slots[currentSlotIndex];
             }
-            //Debug.Log("Scroll up");
+            Debug.Log("Scroll up");
         }
         if (scrollValue < 0f) //backwards
         {
@@ -80,7 +79,7 @@ public class ItemSwitch : MonoBehaviour
                 currentSlotIndex--;
                 currentSlot = inventory.slots[currentSlotIndex];
             }
-            //Debug.Log("Scroll down");
+            Debug.Log("Scroll down");
         }
     }
 

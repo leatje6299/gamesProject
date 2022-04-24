@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 //Script by Lea
 
 public class HelpScreen : MonoBehaviour
 {
+
     public SphereCast sphereCast;
     [SerializeField]
     private Text keyBindHelp1;
@@ -14,6 +16,7 @@ public class HelpScreen : MonoBehaviour
     [SerializeField]
     private Text keyBindHelpMiddle;
     private GameObject currentHit;
+
 
     private void Update()
     {

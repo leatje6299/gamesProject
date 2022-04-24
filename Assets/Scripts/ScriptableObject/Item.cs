@@ -10,4 +10,5 @@ public class Item : ScriptableObject
     public string title;
     public bool stackable;
     public Sprite sprite;
+    public bool isHighlighted;
 }

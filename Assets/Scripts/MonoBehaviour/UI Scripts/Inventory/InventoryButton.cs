@@ -12,27 +12,40 @@ public class InventoryButton : MonoBehaviour
     private Text stackAmount;
 
     public ItemSwitch currentSlot;
-    private ItemSlot slot;
+    //private ItemSlot slot;
+    private ItemSlot highlightedSlot;
+
 
     /*public void SetIndex(int index)
     {
         itemIndex = index;
     }*/
 
-    public void Update()
+    public void HighlightCurrentItem(ItemSlot slot)
     {
-        HighlightCurrentItem();
-    }
-
-    public void HighlightCurrentItem()
-    {
-        slot = currentSlot.getCurrentSlot();
+        highlightedSlot = currentSlot.getCurrentSlot();
+        if (slot == highlightedSlot)
+        {
+            slot.item.isHighlighted = true;
+        }
+        else
+        {
+            slot.item.isHighlighted = false;
+        }
     }
 
     public void ShowItem(ItemSlot slot)
     {
         itemIcon.gameObject.SetActive(true);
         itemIcon.sprite = slot.item.sprite;
+        if(slot.item.isHighlighted)
+        {
+            itemIcon.color = new Color(1, 0, 0);
+        }
+        else if(!slot.item.isHighlighted)
+        {
+            itemIcon.color = new Color(1, 1, 1);
+        }
         if(slot.item.stackable == true)
         {
             //change message displayed by text

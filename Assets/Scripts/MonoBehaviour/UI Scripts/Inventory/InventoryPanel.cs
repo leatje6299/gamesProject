@@ -28,6 +28,7 @@ public class InventoryPanel : MonoBehaviour
             else
             {
                 buttons[i].ShowItem(inventory.slots[i]);
+                buttons[i].HighlightCurrentItem(inventory.slots[i]);
             }
         }
     }
