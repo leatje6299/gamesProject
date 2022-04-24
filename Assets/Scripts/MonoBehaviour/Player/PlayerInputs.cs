@@ -17,6 +17,10 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private Item note;
     [SerializeField] private PlayerStatManagement stamina;
 
+    [SerializeField] private ItemSwitch currentItem;
+    [SerializeField] private ItemHolder inventory;
+    [SerializeField] private PlayerStatManagement stats;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -37,6 +41,7 @@ public class PlayerInputs : MonoBehaviour
         currentHit = sphereCast.currentHitObj;
         if (currentHit == null) return;
 
+        //sphere cast
         if (sphereCast.currentHitObj.tag == "Chest")
         {
             if(playerControls.Game.Interact.ReadValue<float>()>0)
@@ -66,6 +71,15 @@ public class PlayerInputs : MonoBehaviour
             {
                 item.Add(note);
                 Destroy(sphereCast.currentHitObj);
+            }
+        }
+        if (currentItem.getCurrentSlot().item == null) return;
+        if(currentItem.getCurrentSlot().item.title == "Snack")
+        {
+            if (playerControls.Game.Interact.triggered)
+            {
+                inventory.Remove(currentItem.getCurrentSlot().item);
+                stats.setStaminaPlayer(-20);
             }
         }
     }
