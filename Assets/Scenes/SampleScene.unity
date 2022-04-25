@@ -11426,17 +11426,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_PointAction: {fileID: -3618124557481857973, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_MoveAction: {fileID: -4623596112715058291, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_SubmitAction: {fileID: 5046323778527517982, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_CancelAction: {fileID: 6492799775628120160, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_LeftClickAction: {fileID: -3233749988137913280, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_MiddleClickAction: {fileID: 2568813185236356536, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_RightClickAction: {fileID: 2569041705715552941, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_ScrollWheelAction: {fileID: 5409667113286133732, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4169006037688667846, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 5593384090266831124, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
 --- !u!114 &1700653221
@@ -11901,7 +11901,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858228889}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3e55cae232e67e40b8952f28444310d, type: 3}
   m_Name: 
@@ -12432,7 +12432,11 @@ MonoBehaviour:
   choiceCanvas: {fileID: 37245107}
   item: {fileID: 11400000, guid: fd81d89fd13ed8b4f8b773e4c328abfe, type: 2}
   snack: {fileID: 11400000, guid: f65df73e6c99cf24fa6a1d86f81f7657, type: 2}
+  note: {fileID: 11400000, guid: 88e5036f458f1814c9b18c34507877b7, type: 2}
   stamina: {fileID: 1885725814}
+  currentItem: {fileID: 1858228891}
+  inventory: {fileID: 11400000, guid: fd81d89fd13ed8b4f8b773e4c328abfe, type: 2}
+  stats: {fileID: 0}
 --- !u!1 &2065960835
 GameObject:
   m_ObjectHideFlags: 0

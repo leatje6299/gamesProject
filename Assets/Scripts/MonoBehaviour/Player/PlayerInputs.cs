@@ -34,10 +34,9 @@ public class PlayerInputs : MonoBehaviour
     {
         playerControls.Disable();
     }
-
-    // Update is called once per frame
     void Update()
     {
+        print(InputControlPath.ToHumanReadableString(playerControls.Game.Interact.bindings[0].effectivePath,InputControlPath.HumanReadableStringOptions.OmitDevice));
         currentHit = sphereCast.currentHitObj;
         if (currentHit == null) return;
 
@@ -46,7 +45,6 @@ public class PlayerInputs : MonoBehaviour
         {
             if(playerControls.Game.Interact.ReadValue<float>()>0)
             {
-                //GameObject choiceCanvas = GameObject.FindGameObjectWithTag("ChoiceCanvas");
                 Destroy(sphereCast.currentHitObj.gameObject);
                 choiceCanvas.SetActive(true);
             }
