@@ -6828,7 +6828,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468531756}
-  m_LocalRotation: {x: 0.11259615, y: -0.6980846, z: 0.11257183, w: 0.6980885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 255.89386, y: -245.3252, z: 173.6834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6849,7 +6849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerIndex: -1
-  XYAxis: {fileID: 4485540969121359642, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  XYAxis: {fileID: 2922102910304704026, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
   ZAxis: {fileID: 0}
 --- !u!224 &479344904 stripped
 RectTransform:
@@ -11340,50 +11340,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2008e7cd023b02e4796a9e5041093c01, type: 3}
---- !u!1 &1692277636
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1692277638}
-  - component: {fileID: 1692277637}
-  m_Layer: 0
-  m_Name: Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1692277637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692277636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b6c2da2db9374dada6761b5e35121c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
---- !u!4 &1692277638
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692277636}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.407135, y: 11.776662, z: 100.49049}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1700653219
 GameObject:
   m_ObjectHideFlags: 0
@@ -11416,7 +11372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
   m_PointAction: {fileID: -3618124557481857973, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
   m_MoveAction: {fileID: -4623596112715058291, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
@@ -12218,6 +12173,7 @@ GameObject:
   - component: {fileID: 2014586068}
   - component: {fileID: 2014586072}
   - component: {fileID: 2014586067}
+  - component: {fileID: 2014586073}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -12427,7 +12383,37 @@ MonoBehaviour:
   stamina: {fileID: 1885725814}
   currentItem: {fileID: 1858228891}
   inventory: {fileID: 11400000, guid: fd81d89fd13ed8b4f8b773e4c328abfe, type: 2}
-  stats: {fileID: 0}
+  stats: {fileID: 1885725814}
+--- !u!114 &2014586073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014586065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 8ac1a4c84b955134197dd7d4555116b5, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 130012117}
 --- !u!1 &2065960835
 GameObject:
   m_ObjectHideFlags: 0
