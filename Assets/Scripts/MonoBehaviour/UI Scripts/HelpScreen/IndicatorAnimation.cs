@@ -9,6 +9,13 @@ public class IndicatorAnimation : MonoBehaviour
 
     private void OnEnable()
     {
-        LeanTween.moveX(gameObject,transform.position.x, duration).setLoopPingPong();
+        StartCoroutine(moveAnimation());
+    }
+
+    IEnumerator moveAnimation()
+    {
+        LeanTween.moveX(gameObject, transform.position.x + distance, duration).setLoopPingPong();
+        yield return new WaitForSeconds(5f);
+        this.gameObject.SetActive(false);
     }
 }
