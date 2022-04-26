@@ -8,11 +8,20 @@ public class RebindSaveLoad : MonoBehaviour
 {
     public InputActionAsset actions;
 
+    private void Start()
+    {
+        if(this.gameObject.activeSelf)
+        {
+            var rebinds = PlayerPrefs.GetString("rebinds");
+            if (!string.IsNullOrEmpty(rebinds))
+                actions.LoadBindingOverridesFromJson(rebinds);
+        }
+    }
     public void OnEnable()
     {
-        var rebinds = PlayerPrefs.GetString("rebinds");
-        if (!string.IsNullOrEmpty(rebinds))
-            actions.LoadBindingOverridesFromJson(rebinds);
+        //var rebinds = PlayerPrefs.GetString("rebinds");
+        //if (!string.IsNullOrEmpty(rebinds))
+        //    actions.LoadBindingOverridesFromJson(rebinds);
     }
 
     public void OnDisable()
