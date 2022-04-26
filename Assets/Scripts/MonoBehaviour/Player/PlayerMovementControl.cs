@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementControl : MonoBehaviour
 {
-    private PlayerControls playerControls;
+    [SerializeField] private PlayerInput playerInput;
 
     private AudioSource playerAudio;
     public AudioClip walkOnSnow;
@@ -29,7 +29,6 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
         skating = true;
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _characterController = gameObject.GetComponent<CharacterController>();
@@ -38,14 +37,7 @@ public class PlayerMovementControl : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-    private void OnDisable() 
-    {
-        playerControls.Disable();
-    }
+
     private void Start()
     {
         Cursor.visible = false;
@@ -54,9 +46,9 @@ public class PlayerMovementControl : MonoBehaviour
     void Update()
     {
         maxSpeed = stats.playerTemp / 2;
-        bool slow = playerControls.Game.Slow.ReadValue<float>() > 0;
-        bool boosting = playerControls.Game.Boost.ReadValue<float>() > 0;
-        Vector2 moveDirection = playerControls.Game.Move.ReadValue<Vector2>();
+        bool slow = playerInput.actions["Slow"].ReadValue<float>() > 0;
+        bool boosting = playerInput.actions["Boost"].ReadValue<float>() > 0;
+        Vector2 moveDirection = playerInput.actions["Move"].ReadValue<Vector2>();
         float mV = moveDirection.x;
         float mH = moveDirection.y;
         

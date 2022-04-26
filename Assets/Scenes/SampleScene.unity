@@ -12057,6 +12057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d58d171153517a41b3a58ad40a276bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 2014586073}
   sphereCast: {fileID: 130012120}
   keyBindHelp1: {fileID: 283389482}
   keyBindHelp2: {fileID: 1760377977}
@@ -12229,6 +12230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f9b793492b96d40abc1530faa1c1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 2014586073}
   walkOnSnow: {fileID: 8300000, guid: 3cf9ccac632f11d4496d184f605dd09f, type: 3}
   iceSkate: {fileID: 8300000, guid: 1a3175a39db75ae40acf7780c1bd3a10, type: 3}
   boostSound: {fileID: 8300000, guid: fd0a016f52bc7d34f90382eaaa3359d4, type: 3}
@@ -12384,6 +12386,7 @@ MonoBehaviour:
   currentItem: {fileID: 1858228891}
   inventory: {fileID: 11400000, guid: fd81d89fd13ed8b4f8b773e4c328abfe, type: 2}
   stats: {fileID: 1885725814}
+  playerInput: {fileID: 2014586073}
 --- !u!114 &2014586073
 MonoBehaviour:
   m_ObjectHideFlags: 0

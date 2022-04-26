@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
-    private PlayerControls playerControls;
-
     public SphereCast sphereCast;
     private GameObject currentHit;
 
@@ -20,30 +18,19 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private ItemSwitch currentItem;
     [SerializeField] private ItemHolder inventory;
     [SerializeField] private PlayerStatManagement stats;
+    [SerializeField] private PlayerInput playerInput;
 
-    private void Awake()
-    {
-        playerControls = new PlayerControls();
-    }
-
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-    private void OnDisable()
-    {
-        playerControls.Disable();
-    }
     void Update()
     {
-        print(InputControlPath.ToHumanReadableString(playerControls.Game.Interact.bindings[0].effectivePath,InputControlPath.HumanReadableStringOptions.OmitDevice));
+        //print(InputControlPath.ToHumanReadableString(playerControls.Game.Interact.bindings[0].effectivePath,InputControlPath.HumanReadableStringOptions.OmitDevice));
         currentHit = sphereCast.currentHitObj;
         if (currentHit == null) return;
 
         //sphere cast
         if (sphereCast.currentHitObj.tag == "Chest")
         {
-            if(playerControls.Game.Interact.ReadValue<float>()>0)
+            if(playerInput.actions["Interact"].ReadValue<float>()>0)
+            //if(playerControls.Game.Interact.ReadValue<float>()>0)
             {
                 Destroy(sphereCast.currentHitObj.gameObject);
                 choiceCanvas.SetActive(true);
@@ -52,12 +39,12 @@ public class PlayerInputs : MonoBehaviour
         }
         if(sphereCast.currentHitObj.tag == "Snack")
         {
-            if(playerControls.Game.Interact.ReadValue<float>() > 0)
+            if (playerInput.actions["Interact"].ReadValue<float>() > 0)
             {
                 item.Add(snack);
                 Destroy(sphereCast.currentHitObj);
             }
-            if(playerControls.Game.Use.ReadValue<float>() > 0)
+            if (playerInput.actions["Use"].ReadValue<float>() > 0)
             {
                 stamina.setStaminaPlayer(-20); //add 20 to stamina of player if eat
                 Destroy(sphereCast.currentHitObj);
@@ -65,7 +52,7 @@ public class PlayerInputs : MonoBehaviour
         }
         if(sphereCast.currentHitObj.tag == "ResearchNote")
         {
-            if(playerControls.Game.Interact.ReadValue<float>() > 0)
+            if (playerInput.actions["Interact"].ReadValue<float>() > 0)
             {
                 item.Add(note);
                 Destroy(sphereCast.currentHitObj);
@@ -74,7 +61,7 @@ public class PlayerInputs : MonoBehaviour
         if (currentItem.getCurrentSlot().item == null) return;
         if(currentItem.getCurrentSlot().item.title == "Snack")
         {
-            if (playerControls.Game.Interact.triggered)
+            if (playerInput.actions["Interact"].triggered)
             {
                 inventory.Remove(currentItem.getCurrentSlot().item);
                 stats.setStaminaPlayer(-20);
