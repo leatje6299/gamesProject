@@ -7,16 +7,17 @@ using UnityEngine.InputSystem;
 
 public class HelpScreen : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerInput playerInput;
-    public SphereCast sphereCast;
-    [SerializeField]
-    private Text keyBindHelp1;
-    [SerializeField]
-    private Text keyBindHelp2;
-    [SerializeField]
-    private Text keyBindHelpMiddle;
+    [Header("Player Input Field")]
+    [SerializeField] private PlayerInput playerInput;
+
+    [Header("Sphere cast Field")]
+    [SerializeField] private SphereCast sphereCast;
     private GameObject currentHit;
+
+    [Header("Text Fields")]
+    [SerializeField] private Text keyBindHelp1;
+    [SerializeField] private Text keyBindHelp2;
+    [SerializeField] private Text keyBindHelpMiddle;
 
     private void Update()
     {

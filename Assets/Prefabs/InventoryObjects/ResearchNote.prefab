@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1091758354601773224}
   - component: {fileID: 2762184817419183459}
+  - component: {fileID: 7902142066152257462}
   m_Layer: 0
   m_Name: ResearchNote
   m_TagString: ResearchNote
@@ -47,6 +48,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39185196, y: 1, z: 0.12054945}
   m_Center: {x: 0.003628418, y: -7.2395456e-10, z: 0.1489615}
+--- !u!114 &7902142066152257462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319022048698094098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c698f793856a144b9fea84ab4952248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
+  description: {fileID: 0}
+  noteCanvas: {fileID: 0}
+  indicatorUI: {fileID: 0}
+  note: {fileID: 11400000, guid: 9c640e615a3300444bbc8b98c94a5b86, type: 2}
 --- !u!1 &1961128275342670452
 GameObject:
   m_ObjectHideFlags: 0

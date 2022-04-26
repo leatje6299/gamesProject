@@ -6,23 +6,25 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
-    //input system
+    [Header("Player Input Field")]
     [SerializeField] private PlayerInput playerInput;
 
-    //sphere cast
-    public SphereCast sphereCast;
+    [Header("Sphere cast Field")]
+    [SerializeField] private SphereCast sphereCast;
     private GameObject currentHit;
 
+    [Header("UI Canvas Fields")]
     [SerializeField] private GameObject choiceCanvas;
 
+    [Header("Items Fields")]
+    [SerializeField] private Item snack;
+    [SerializeField] private Note note;
+
+    [Header("Scripts Fields")]
+    [SerializeField] private PlayerStatManagement stats;
+    [SerializeField] private NoteUI noteUI;
     [SerializeField] private ItemSwitch currentItem;
     [SerializeField] private ItemHolder inventory;
-    [SerializeField] private Item snack;
-
-    [SerializeField] private Note note;
-    [SerializeField] private NoteUI noteUI;
-
-    [SerializeField] private PlayerStatManagement stats;
 
     void Update()
     {
@@ -54,10 +56,10 @@ public class PlayerInputs : MonoBehaviour
         }
         if(currentHit.tag == "ResearchNote")
         {
-            if (playerInput.actions["Interact"].ReadValue<float>() > 0)
+            if (playerInput.actions["Interact"].triggered)
             {
                 inventory.Add(note);
-                noteUI.readNote(note);
+                noteUI.setNoteCanvasActive(note);
                 Destroy(sphereCast.currentHitObj);
             }
         }
