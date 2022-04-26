@@ -1167,8 +1167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f9b793492b96d40abc1530faa1c1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  playerInput: {fileID: 0}
+  walkOnSnow: {fileID: 0}
+  iceSkate: {fileID: 0}
+  boostSound: {fileID: 0}
   stats: {fileID: 0}
+  skating: 0
+  mouseSensitivity: 1000
 --- !u!54 &852187754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1198,13 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTemp: 0
-  playerHunger: 0
-  playerWater: 0
-  canvas: {fileID: 1516079808}
-  inventory: 
-  selectedSlot: 0
-  fish: {fileID: 2139902909}
-  pole: {fileID: 1050764838}
+  playerStamina: 0
 --- !u!1 &1027611973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,11 +1264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1516079808}
   stats: {fileID: 852187755}
---- !u!1 &1050764838 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6479727651795184067, guid: c63ae72f39cb0f44aa2f3d6332b9a435, type: 3}
-  m_PrefabInstance: {fileID: 6137830311934123845}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1295316733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,7 +2251,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 852187755}
-  canvas: {fileID: 1516079808}
 --- !u!1 &1840695801
 GameObject:
   m_ObjectHideFlags: 0
