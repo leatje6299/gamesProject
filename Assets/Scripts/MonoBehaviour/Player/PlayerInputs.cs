@@ -13,7 +13,6 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private ItemHolder item;
     [SerializeField] private Item snack;
     [SerializeField] private Item note;
-    [SerializeField] private PlayerStatManagement stamina;
 
     [SerializeField] private ItemSwitch currentItem;
     [SerializeField] private ItemHolder inventory;
@@ -26,11 +25,9 @@ public class PlayerInputs : MonoBehaviour
         currentHit = sphereCast.currentHitObj;
         if (currentHit == null) return;
 
-        //sphere cast
         if (sphereCast.currentHitObj.tag == "Chest")
         {
             if(playerInput.actions["Interact"].ReadValue<float>()>0)
-            //if(playerControls.Game.Interact.ReadValue<float>()>0)
             {
                 Destroy(sphereCast.currentHitObj.gameObject);
                 choiceCanvas.SetActive(true);
@@ -46,7 +43,7 @@ public class PlayerInputs : MonoBehaviour
             }
             if (playerInput.actions["Use"].ReadValue<float>() > 0)
             {
-                stamina.setStaminaPlayer(-20); //add 20 to stamina of player if eat
+                stats.setStaminaPlayer(-20); //add 20 to stamina of player if eat
                 Destroy(sphereCast.currentHitObj);
             }
         }

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChestInput : MonoBehaviour
+public class UIPopUp : MonoBehaviour
 {
-
-    // Update is called once per frame
+    //Script if a UI element needs to pause the game
     void Update()
     {
         if (this.gameObject.activeSelf)
