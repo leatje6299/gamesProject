@@ -19,7 +19,7 @@ public class NoteUI : MonoBehaviour
     public void setNoteCanvasActive(Note note)
     {
         noteCanvas.SetActive(true);
-        description.text = note.description;
+        description.text = note.description; //need to change this
     }
 
     public void readNote(Note note)
