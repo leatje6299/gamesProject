@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76928528eacf1f419a8661781ee1a5e, type: 3}
-  m_Name: ResearchNote
+  m_Script: {fileID: 11500000, guid: 98c1ceb0ed14aab48aa6a3259fa69256, type: 3}
+  m_Name: Note1
   m_EditorClassIdentifier: 
-  type: {fileID: 919132149155446097, guid: a979a3b236bcd0e488acf2e01926c806, type: 3}
+  type: {fileID: 319022048698094098, guid: 4e67a499bbc47b84c8a43f645dbc2a81, type: 3}
   title: Research Note
   stackable: 1
   sprite: {fileID: 21300000, guid: 5a3800e93ad7cb04f893a3dc72365555, type: 3}
+  isHighlighted: 0
+  order: 1
+  description: 
+  tutorialNote: 1

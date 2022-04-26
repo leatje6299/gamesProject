@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "Assets/Item")]
 public class Item : ScriptableObject
 {
+    [Header("Item Fields")]
     public GameObject type;
     public string title;
     public bool stackable;

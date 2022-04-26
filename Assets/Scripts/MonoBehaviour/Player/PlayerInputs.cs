@@ -6,18 +6,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
+    //input system
+    [SerializeField] private PlayerInput playerInput;
+
+    //sphere cast
     public SphereCast sphereCast;
     private GameObject currentHit;
 
     [SerializeField] private GameObject choiceCanvas;
-    [SerializeField] private ItemHolder item;
-    [SerializeField] private Item snack;
-    [SerializeField] private Item note;
 
     [SerializeField] private ItemSwitch currentItem;
     [SerializeField] private ItemHolder inventory;
+    [SerializeField] private Item snack;
+
+    [SerializeField] private Note note;
+    [SerializeField] private NoteUI noteUI;
+
     [SerializeField] private PlayerStatManagement stats;
-    [SerializeField] private PlayerInput playerInput;
 
     void Update()
     {
@@ -25,7 +30,7 @@ public class PlayerInputs : MonoBehaviour
         currentHit = sphereCast.currentHitObj;
         if (currentHit == null) return;
 
-        if (sphereCast.currentHitObj.tag == "Chest")
+        if (currentHit.tag == "Chest")
         {
             if(playerInput.actions["Interact"].ReadValue<float>()>0)
             {
@@ -34,11 +39,11 @@ public class PlayerInputs : MonoBehaviour
             }
 
         }
-        if(sphereCast.currentHitObj.tag == "Snack")
+        if(currentHit.tag == "Snack")
         {
             if (playerInput.actions["Interact"].ReadValue<float>() > 0)
             {
-                item.Add(snack);
+                inventory.Add(snack);
                 Destroy(sphereCast.currentHitObj);
             }
             if (playerInput.actions["Use"].ReadValue<float>() > 0)
@@ -47,15 +52,18 @@ public class PlayerInputs : MonoBehaviour
                 Destroy(sphereCast.currentHitObj);
             }
         }
-        if(sphereCast.currentHitObj.tag == "ResearchNote")
+        if(currentHit.tag == "ResearchNote")
         {
             if (playerInput.actions["Interact"].ReadValue<float>() > 0)
             {
-                item.Add(note);
+                inventory.Add(note);
+                noteUI.readNote(note);
                 Destroy(sphereCast.currentHitObj);
             }
         }
+
         if (currentItem.getCurrentSlot().item == null) return;
+
         if(currentItem.getCurrentSlot().item.title == "Snack")
         {
             if (playerInput.actions["Interact"].triggered)
