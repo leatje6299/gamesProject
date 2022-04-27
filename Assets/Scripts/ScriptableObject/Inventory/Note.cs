@@ -7,5 +7,4 @@ public class Note : Item
 {
     [Header("Note Fields")]
     public int order;
-    public string description;
 }

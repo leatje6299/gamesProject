@@ -13,20 +13,23 @@ public class NoteUI : MonoBehaviour
     [SerializeField] private Text description;
     [SerializeField] private GameObject noteCanvas;
     [SerializeField] private Image indicatorUI;
+    [SerializeField] private NoteDescriptions descriptions;
+    public string[] text;
 
     [Header("Items Fields")]
     [SerializeField] private Note note;
+
     public void setNoteCanvasActive(Note note)
     {
         noteCanvas.SetActive(true);
-        description.text = note.description; //need to change this
     }
 
     public void readNote(Note note)
     {
         if (noteCanvas.activeSelf)
         {
-            if (note.order == 1)
+            description.text = descriptions.text[note.order];
+            if (note.order == 0)
             {
                 indicatorUI.gameObject.SetActive(true);
             }
