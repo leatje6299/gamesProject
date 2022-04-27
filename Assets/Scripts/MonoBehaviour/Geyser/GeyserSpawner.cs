@@ -5,12 +5,12 @@ using UnityEngine;
 //https://answers.unity.com/questions/1657594/how-to-spawn-prefab-anywhere-within-box-collider-2.html
 //part taken from here to spawn inside box collider
 
-public class SnowballSpawn : MonoBehaviour
+public class GeyserSpawner : MonoBehaviour
 {
     //area of spawn 
     private float spawnSizeArea = 10f;
     [SerializeField] private BoxCollider bc;
-    [SerializeField] private GameObject snowball;
+    [SerializeField] private GameObject geyser;
 
     Vector3 cubeSize;
     Vector3 cubeCenter;
@@ -29,17 +29,17 @@ public class SnowballSpawn : MonoBehaviour
     }
     void Update()
     {
-        if(Random.Range(1,1000) < 5)
+        if (Random.Range(1, 1000) < 5)
         {
-            SpawnSnowBall();
+            SpawnGeyser();
         }
     }
 
-    private void SpawnSnowBall()
+    private void SpawnGeyser()
     {
         //print("spawn");
         //change rotation
-        Instantiate(snowball, GetRandomPosition(), Quaternion.identity);
+        Instantiate(geyser, GetRandomPosition(), Quaternion.identity);
     }
 
     private Vector3 GetRandomPosition()

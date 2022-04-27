@@ -57,12 +57,14 @@ public class PlayerMovementControl : MonoBehaviour
             stats.setStaminaPlayer(4f);  
         }
 
-        //print(shifted);
-        //print(skatingSpeed);
 
         transform.rotation = Quaternion.Euler(0,_camera.transform.localRotation.eulerAngles.y, 0);
-        if (skating) skatingCalculator(mV, mH, slow, boosting);
-        else _characterController.Move(transform.forward * mH * Time.deltaTime * 3+ transform.right * mV * Time.deltaTime * 3);
+        if (skating)
+        {
+            skatingCalculator(mV, mH, slow, boosting);
+            skatingMove();
+        }
+        else _characterController.Move(transform.forward * mH * Time.deltaTime * 3 + transform.right * mV * Time.deltaTime * 3);
     }
 
     void skatingCalculator(float mH, float mV, bool slow, bool boost)
@@ -88,28 +90,24 @@ public class PlayerMovementControl : MonoBehaviour
         {
             print("SLOW");
             skatingSpeed -= 0.1f;
-            skatingMove();
             return;
         } //if Shift pressed, slow down Quickly
 
         if (skatingSpeed > 20)
         {
             skatingSpeed -= 0.003f;
-            skatingMove();
             return;
         } //if speed is at max, slow down
 
         if (skatingSpeed < 0.1 &&(mV > 0 || mH > 0))
         {
             skatingSpeed += 4f;
-            skatingMove();
             return;
         }
 
         if (mV > 0 || mH > 0)
         {
             skatingSpeed += 0.03f;
-            skatingMove();
             return;
         } //if pressing forward, move forward
 
@@ -117,46 +115,21 @@ public class PlayerMovementControl : MonoBehaviour
         if (skatingSpeed < 0)return;
 
         skatingSpeed -= 0.005f;  //default Slow Down
-        skatingMove(); 
+        
     }
     void skatingMove()
     {
+        if (SkatingVector.y > -1.5f) SkatingVector.y -= 0.01f;
         skatingSpeed = Mathf.Clamp(skatingSpeed, 0, maxSpeed);
-        _characterController.Move(new Vector3(SkatingVector.normalized.x * skatingSpeed * Time.deltaTime, -9.8f ,SkatingVector.normalized.z * skatingSpeed * Time.deltaTime));
+        _characterController.Move(new Vector3(SkatingVector.normalized.x * skatingSpeed * Time.deltaTime, SkatingVector.y ,SkatingVector.normalized.z * skatingSpeed * Time.deltaTime));
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        
-        if (hit.gameObject.tag == "Ice")
-        {
-            skating = true;
-            /* this is broken...
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                print(skatingSpeed);
-                if (skatingSpeed >= 1)
-                {
-                    playerAudio.PlayOneShot(iceSkate);
-                    StartCoroutine(playIceSound());
-                }
-            }
-            return;
-            */
-        }
+    { 
             if (hit.gameObject.tag == "Snow")
         {
             skating = false;
             skatingSpeed = 0;
-            /*
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
-            {
-                playerAudio.clip = walkOnSnow;
-                playerAudio.PlayOneShot(walkOnSnow);
-                StartCoroutine(playSnowSound());
-            }
-            return;
-            */
         }
         
         if (hit.gameObject.tag == "SnowBall")
@@ -169,7 +142,17 @@ public class PlayerMovementControl : MonoBehaviour
             stats.playerTemp-=2;
             startKnockBackCooldown();
         }
-       
+    }
+    public void geyserHit(GameObject hit)
+    {
+        Vector3 colliderTransform = hit.transform.position;
+        Vector3 colliderDirection = (transform.position - colliderTransform).normalized;
+        colliderDirection.y = 0;
+        SkatingVector = colliderDirection * 2;
+        SkatingVector.y = 0.1f;
+        skatingSpeed = 5;
+        stats.playerTemp -= 2;
+        startKnockBackCooldown();
     }
 
     private void startBoostCoolDown()
