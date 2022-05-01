@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 //SCRIPT BY LEA
 
 public class PlayerInputs : MonoBehaviour
@@ -15,10 +16,16 @@ public class PlayerInputs : MonoBehaviour
 
     [Header("UI Canvas Fields")]
     [SerializeField] private GameObject choiceCanvas;
+    [SerializeField] private GameObject noteCanvas;
+    [SerializeField] private GameObject optionCanvas;
+    [SerializeField] private Image indicatorUI;
+    [SerializeField] private Text description;
 
     [Header("Items Fields")]
     [SerializeField] private Item snack;
     [SerializeField] private Note note;
+    [SerializeField] private NoteDescriptions descriptions;
+    private string[] text;
 
     [Header("Scripts Fields")]
     [SerializeField] private PlayerStatManagement stats;
@@ -30,6 +37,20 @@ public class PlayerInputs : MonoBehaviour
     {
         //print(InputControlPath.ToHumanReadableString(playerControls.Game.Interact.bindings[0].effectivePath,InputControlPath.HumanReadableStringOptions.OmitDevice));
         currentHit = sphereCast.currentHitObj;
+        readNote(note);
+        if(optionCanvas.activeSelf)
+        {
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if(!optionCanvas.activeSelf)
+        {
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         if (currentHit == null) return;
 
         if (currentHit.tag == "Chest")
@@ -59,7 +80,7 @@ public class PlayerInputs : MonoBehaviour
             if (playerInput.actions["Interact"].triggered)
             {
                 inventory.Add(note);
-                noteUI.setNoteCanvasActive(note);
+                noteCanvas.SetActive(true);
                 Destroy(sphereCast.currentHitObj);
             }
         }
@@ -72,6 +93,31 @@ public class PlayerInputs : MonoBehaviour
             {
                 inventory.Remove(currentItem.getCurrentSlot().item);
                 stats.setStaminaPlayer(-20);
+            }
+        }
+
+        if(!noteCanvas.activeSelf)
+        {
+            if(playerInput.actions["Escape"].triggered)
+            {
+                optionCanvas.SetActive(true);
+            }
+        }
+    }
+
+    public void readNote(Note note)
+    {
+        if(noteCanvas.activeSelf)
+        {
+            description.text = descriptions.text[note.order];
+            if (note.order == 0)
+            {
+                indicatorUI.gameObject.SetActive(true);
+            }
+            if (noteCanvas.activeSelf && playerInput.actions["Escape"].triggered)
+            {
+                noteCanvas.SetActive(false);
+                note.order++;
             }
         }
     }

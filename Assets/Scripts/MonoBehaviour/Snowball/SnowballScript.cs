@@ -16,7 +16,7 @@ public class SnowballScript : MonoBehaviour
     {
         //set base scale and target scale
         baseScale = transform.localScale;
-        targetScale = baseScale / 100;
+        targetScale = baseScale * 100;
     }
 
     // Update is called once per frame
