@@ -50,6 +50,10 @@ public class PlayerInputs : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        if (!noteCanvas.activeSelf && playerInput.actions["Escape"].triggered)
+        {
+            optionCanvas.SetActive(true);
+        }
 
         if (currentHit == null) return;
 
@@ -93,14 +97,6 @@ public class PlayerInputs : MonoBehaviour
             {
                 inventory.Remove(currentItem.getCurrentSlot().item);
                 stats.setStaminaPlayer(-20);
-            }
-        }
-
-        if(!noteCanvas.activeSelf)
-        {
-            if(playerInput.actions["Escape"].triggered)
-            {
-                optionCanvas.SetActive(true);
             }
         }
     }
