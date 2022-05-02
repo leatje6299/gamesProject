@@ -29,12 +29,19 @@ public class PlayerInputs : MonoBehaviour
 
     [Header("Scripts Fields")]
     [SerializeField] private PlayerStatManagement stats;
-    [SerializeField] private NoteUI noteUI;
     [SerializeField] private ItemSwitch currentItem;
     [SerializeField] private ItemHolder inventory;
 
+    private bool openOption;
+    private void Start()
+    {
+        openOption = true;
+    }
+
     void Update()
     {
+        print(openOption);
+
         //print(InputControlPath.ToHumanReadableString(playerControls.Game.Interact.bindings[0].effectivePath,InputControlPath.HumanReadableStringOptions.OmitDevice));
         currentHit = sphereCast.currentHitObj;
         readNote(note);
@@ -50,7 +57,7 @@ public class PlayerInputs : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        if (!noteCanvas.activeSelf && playerInput.actions["Escape"].triggered)
+        if (!noteCanvas.activeSelf && playerInput.actions["Escape"].triggered && openOption)
         {
             optionCanvas.SetActive(true);
         }
@@ -85,6 +92,7 @@ public class PlayerInputs : MonoBehaviour
             {
                 inventory.Add(note);
                 noteCanvas.SetActive(true);
+                openOption = false;
                 Destroy(sphereCast.currentHitObj);
             }
         }
@@ -114,7 +122,14 @@ public class PlayerInputs : MonoBehaviour
             {
                 noteCanvas.SetActive(false);
                 note.order++;
+                StartCoroutine(openOptionEnable());
             }
         }
+    }
+
+    IEnumerator openOptionEnable()
+    {
+        yield return new WaitForSeconds(3);
+        openOption = true;
     }
 }

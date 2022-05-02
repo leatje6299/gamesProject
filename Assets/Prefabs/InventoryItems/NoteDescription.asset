@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: NoteDescription
   m_EditorClassIdentifier: 
   text:
-  - "<b>Research day 1</b> \nExtremely cold temperatures\ncompared to previous years,
-    something is unusual... \\r\\n Research are starting well but must <b> not be
-    lost </b>, it could massively help the future."
+  - "<b>Research day 1</b> \nExtremely cold temperatures\ncompared to previous years,\nsomething
+    is unusual...\nResearch are starting well but \nmust <b> not be lost </b>, it
+    \ncould massively help the future.\n\nDo not forget to pay attention\nto your
+    stamina and temperature\nmy co-researchers! \n\nAnd please, report to us\nhow
+    effective your new \nskating material is! "
   - 
   - 
