@@ -15,14 +15,8 @@ public class BothButtonHandler : MonoBehaviour
     [SerializeField] private Sprite leftIm01;
     [SerializeField] private Sprite rightIm01;
 
-    //[SerializeField] public Image leftIm02;
-    //[SerializeField] public Image rightIm02;
-
-    //[SerializeField] public Image leftIm03;
-    //[SerializeField] public Image rightIm03;
-
-    //[SerializeField] public Image leftIm04;
-    //[SerializeField] public Image rightIm04;
+    [SerializeField] public Sprite leftIm02;
+    [SerializeField] public Sprite rightIm02;
 
     [SerializeField] private GameObject choiceCanvas;
     public void ButtonPressed()
@@ -34,20 +28,13 @@ public class BothButtonHandler : MonoBehaviour
 
         curState++;
 
-        if (curState == 0)
+        if (curState > 1)
         {
-            //leftImage.SetLeftImage(leftIm02);
-            //rightImage.SetRightImage(rightIm02);
-        }
-        if (curState == 1)
-        {
-            //leftImage.SetLeftImage(leftIm03);
-            //rightImage.SetRightImage(rightIm03);
-        }
-        if (curState == 2)
-        {
-            //leftImage.SetLeftImage(leftIm04);
-            //rightImage.SetRightImage(rightIm04);
+            leftImage.SetLeftImage(leftIm02);
+            rightImage.SetRightImage(rightIm02);
+
+            textBoxL.text = "Gain 10 snacks!";
+            textBoxR.text = "Your stamina will decrease less overtime";
         }
     }
 
@@ -60,7 +47,7 @@ public class BothButtonHandler : MonoBehaviour
             rightImage.SetRightImage(rightIm01);
 
             textBoxL.text = "Your body temperature will decrease slower";
-            textBoxR.text = "Stamina decreases half as much";
+            textBoxR.text = "Your stamina decreases half as less when you activate your boost";
         }
     }
 

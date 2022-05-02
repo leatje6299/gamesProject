@@ -7,10 +7,11 @@ public class PlayerMovementControl : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
 
+    //SOUND
     private AudioSource playerAudio;
-    public AudioClip walkOnSnow;
-    public AudioClip iceSkate;
-    public AudioClip boostSound;
+    private AudioClip walkOnSnow;
+    private AudioClip iceSkate;
+    private AudioClip boostSound;
 
     protected CharacterController _characterController;
     [SerializeField] private PlayerStatManagement stats;
@@ -22,10 +23,11 @@ public class PlayerMovementControl : MonoBehaviour
     private float skatingSpeed = 0f;
     private float maxSpeed = 5f;
  
-
     public float mouseSensitivity = 1000f;
-    private float xRotation = 0f;
+
+    //BOOST
     private bool boostCoolDown = false;
+    private float staminaBoost;
 
     private void Awake()
     {
@@ -40,6 +42,7 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void Start()
     {
+        staminaBoost = 4f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -54,7 +57,7 @@ public class PlayerMovementControl : MonoBehaviour
         
         if(boosting && !boostCoolDown)
         {
-            stats.setStaminaPlayer(4f);  
+            stats.setStaminaPlayer(staminaBoost);  
         }
 
 
@@ -182,5 +185,10 @@ public class PlayerMovementControl : MonoBehaviour
     private IEnumerator playSnowSound()
     {
         yield return new WaitForSeconds(3);
+    }
+
+    public void setStaminaBoost(float newStamBoost)
+    {
+        staminaBoost = newStamBoost;
     }
 }

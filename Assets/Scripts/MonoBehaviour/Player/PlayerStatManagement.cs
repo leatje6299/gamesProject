@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerStatManagement : MonoBehaviour
 {
     public float playerTemp;
-    private int playerHunger;
-    private float playerWater;
     public float playerStamina;
 
     private float tempTick;
