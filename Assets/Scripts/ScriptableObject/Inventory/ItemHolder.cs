@@ -21,6 +21,7 @@ public class ItemSlot
 public class ItemHolder : ScriptableObject
 {
     public List<ItemSlot> slots;
+    public bool isFull;
 
     public void Add(Item itemToAdd, int count = 1)
     {
@@ -41,12 +42,14 @@ public class ItemHolder : ScriptableObject
                 itemSlot = slots.Find(x => x.item == null);
                 if(itemSlot != null) //empty space found
                 {
+                    isFull = false;
                     itemSlot.item = itemToAdd;
                     itemSlot.amount = count;
                 }
                 else
                 {
                     Debug.Log("Inventory full");
+                    isFull = true;
                 }
             }
         }
@@ -58,10 +61,12 @@ public class ItemHolder : ScriptableObject
             //if we found empty space => itemslot != null
             if (itemSlot != null)//empty space found
             {
+                isFull = false;
                 itemSlot.item = itemToAdd; //we add item
             }
             else
             {
+                isFull = true;
                 Debug.Log("Inventory Full");
             }
         }
@@ -75,6 +80,10 @@ public class ItemHolder : ScriptableObject
             if(itemSlot != null)
             {
                 //if we have more than one only remove one but if last one remove item fully
+                if(itemSlot.amount == count)
+                {
+                    itemSlot.Clear();
+                }
                 if (itemSlot.amount > 1)
                 {
                     itemSlot.amount -= count;
@@ -108,5 +117,13 @@ public class ItemHolder : ScriptableObject
         {
             return false;
         }
+    }
+
+    public void Swap(Item itemToRemove, Item itemToAdd)
+    {
+        ItemSlot itemSlot = slots.Find(x => x.item == itemToRemove);
+
+        Remove(itemToRemove, itemSlot.amount);
+        Add(itemToAdd);
     }
 }

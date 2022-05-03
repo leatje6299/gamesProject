@@ -41,8 +41,6 @@ public class PlayerInputs : MonoBehaviour
 
     void Update()
     {
-        print(openOption);
-
         //print(InputControlPath.ToHumanReadableString(playerControls.Game.Interact.bindings[0].effectivePath,InputControlPath.HumanReadableStringOptions.OmitDevice));
         currentHit = sphereCast.currentHitObj;
         readNote(note);

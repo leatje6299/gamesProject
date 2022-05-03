@@ -15,4 +15,5 @@ MonoBehaviour:
   type: {fileID: 1021508173503972019, guid: c183d22a543c6084789186bdc077c81f, type: 3}
   title: Skate
   stackable: 0
-  sprite: {fileID: 21300000, guid: f43dbf9cf88e2034c9437562fb019753, type: 3}
+  sprite: {fileID: 21300000, guid: d329cc4f72ba4654aa5a66f9554a7d94, type: 3}
+  isHighlighted: 0

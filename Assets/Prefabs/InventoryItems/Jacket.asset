@@ -15,5 +15,5 @@ MonoBehaviour:
   type: {fileID: 4965024497307993246, guid: dd2fafc54e78cde438d4f88d25a2f24f, type: 3}
   title: Jacket
   stackable: 0
-  sprite: {fileID: 21300000, guid: d6fe79c32fc47e942b24063044194152, type: 3}
+  sprite: {fileID: 21300000, guid: 38cbe16ccc709f542b09af4d34ccec7a, type: 3}
   isHighlighted: 0
