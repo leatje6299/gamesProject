@@ -95,4 +95,18 @@ public class ItemHolder : ScriptableObject
             }
         }
     }
+
+    public bool CheckIfSnack(Item snack)
+    {
+        //look for item in list
+        ItemSlot itemSlot = slots.Find(x => x.item == snack);
+        if(itemSlot != null) //item found
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

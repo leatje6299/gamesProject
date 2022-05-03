@@ -18,7 +18,8 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private GameObject choiceCanvas;
     [SerializeField] private GameObject noteCanvas;
     [SerializeField] private GameObject optionCanvas;
-    [SerializeField] private Image indicatorUI;
+    [SerializeField] private Image indicatorUI_Left;
+    [SerializeField] private Image indicatorUI_Right;
     [SerializeField] private Text description;
 
     [Header("Items Fields")]
@@ -116,7 +117,8 @@ public class PlayerInputs : MonoBehaviour
             description.text = descriptions.text[note.order];
             if (note.order == 0)
             {
-                indicatorUI.gameObject.SetActive(true);
+                indicatorUI_Left.gameObject.SetActive(true);
+                indicatorUI_Right.gameObject.SetActive(true);
             }
             if (noteCanvas.activeSelf && playerInput.actions["Escape"].triggered)
             {

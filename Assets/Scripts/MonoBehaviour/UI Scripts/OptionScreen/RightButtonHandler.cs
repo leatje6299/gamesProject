@@ -6,8 +6,13 @@ using UnityEngine.UI;
 public class RightButtonHandler : MonoBehaviour
 {
     [SerializeField] private Image rightImage;
-    [SerializeField] private ItemHolder item;
+
+    [Header("Inventory Fields")]
+    [SerializeField] private ItemHolder inventory;
     [SerializeField] private Item skate;
+    [SerializeField] private Item snack;
+
+    [Header("Scripts Fields")]
     [SerializeField] private PlayerStatManagement stats;
     [SerializeField] private PlayerMovementControl stamina;
     public BothButtonHandler state;
@@ -23,8 +28,19 @@ public class RightButtonHandler : MonoBehaviour
         if (curState <= 1f)
         {
             print("put skate into inventory");
-            item.Add(skate);
+            inventory.Add(skate);
             stamina.setStaminaBoost(2f);
+        }
+        if(curState >= 1f)
+        {
+            if(inventory.CheckIfSnack(snack))
+            {
+                return;
+            }
+            else if(!inventory.CheckIfSnack(snack))
+            {
+                stats.setStaminaTick(5f);
+            }
         }
     }
 

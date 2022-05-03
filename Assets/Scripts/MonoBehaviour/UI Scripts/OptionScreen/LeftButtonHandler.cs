@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class LeftButtonHandler : MonoBehaviour
 {
     [SerializeField] private Image leftImage;
-    [SerializeField] private ItemHolder item;
+    [SerializeField] private ItemHolder inventory;
     [SerializeField] private Item jacket;
+    [SerializeField] private Item snack;
     [SerializeField] private PlayerStatManagement temp;
 
     public BothButtonHandler state;
@@ -24,8 +25,13 @@ public class LeftButtonHandler : MonoBehaviour
         if (curState <= 1f)
         {
             print("put jacket into inventory");
-            item.Add(jacket);
+            inventory.Add(jacket);
             temp.setTempTick(1f);
+        }
+        if(curState >= 1f)
+        {
+            print("5 snacks into your inventory");
+            inventory.Add(snack, 5);
         }
     }
 
