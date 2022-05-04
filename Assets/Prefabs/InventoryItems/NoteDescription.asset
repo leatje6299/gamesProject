@@ -19,7 +19,16 @@ MonoBehaviour:
     stamina and temperature\nmy co-researchers! \n\nAnd please, report to us\nhow
     effective your new \nskating material is! "
   - "<b>Research day 2</b> \nTemperatures have stabilised,\nfinally. But the ice
-    is melting, \nlots of noise around us... \n\nDo not forget to eat our \nsnacks
-    that are stored all\naround the research camp.\nThey will help you a lot \nwith
-    fatigue and strength."
-  - 
+    is melting, \nlots of noise around us... \nLike a sort of avalanche. \n\nDo not
+    forget to eat our \nsnacks that are stored all\naround the research camp.\nThey
+    will help you a lot \nwith fatigue and strength."
+  - "<b>Research day 3</b>\nThree people of the research team\nhave gone on an expedition
+    to \nretrieve some data, hopefully\nthey come back all in one piece.\n"
+  - '<b>Research day 4</b>
+
+'
+  - '<b>Research day 5</b>
+
+
+    + Researches havent came back(from nr3)'
+  - <b>Research day 6</b>
