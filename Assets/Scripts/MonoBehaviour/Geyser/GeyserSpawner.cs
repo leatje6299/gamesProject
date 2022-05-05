@@ -2,52 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//https://answers.unity.com/questions/1657594/how-to-spawn-prefab-anywhere-within-box-collider-2.html
-//part taken from here to spawn inside box collider
-
 public class GeyserSpawner : MonoBehaviour
 {
-    //area of spawn 
-    private float spawnSizeArea = 10f;
-    [SerializeField] private BoxCollider bc;
-    [SerializeField] private GameObject geyser;
-
-    Vector3 cubeSize;
-    Vector3 cubeCenter;
+    [SerializeField] private ParticleSystem warningEffect;
+    [SerializeField] private ParticleSystem geyser;
+    private CapsuleCollider collider;
+    private int inactiveTime;
 
     // Update is called once per frame
 
     private void Awake()
     {
-        Transform cubeTrans = bc.GetComponent<Transform>();
-        cubeCenter = cubeTrans.position;
-
-        // Multiply by scale because it does affect the size of the collider
-        cubeSize.x = cubeTrans.localScale.x * bc.size.x;
-        cubeSize.y = cubeTrans.localScale.y * bc.size.y;
-        cubeSize.z = cubeTrans.localScale.z * bc.size.z;
+        collider = GetComponent<CapsuleCollider>();
     }
-    void Update()
+    private void Start()
     {
-        if (Random.Range(1, 1000) < 5)
-        {
-            SpawnGeyser();
-        }
+        inactiveTime = Random.Range(20,40);
+        StartCoroutine(inactiveTimer(Random.Range(0,inactiveTime)));
     }
 
-    private void SpawnGeyser()
+    private IEnumerator inactiveTimer(float time)
     {
-        //print("spawn");
-        //change rotation
-        Instantiate(geyser, GetRandomPosition(), Quaternion.identity);
+        print("Inactive for " + time);
+        yield return new WaitForSeconds(time);
+        StartCoroutine(warningTimer());
+        
     }
-
-    private Vector3 GetRandomPosition()
+    private IEnumerator warningTimer()
     {
-        // You can also take off half the bounds of the thing you want in the box, so it doesn't extend outside.
-        // Right now, the center of the prefab could be right on the extents of the box
-        Vector3 randomPosition = new Vector3(Random.Range(-cubeSize.x / 2, cubeSize.x / 2), Random.Range(-cubeSize.y / 2, cubeSize.y / 2), Random.Range(-cubeSize.z / 2, cubeSize.z / 2));
-
-        return cubeCenter + randomPosition;
+        print("Bubbles for " + 5);
+        warningEffect.Play();
+        yield return new WaitForSeconds(5);
+        StartCoroutine(geyserTimer());
     }
+    private IEnumerator geyserTimer()
+    {
+        collider.enabled = true;
+        geyser.Play();
+        yield return new WaitForSeconds(5);
+        collider.enabled = false;
+        StartCoroutine(inactiveTimer(inactiveTime));
+    }
+
 }

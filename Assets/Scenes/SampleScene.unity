@@ -10173,15 +10173,15 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138927802}
   serializedVersion: 7
-  lengthInSec: 1
+  lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -20224,6 +20224,7 @@ GameObject:
   - component: {fileID: 1882480161}
   - component: {fileID: 1882480163}
   - component: {fileID: 1882480162}
+  - component: {fileID: 1882480164}
   m_Layer: 0
   m_Name: GeyserSpwaner
   m_TagString: Untagged
@@ -20238,14 +20239,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882480160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 316.6, y: 4.5, z: 249.97427}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1138927805}
   - {fileID: 1955557582}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1938172750}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1882480162
 MonoBehaviour:
@@ -20268,11 +20269,25 @@ CapsuleCollider:
   m_GameObject: {fileID: 1882480160}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 6
   m_Height: 20
   m_Direction: 1
   m_Center: {x: 0, y: 3.69, z: 0}
+--- !u!114 &1882480164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882480160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fa7c799d611304cbcaa8562d4aa073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningEffect: {fileID: 1138927804}
+  geyser: {fileID: 1955557584}
 --- !u!4 &1892047124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4689203809185060879, guid: 13e4537a80ad9f7438c4ef6d96d4854f, type: 3}
@@ -20321,7 +20336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fa7c799d611304cbcaa8562d4aa073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bc: {fileID: 1914016982}
+  warningEffect: {fileID: 0}
   geyser: {fileID: 4822466349499635614, guid: 8cc45e8781fe3e44ea584a1be03b6f83, type: 3}
 --- !u!4 &1914016984
 Transform:
@@ -20348,6 +20363,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e55cae232e67e40b8952f28444310d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1938172749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938172750}
+  m_Layer: 0
+  m_Name: Geysers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1938172750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938172749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 266.20267, y: 4.5, z: 251.12866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1882480161}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1939279895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20602,7 +20648,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
