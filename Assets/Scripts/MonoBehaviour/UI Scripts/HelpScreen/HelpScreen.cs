@@ -26,8 +26,9 @@ public class HelpScreen : MonoBehaviour
     private void Update()
     {
         currentHit = sphereCast.currentHitObj;
+        print(currentHit);
         if (currentHit == null) return;
-        //if (currentItem.getCurrentSlot().item == null) return;
+        if (currentItem.getCurrentSlot().item == null) return;
 
         if (currentHit.tag == "Chest")
         {
@@ -43,10 +44,10 @@ public class HelpScreen : MonoBehaviour
         {
             keyBindHelpMiddle.text = "[" + InputControlPath.ToHumanReadableString(playerInput.actions["Interact"].bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.OmitDevice) + "] Pick up \r\n [" + InputControlPath.ToHumanReadableString(playerInput.actions["Use"].bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.OmitDevice) + "] Eat";
         }
-        /*if (currentItem.getCurrentSlot().item.title == "Snack")
+        if (currentItem.getCurrentSlot().item.title == "Snack")
         {
             keyBindHelpMiddle.text = "[" + InputControlPath.ToHumanReadableString(playerInput.actions["Use"].bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.OmitDevice) + "] Eat";
-        }*/
+        }
         else
         {
             keyBindHelp1.text = "[" + InputControlPath.ToHumanReadableString(playerInput.actions["Slow"].bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.OmitDevice) + "] Slow down";
