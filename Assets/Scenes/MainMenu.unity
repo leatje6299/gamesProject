@@ -8842,6 +8842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   click: {fileID: 0}
+  inventory: {fileID: 0}
+  state: {fileID: 0}
 --- !u!4 &1778688813
 Transform:
   m_ObjectHideFlags: 0
