@@ -26,7 +26,7 @@ public class HelpScreen : MonoBehaviour
     private void Update()
     {
         currentHit = sphereCast.currentHitObj;
-        print(currentHit);
+       // print(currentHit);
         if (currentHit == null) return;
         if (currentItem.getCurrentSlot().item == null) return;
 

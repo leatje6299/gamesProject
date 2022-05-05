@@ -15,7 +15,27 @@ ModelImporter:
   - first:
       74: 2933577835342229695
     second: metarig|Walk
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 51c16293c95d3a2498a670150c2e8ab8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 6f7a99902e6c1dc488f7f7702f72bd6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 3f0ec1c7faf7f364f8a1c14e41c9573a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: de4fb270e81151d40a3e1b1203fb7040, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
