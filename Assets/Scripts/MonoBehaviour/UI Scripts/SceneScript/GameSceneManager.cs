@@ -7,6 +7,8 @@ public class GameSceneManager : MonoBehaviour
 {
     private AudioSource source;
     public AudioClip click;
+    [SerializeField] private ItemHolder inventory;
+    [SerializeField] private ChoiceState state;
     public static void loadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -23,5 +25,10 @@ public class GameSceneManager : MonoBehaviour
     public void ReplayGame()
     {
         SceneManager.LoadScene(1);
+        for (int i = 0; i < inventory.slots.Count; i++)
+        {
+            inventory.slots[i].Clear();
+        }
+        state.curState = 0.5f;
     }
 }
