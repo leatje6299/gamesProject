@@ -1,30 +1,24 @@
 // Shader created with Shader Forge v1.40 
 // Shader Forge (c) Freya Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.40;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,cpap:True,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:2,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:2,rntp:3,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-7524-OUT,spec-361-OUT,gloss-361-OUT,emission-1191-OUT,clip-1306-OUT;n:type:ShaderForge.SFN_Multiply,id:6343,x:31980,y:32532,varname:node_6343,prsc:2|A-8067-OUT,B-6665-RGB;n:type:ShaderForge.SFN_Color,id:6665,x:31807,y:32680,ptovrint:False,ptlb:Color,ptin:_Color,varname:_Color,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0.5019608,c2:0.5019608,c3:0.5019608,c4:1;n:type:ShaderForge.SFN_Tex2d,id:7736,x:31672,y:32272,ptovrint:True,ptlb:Base Color,ptin:_MainTex,varname:_MainTex,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:28c7aad1372ff114b90d330f8a2dd938,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Vector1,id:7529,x:31564,y:33367,varname:node_7529,prsc:2,v1:20;n:type:ShaderForge.SFN_ValueProperty,id:363,x:31564,y:33134,ptovrint:False,ptlb:node_363,ptin:_node_363,varname:node_363,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0;n:type:ShaderForge.SFN_Subtract,id:9775,x:31869,y:33176,varname:node_9775,prsc:2|A-363-OUT,B-7529-OUT;n:type:ShaderForge.SFN_RemapRange,id:378,x:32046,y:33176,varname:node_378,prsc:2,frmn:0,frmx:5,tomn:-1,tomx:1|IN-9775-OUT;n:type:ShaderForge.SFN_Tex2d,id:637,x:31673,y:32946,ptovrint:False,ptlb:node_637,ptin:_node_637,varname:node_637,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:28c7aad1372ff114b90d330f8a2dd938,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Subtract,id:1306,x:32213,y:33071,varname:node_1306,prsc:2|A-637-R,B-378-OUT;n:type:ShaderForge.SFN_Vector1,id:7809,x:31869,y:33086,varname:node_7809,prsc:2,v1:0.54;n:type:ShaderForge.SFN_Add,id:7141,x:32067,y:33042,varname:node_7141,prsc:2|A-7809-OUT,B-378-OUT;n:type:ShaderForge.SFN_Step,id:2552,x:32010,y:32889,varname:node_2552,prsc:2|A-7141-OUT,B-637-R;n:type:ShaderForge.SFN_OneMinus,id:2717,x:32270,y:32931,varname:node_2717,prsc:2|IN-2552-OUT;n:type:ShaderForge.SFN_Color,id:7330,x:32086,y:32682,ptovrint:False,ptlb:node_7330,ptin:_node_7330,varname:node_7330,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0.9,c2:0.9,c3:1,c4:1;n:type:ShaderForge.SFN_Multiply,id:7795,x:32270,y:32782,varname:node_7795,prsc:2|A-7330-RGB,B-2717-OUT;n:type:ShaderForge.SFN_Vector1,id:361,x:32504,y:32863,varname:node_361,prsc:2,v1:0.1;n:type:ShaderForge.SFN_Multiply,id:5953,x:31822,y:32331,varname:node_5953,prsc:2|A-7736-RGB,B-9790-OUT;n:type:ShaderForge.SFN_Vector1,id:9790,x:31623,y:32517,varname:node_9790,prsc:2,v1:0.2;n:type:ShaderForge.SFN_Add,id:8067,x:32062,y:32346,varname:node_8067,prsc:2|A-1692-OUT,B-5953-OUT;n:type:ShaderForge.SFN_Vector1,id:1692,x:31891,y:32218,varname:node_1692,prsc:2,v1:0.4;n:type:ShaderForge.SFN_Add,id:7524,x:32280,y:32477,varname:node_7524,prsc:2|A-4028-OUT,B-6343-OUT;n:type:ShaderForge.SFN_Slider,id:4028,x:32202,y:32283,ptovrint:False,ptlb:node_4028,ptin:_node_4028,varname:node_4028,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0.373913,max:1;n:type:ShaderForge.SFN_Multiply,id:1191,x:32376,y:32635,varname:node_1191,prsc:2|A-7524-OUT,B-7795-OUT;proporder:6665-7736-363-637-7330-4028-6136;pass:END;sub:END;*/
+/*SF_DATA;ver:1.40;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,cpap:True,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-6343-OUT,spec-324-OUT,gloss-324-OUT;n:type:ShaderForge.SFN_Multiply,id:6343,x:32203,y:32785,varname:node_6343,prsc:2|A-3683-OUT,B-6665-RGB;n:type:ShaderForge.SFN_Color,id:6665,x:31930,y:32814,ptovrint:False,ptlb:Color,ptin:_Color,varname:_Color,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0.8,c2:0.8,c3:1,c4:1;n:type:ShaderForge.SFN_Noise,id:7169,x:32129,y:33294,varname:node_7169,prsc:2|XY-3162-OUT;n:type:ShaderForge.SFN_TexCoord,id:830,x:31666,y:33055,varname:node_830,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_Divide,id:3162,x:31985,y:33329,varname:node_3162,prsc:2|A-830-UVOUT,B-8804-OUT;n:type:ShaderForge.SFN_Slider,id:8804,x:31613,y:33294,ptovrint:False,ptlb:node_8804,ptin:_node_8804,varname:node_8804,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:66.95654,max:1000;n:type:ShaderForge.SFN_Tex2d,id:2801,x:31566,y:32883,ptovrint:False,ptlb:node_2801,ptin:_node_2801,varname:node_2801,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:28c7aad1372ff114b90d330f8a2dd938,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Multiply,id:3246,x:32030,y:33064,varname:node_3246,prsc:2|A-2801-RGB,B-7169-OUT;n:type:ShaderForge.SFN_Add,id:3683,x:31896,y:32625,varname:node_3683,prsc:2|A-2815-OUT,B-3246-OUT;n:type:ShaderForge.SFN_Slider,id:2815,x:31521,y:32644,ptovrint:False,ptlb:node_2815,ptin:_node_2815,varname:node_2815,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0.8956522,max:1;n:type:ShaderForge.SFN_Vector1,id:324,x:32397,y:32894,varname:node_324,prsc:2,v1:0.85;proporder:6665-8804-2801-2815;pass:END;sub:END;*/
 
-Shader "Shader Forge/SnowBall" {
+Shader "Shader Forge/Ice" {
     Properties {
-        _Color ("Color", Color) = (0.5019608,0.5019608,0.5019608,1)
-        _MainTex ("Base Color", 2D) = "white" {}
-        _node_363 ("node_363", Float ) = 0
-        _node_637 ("node_637", 2D) = "white" {}
-        _node_7330 ("node_7330", Color) = (0.9,0.9,1,1)
-        _node_4028 ("node_4028", Range(0, 1)) = 0.373913
-        _node_6136 ("node_6136", Color) = (0.5,0.5,0.5,1)
-        [HideInInspector]_Cutoff ("Alpha cutoff", Range(0,1)) = 0.5
+        _Color ("Color", Color) = (0.8,0.8,1,1)
+        _node_8804 ("node_8804", Range(0, 1000)) = 66.95654
+        _node_2801 ("node_2801", 2D) = "white" {}
+        _node_2815 ("node_2815", Range(0, 1)) = 0.8956522
     }
     SubShader {
         Tags {
-            "Queue"="AlphaTest"
-            "RenderType"="TransparentCutout"
+            "RenderType"="Opaque"
         }
         Pass {
             Name "FORWARD"
             Tags {
                 "LightMode"="ForwardBase"
             }
-            Cull Off
             
             
             CGPROGRAM
@@ -44,13 +38,11 @@ Shader "Shader Forge/SnowBall" {
             #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
             #pragma multi_compile_fog
             #pragma target 3.0
-            uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
-            uniform sampler2D _node_637; uniform float4 _node_637_ST;
+            uniform sampler2D _node_2801; uniform float4 _node_2801_ST;
             UNITY_INSTANCING_BUFFER_START( Props )
                 UNITY_DEFINE_INSTANCED_PROP( float4, _Color)
-                UNITY_DEFINE_INSTANCED_PROP( float, _node_363)
-                UNITY_DEFINE_INSTANCED_PROP( float4, _node_7330)
-                UNITY_DEFINE_INSTANCED_PROP( float, _node_4028)
+                UNITY_DEFINE_INSTANCED_PROP( float, _node_8804)
+                UNITY_DEFINE_INSTANCED_PROP( float, _node_2815)
             UNITY_INSTANCING_BUFFER_END( Props )
             struct VertexInput {
                 UNITY_VERTEX_INPUT_INSTANCE_ID
@@ -102,20 +94,13 @@ Shader "Shader Forge/SnowBall" {
                 TRANSFER_VERTEX_TO_FRAGMENT(o)
                 return o;
             }
-            float4 frag(VertexOutput i, float facing : VFACE) : COLOR {
+            float4 frag(VertexOutput i) : COLOR {
                 UNITY_SETUP_INSTANCE_ID( i );
-                float isFrontFace = ( facing >= 0 ? 1 : 0 );
-                float faceSign = ( facing >= 0 ? 1 : -1 );
                 i.normalDir = normalize(i.normalDir);
-                i.normalDir *= faceSign;
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 float3 normalDirection = i.normalDir;
                 float3 viewReflectDirection = reflect( -viewDirection, normalDirection );
-                float4 _node_637_var = tex2D(_node_637,TRANSFORM_TEX(i.uv0, _node_637));
-                float _node_363_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_363 );
-                float node_378 = ((_node_363_var-20.0)*0.4+-1.0);
-                clip((_node_637_var.r-node_378) - 0.5);
                 float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
                 float3 lightColor = _LightColor0.rgb;
                 float3 halfDirection = normalize(viewDirection+lightDirection);
@@ -125,9 +110,9 @@ Shader "Shader Forge/SnowBall" {
                 float Pi = 3.141592654;
                 float InvPi = 0.31830988618;
 ///////// Gloss:
-                float node_361 = 0.1;
-                float gloss = node_361;
-                float perceptualRoughness = 1.0 - node_361;
+                float node_324 = 0.85;
+                float gloss = node_324;
+                float perceptualRoughness = 1.0 - node_324;
                 float roughness = perceptualRoughness * perceptualRoughness;
                 float specPow = exp2( gloss * 10.0 + 1.0 );
 /////// GI Data:
@@ -173,13 +158,17 @@ Shader "Shader Forge/SnowBall" {
 ////// Specular:
                 float NdotL = saturate(dot( normalDirection, lightDirection ));
                 float LdotH = saturate(dot(lightDirection, halfDirection));
-                float3 specularColor = node_361;
+                float3 specularColor = node_324;
                 float specularMonochrome;
-                float _node_4028_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_4028 );
-                float4 _MainTex_var = tex2D(_MainTex,TRANSFORM_TEX(i.uv0, _MainTex));
+                float _node_2815_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_2815 );
+                float4 _node_2801_var = tex2D(_node_2801,TRANSFORM_TEX(i.uv0, _node_2801));
+                float _node_8804_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_8804 );
+                float2 node_3162 = (i.uv0/_node_8804_var);
+                float2 node_7169_skew = node_3162 + 0.2127+node_3162.x*0.3713*node_3162.y;
+                float2 node_7169_rnd = 4.789*sin(489.123*(node_7169_skew));
+                float node_7169 = frac(node_7169_rnd.x*node_7169_rnd.y*(1+node_7169_skew.x));
                 float4 _Color_var = UNITY_ACCESS_INSTANCED_PROP( Props, _Color );
-                float3 node_7524 = (_node_4028_var+((0.4+(_MainTex_var.rgb*0.2))*_Color_var.rgb));
-                float3 diffuseColor = node_7524; // Need this for specular when using metallic
+                float3 diffuseColor = ((_node_2815_var+(_node_2801_var.rgb*node_7169))*_Color_var.rgb); // Need this for specular when using metallic
                 diffuseColor = DiffuseAndSpecularFromMetallic( diffuseColor, specularColor, specularColor, specularMonochrome );
                 specularMonochrome = 1.0-specularMonochrome;
                 float NdotV = abs(dot( normalDirection, viewDirection ));
@@ -217,12 +206,8 @@ Shader "Shader Forge/SnowBall" {
                 float3 indirectDiffuse = float3(0,0,0);
                 indirectDiffuse += gi.indirect.diffuse;
                 float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
-////// Emissive:
-                float4 _node_7330_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_7330 );
-                float3 node_7795 = (_node_7330_var.rgb*(1.0 - step((0.54+node_378),_node_637_var.r)));
-                float3 emissive = (node_7524*node_7795);
 /// Final Color:
-                float3 finalColor = diffuse + specular + emissive;
+                float3 finalColor = diffuse + specular;
                 fixed4 finalRGBA = fixed4(finalColor,1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;
@@ -235,7 +220,6 @@ Shader "Shader Forge/SnowBall" {
                 "LightMode"="ForwardAdd"
             }
             Blend One One
-            Cull Off
             
             
             CGPROGRAM
@@ -255,13 +239,11 @@ Shader "Shader Forge/SnowBall" {
             #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
             #pragma multi_compile_fog
             #pragma target 3.0
-            uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
-            uniform sampler2D _node_637; uniform float4 _node_637_ST;
+            uniform sampler2D _node_2801; uniform float4 _node_2801_ST;
             UNITY_INSTANCING_BUFFER_START( Props )
                 UNITY_DEFINE_INSTANCED_PROP( float4, _Color)
-                UNITY_DEFINE_INSTANCED_PROP( float, _node_363)
-                UNITY_DEFINE_INSTANCED_PROP( float4, _node_7330)
-                UNITY_DEFINE_INSTANCED_PROP( float, _node_4028)
+                UNITY_DEFINE_INSTANCED_PROP( float, _node_8804)
+                UNITY_DEFINE_INSTANCED_PROP( float, _node_2815)
             UNITY_INSTANCING_BUFFER_END( Props )
             struct VertexInput {
                 UNITY_VERTEX_INPUT_INSTANCE_ID
@@ -302,19 +284,12 @@ Shader "Shader Forge/SnowBall" {
                 TRANSFER_VERTEX_TO_FRAGMENT(o)
                 return o;
             }
-            float4 frag(VertexOutput i, float facing : VFACE) : COLOR {
+            float4 frag(VertexOutput i) : COLOR {
                 UNITY_SETUP_INSTANCE_ID( i );
-                float isFrontFace = ( facing >= 0 ? 1 : 0 );
-                float faceSign = ( facing >= 0 ? 1 : -1 );
                 i.normalDir = normalize(i.normalDir);
-                i.normalDir *= faceSign;
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 float3 normalDirection = i.normalDir;
-                float4 _node_637_var = tex2D(_node_637,TRANSFORM_TEX(i.uv0, _node_637));
-                float _node_363_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_363 );
-                float node_378 = ((_node_363_var-20.0)*0.4+-1.0);
-                clip((_node_637_var.r-node_378) - 0.5);
                 float3 lightDirection = normalize(lerp(_WorldSpaceLightPos0.xyz, _WorldSpaceLightPos0.xyz - i.posWorld.xyz,_WorldSpaceLightPos0.w));
                 float3 lightColor = _LightColor0.rgb;
                 float3 halfDirection = normalize(viewDirection+lightDirection);
@@ -324,21 +299,25 @@ Shader "Shader Forge/SnowBall" {
                 float Pi = 3.141592654;
                 float InvPi = 0.31830988618;
 ///////// Gloss:
-                float node_361 = 0.1;
-                float gloss = node_361;
-                float perceptualRoughness = 1.0 - node_361;
+                float node_324 = 0.85;
+                float gloss = node_324;
+                float perceptualRoughness = 1.0 - node_324;
                 float roughness = perceptualRoughness * perceptualRoughness;
                 float specPow = exp2( gloss * 10.0 + 1.0 );
 ////// Specular:
                 float NdotL = saturate(dot( normalDirection, lightDirection ));
                 float LdotH = saturate(dot(lightDirection, halfDirection));
-                float3 specularColor = node_361;
+                float3 specularColor = node_324;
                 float specularMonochrome;
-                float _node_4028_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_4028 );
-                float4 _MainTex_var = tex2D(_MainTex,TRANSFORM_TEX(i.uv0, _MainTex));
+                float _node_2815_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_2815 );
+                float4 _node_2801_var = tex2D(_node_2801,TRANSFORM_TEX(i.uv0, _node_2801));
+                float _node_8804_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_8804 );
+                float2 node_3162 = (i.uv0/_node_8804_var);
+                float2 node_7169_skew = node_3162 + 0.2127+node_3162.x*0.3713*node_3162.y;
+                float2 node_7169_rnd = 4.789*sin(489.123*(node_7169_skew));
+                float node_7169 = frac(node_7169_rnd.x*node_7169_rnd.y*(1+node_7169_skew.x));
                 float4 _Color_var = UNITY_ACCESS_INSTANCED_PROP( Props, _Color );
-                float3 node_7524 = (_node_4028_var+((0.4+(_MainTex_var.rgb*0.2))*_Color_var.rgb));
-                float3 diffuseColor = node_7524; // Need this for specular when using metallic
+                float3 diffuseColor = ((_node_2815_var+(_node_2801_var.rgb*node_7169))*_Color_var.rgb); // Need this for specular when using metallic
                 diffuseColor = DiffuseAndSpecularFromMetallic( diffuseColor, specularColor, specularColor, specularMonochrome );
                 specularMonochrome = 1.0-specularMonochrome;
                 float NdotV = abs(dot( normalDirection, viewDirection ));
@@ -373,75 +352,6 @@ Shader "Shader Forge/SnowBall" {
             ENDCG
         }
         Pass {
-            Name "ShadowCaster"
-            Tags {
-                "LightMode"="ShadowCaster"
-            }
-            Offset 1, 1
-            Cull Off
-            
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #define SHOULD_SAMPLE_SH ( defined (LIGHTMAP_OFF) && defined(DYNAMICLIGHTMAP_OFF) )
-            #define _GLOSSYENV 1
-            #pragma multi_compile_instancing
-            #include "UnityCG.cginc"
-            #include "Lighting.cginc"
-            #include "UnityPBSLighting.cginc"
-            #include "UnityStandardBRDF.cginc"
-            #pragma fragmentoption ARB_precision_hint_fastest
-            #pragma multi_compile_shadowcaster
-            #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
-            #pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
-            #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
-            #pragma multi_compile_fog
-            #pragma target 3.0
-            uniform sampler2D _node_637; uniform float4 _node_637_ST;
-            UNITY_INSTANCING_BUFFER_START( Props )
-                UNITY_DEFINE_INSTANCED_PROP( float, _node_363)
-            UNITY_INSTANCING_BUFFER_END( Props )
-            struct VertexInput {
-                UNITY_VERTEX_INPUT_INSTANCE_ID
-                float4 vertex : POSITION;
-                float2 texcoord0 : TEXCOORD0;
-                float2 texcoord1 : TEXCOORD1;
-                float2 texcoord2 : TEXCOORD2;
-            };
-            struct VertexOutput {
-                V2F_SHADOW_CASTER;
-                UNITY_VERTEX_INPUT_INSTANCE_ID
-                float2 uv0 : TEXCOORD1;
-                float2 uv1 : TEXCOORD2;
-                float2 uv2 : TEXCOORD3;
-                float4 posWorld : TEXCOORD4;
-            };
-            VertexOutput vert (VertexInput v) {
-                VertexOutput o = (VertexOutput)0;
-                UNITY_SETUP_INSTANCE_ID( v );
-                UNITY_TRANSFER_INSTANCE_ID( v, o );
-                o.uv0 = v.texcoord0;
-                o.uv1 = v.texcoord1;
-                o.uv2 = v.texcoord2;
-                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
-                o.pos = UnityObjectToClipPos( v.vertex );
-                TRANSFER_SHADOW_CASTER(o)
-                return o;
-            }
-            float4 frag(VertexOutput i, float facing : VFACE) : COLOR {
-                UNITY_SETUP_INSTANCE_ID( i );
-                float isFrontFace = ( facing >= 0 ? 1 : 0 );
-                float faceSign = ( facing >= 0 ? 1 : -1 );
-                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float4 _node_637_var = tex2D(_node_637,TRANSFORM_TEX(i.uv0, _node_637));
-                float _node_363_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_363 );
-                float node_378 = ((_node_363_var-20.0)*0.4+-1.0);
-                clip((_node_637_var.r-node_378) - 0.5);
-                SHADOW_CASTER_FRAGMENT(i)
-            }
-            ENDCG
-        }
-        Pass {
             Name "Meta"
             Tags {
                 "LightMode"="Meta"
@@ -467,13 +377,11 @@ Shader "Shader Forge/SnowBall" {
             #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
             #pragma multi_compile_fog
             #pragma target 3.0
-            uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
-            uniform sampler2D _node_637; uniform float4 _node_637_ST;
+            uniform sampler2D _node_2801; uniform float4 _node_2801_ST;
             UNITY_INSTANCING_BUFFER_START( Props )
                 UNITY_DEFINE_INSTANCED_PROP( float4, _Color)
-                UNITY_DEFINE_INSTANCED_PROP( float, _node_363)
-                UNITY_DEFINE_INSTANCED_PROP( float4, _node_7330)
-                UNITY_DEFINE_INSTANCED_PROP( float, _node_4028)
+                UNITY_DEFINE_INSTANCED_PROP( float, _node_8804)
+                UNITY_DEFINE_INSTANCED_PROP( float, _node_2815)
             UNITY_INSTANCING_BUFFER_END( Props )
             struct VertexInput {
                 UNITY_VERTEX_INPUT_INSTANCE_ID
@@ -501,31 +409,28 @@ Shader "Shader Forge/SnowBall" {
                 o.pos = UnityMetaVertexPosition(v.vertex, v.texcoord1.xy, v.texcoord2.xy, unity_LightmapST, unity_DynamicLightmapST );
                 return o;
             }
-            float4 frag(VertexOutput i, float facing : VFACE) : SV_Target {
+            float4 frag(VertexOutput i) : SV_Target {
                 UNITY_SETUP_INSTANCE_ID( i );
-                float isFrontFace = ( facing >= 0 ? 1 : 0 );
-                float faceSign = ( facing >= 0 ? 1 : -1 );
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 UnityMetaInput o;
                 UNITY_INITIALIZE_OUTPUT( UnityMetaInput, o );
                 
-                float _node_4028_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_4028 );
-                float4 _MainTex_var = tex2D(_MainTex,TRANSFORM_TEX(i.uv0, _MainTex));
-                float4 _Color_var = UNITY_ACCESS_INSTANCED_PROP( Props, _Color );
-                float3 node_7524 = (_node_4028_var+((0.4+(_MainTex_var.rgb*0.2))*_Color_var.rgb));
-                float4 _node_7330_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_7330 );
-                float _node_363_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_363 );
-                float node_378 = ((_node_363_var-20.0)*0.4+-1.0);
-                float4 _node_637_var = tex2D(_node_637,TRANSFORM_TEX(i.uv0, _node_637));
-                float3 node_7795 = (_node_7330_var.rgb*(1.0 - step((0.54+node_378),_node_637_var.r)));
-                o.Emission = (node_7524*node_7795);
+                o.Emission = 0;
                 
-                float3 diffColor = node_7524;
+                float _node_2815_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_2815 );
+                float4 _node_2801_var = tex2D(_node_2801,TRANSFORM_TEX(i.uv0, _node_2801));
+                float _node_8804_var = UNITY_ACCESS_INSTANCED_PROP( Props, _node_8804 );
+                float2 node_3162 = (i.uv0/_node_8804_var);
+                float2 node_7169_skew = node_3162 + 0.2127+node_3162.x*0.3713*node_3162.y;
+                float2 node_7169_rnd = 4.789*sin(489.123*(node_7169_skew));
+                float node_7169 = frac(node_7169_rnd.x*node_7169_rnd.y*(1+node_7169_skew.x));
+                float4 _Color_var = UNITY_ACCESS_INSTANCED_PROP( Props, _Color );
+                float3 diffColor = ((_node_2815_var+(_node_2801_var.rgb*node_7169))*_Color_var.rgb);
                 float specularMonochrome;
                 float3 specColor;
-                float node_361 = 0.1;
-                diffColor = DiffuseAndSpecularFromMetallic( diffColor, node_361, specColor, specularMonochrome );
-                float roughness = 1.0 - node_361;
+                float node_324 = 0.85;
+                diffColor = DiffuseAndSpecularFromMetallic( diffColor, node_324, specColor, specularMonochrome );
+                float roughness = 1.0 - node_324;
                 o.Albedo = diffColor + specColor * roughness * roughness * 0.5;
                 
                 return UnityMetaFragment( o );
