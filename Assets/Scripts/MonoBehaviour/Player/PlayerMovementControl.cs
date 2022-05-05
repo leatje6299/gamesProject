@@ -12,6 +12,7 @@ public class PlayerMovementControl : MonoBehaviour
     private AudioClip walkOnSnow;
     private AudioClip iceSkate;
     private AudioClip boostSound;
+    public AudioClip hitSound;
 
     protected CharacterController _characterController;
     [SerializeField] private PlayerStatManagement stats;
@@ -143,6 +144,7 @@ public class PlayerMovementControl : MonoBehaviour
             SkatingVector = colliderDirection * 2;
             skatingSpeed = 5;
             stats.playerTemp-=2;
+            playerAudio.PlayOneShot(hitSound);
             startKnockBackCooldown();
         }
     }

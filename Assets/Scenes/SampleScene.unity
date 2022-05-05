@@ -13049,6 +13049,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8420828905011082857, guid: bc97d56b26ab4064191a72ca7d62bd1a, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 05b1c9a7c574bbc4fac3230a54f7d6ba, type: 3}
+    - target: {fileID: 8420828905011082857, guid: bc97d56b26ab4064191a72ca7d62bd1a, type: 3}
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 968618787}
