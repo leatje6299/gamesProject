@@ -19,4 +19,9 @@ public class GameSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void ReplayGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
