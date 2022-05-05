@@ -17,20 +17,18 @@ public class GeyserSpawner : MonoBehaviour
     }
     private void Start()
     {
-        inactiveTime = Random.Range(20,40);
+        inactiveTime = Random.Range(5,15);
         StartCoroutine(inactiveTimer(Random.Range(0,inactiveTime)));
     }
 
     private IEnumerator inactiveTimer(float time)
     {
-        print("Inactive for " + time);
         yield return new WaitForSeconds(time);
         StartCoroutine(warningTimer());
         
     }
     private IEnumerator warningTimer()
     {
-        print("Bubbles for " + 5);
         warningEffect.Play();
         yield return new WaitForSeconds(5);
         StartCoroutine(geyserTimer());
