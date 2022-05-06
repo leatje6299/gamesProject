@@ -57,8 +57,9 @@ public class PlayerMovementControl : MonoBehaviour
         float mV = moveDirection.x;
         float mH = moveDirection.y;
 
-        
-        if(boosting && !boostCoolDown)
+        print(skating);
+
+        if (boosting && !boostCoolDown && skating)
         {
             stats.setStaminaPlayer(staminaBoost);  
         }
@@ -91,10 +92,10 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (boostCoolDown == false && boost == true && stats.playerStamina > 0)
         {
+            
             SkatingVector = transform.forward + transform.right;
             boostCoolDown = true;
             skatingSpeed += 10f;
-            playerAudio.PlayOneShot(boostSound);
             startBoostCoolDown();
         }
 
@@ -125,7 +126,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (skatingSpeed < 0)return;
 
-        skatingSpeed -= 0.005f;  //default Slow Down
+        skatingSpeed -= 0.1f;  //default Slow Down
         
     }
     void skatingMove()
@@ -133,7 +134,6 @@ public class PlayerMovementControl : MonoBehaviour
         if (SkatingVector.y > -0.01f)
         {
             SkatingVector.y -= 0.01f;
-            print(SkatingVector.y);
         }
         skatingSpeed = Mathf.Clamp(skatingSpeed, 0, maxSpeed);
         _characterController.Move(new Vector3(SkatingVector.normalized.x * skatingSpeed * Time.deltaTime, SkatingVector.y ,SkatingVector.normalized.z * skatingSpeed * Time.deltaTime));

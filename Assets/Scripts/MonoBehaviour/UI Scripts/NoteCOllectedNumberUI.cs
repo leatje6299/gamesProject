@@ -16,7 +16,7 @@ public class NoteCOllectedNumberUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text =note.order.ToString() + "/3";
+        text.text =note.order.ToString() + "/6 Total";
         if (note.order == 3 || note.order == 6)
         {
             text.color = Color.green;
