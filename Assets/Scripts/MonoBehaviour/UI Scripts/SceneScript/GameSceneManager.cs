@@ -13,6 +13,7 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cam;
     [SerializeField] private ItemHolder inventory;
     [SerializeField] private ChoiceState state;
+    [SerializeField] private Note note;
 
     public AudioMixer audioMixer;
 
@@ -32,6 +33,7 @@ public class GameSceneManager : MonoBehaviour
             inventory.slots[i].Clear();
         }
         state.curState = 0.5f;
+        note.order = 0;
     }
 
     public void ReplayGame()
@@ -42,6 +44,7 @@ public class GameSceneManager : MonoBehaviour
             inventory.slots[i].Clear();
         }
         state.curState = 0.5f;
+        note.order = 0;
     }
 
     public void setVolume(float volume)
