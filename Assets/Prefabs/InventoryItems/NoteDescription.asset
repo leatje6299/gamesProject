@@ -37,9 +37,7 @@ MonoBehaviour:
     back soon with
 
     the missing data.'
-  - "<b>Research day 5</b>\nThe researches havent came back,\nit's kind of worrying...
-    \n\n"
-  - '<b>Research day 6</b>
+  - '<b>Research day 5</b>
 
     Apparently, a strange phenomenon
 
@@ -53,4 +51,9 @@ MonoBehaviour:
 
     to investigate,
 
-    <b>PROCEED WITH CAUTION</b>'
+    <b>PROCEED WITH CAUTION</b>
+
+'
+  - "<b>Research day 6</b>\n\nIt seems nothing new can be\ndiscovered here for right
+    now, \nbetter head back to the camp\nand go over every thing we \nfound.\n\n<i>Head
+    back to the camp </i>"

@@ -130,7 +130,11 @@ public class PlayerMovementControl : MonoBehaviour
     }
     void skatingMove()
     {
-        if (SkatingVector.y > -1.5f) SkatingVector.y -= 0.01f;
+        if (SkatingVector.y > -0.01f)
+        {
+            SkatingVector.y -= 0.01f;
+            print(SkatingVector.y);
+        }
         skatingSpeed = Mathf.Clamp(skatingSpeed, 0, maxSpeed);
         _characterController.Move(new Vector3(SkatingVector.normalized.x * skatingSpeed * Time.deltaTime, SkatingVector.y ,SkatingVector.normalized.z * skatingSpeed * Time.deltaTime));
     }
@@ -168,15 +172,20 @@ public class PlayerMovementControl : MonoBehaviour
     }
     public void geyserHit(GameObject hit)
     {
-        Vector3 colliderTransform = hit.transform.position;
-        Vector3 colliderDirection = (transform.position - colliderTransform).normalized;
-        colliderDirection.y = 0;
-        SkatingVector = colliderDirection * 2;
-        SkatingVector.y = 0.1f;
-        skatingSpeed = 5;
-        stats.playerTemp -= 2;
-        playerAudio.PlayOneShot(steam);
-        startKnockBackCooldown();
+        if (ableSkate)
+        {
+            Vector3 colliderTransform = hit.transform.position;
+            Vector3 colliderDirection = (transform.position - colliderTransform).normalized;
+            SkatingVector = colliderDirection * 1.5f;
+            SkatingVector.y = 10f;
+            skatingSpeed = 0;
+            print(SkatingVector);
+            skatingMove();
+            stats.playerTemp -= 2;
+            stats.setStaminaPlayer(10);
+            playerAudio.PlayOneShot(steam);
+            startKnockBackCooldown();
+        }
     }
 
     private void startBoostCoolDown()
