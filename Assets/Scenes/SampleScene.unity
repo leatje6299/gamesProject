@@ -36518,7 +36518,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   inventory: {fileID: 0}
   state: {fileID: 0}
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 620aca6ca80256d4fa5270c53ad17e65, type: 2}
 --- !u!1 &2066641781
 GameObject:
   m_ObjectHideFlags: 0
