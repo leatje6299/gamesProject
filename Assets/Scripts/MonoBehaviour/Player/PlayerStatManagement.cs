@@ -27,6 +27,13 @@ public class PlayerStatManagement : MonoBehaviour
         playerTemp -= tempTick;
         playerStamina -= staminaTick;
 
+        if (playerStamina <= 0)
+        {
+            respawnMan.respawn();
+            playerStamina = 70f;
+            playerTemp = 35.0f;
+        }
+
         yield return new WaitForSeconds(4);
         StartCoroutine(statRestart());
     }
