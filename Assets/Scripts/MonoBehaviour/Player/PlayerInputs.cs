@@ -21,6 +21,7 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private Image indicatorUI_Left;
     [SerializeField] private Image indicatorUI_Right;
     [SerializeField] private Text description;
+    [SerializeField] private Text escapeTxt;
 
     [Header("Items Fields")]
     [SerializeField] private Item snack;
@@ -112,6 +113,7 @@ public class PlayerInputs : MonoBehaviour
     {
         if(noteCanvas.activeSelf)
         {
+            escapeTxt.text = "[" + InputControlPath.ToHumanReadableString(playerInput.actions["Escape"].bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.OmitDevice) + "] Escape";
             description.text = descriptions.text[note.order];
             if (note.order == 0)
             {
