@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using Cinemachine;
 
 public class GameSceneManager : MonoBehaviour
 {
     private AudioSource source;
     public AudioClip click;
 
+    [SerializeField] private CinemachineVirtualCamera cam;
     [SerializeField] private ItemHolder inventory;
     [SerializeField] private ChoiceState state;
 
@@ -40,5 +42,12 @@ public class GameSceneManager : MonoBehaviour
     public void setVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
+    }
+
+    public void setSens(float sens)
+    {
+        var pov = cam.GetCinemachineComponent<CinemachinePOV>();
+        pov.m_VerticalAxis.m_MaxSpeed = sens;
+        pov.m_HorizontalAxis.m_MaxSpeed = sens;
     }
 }
