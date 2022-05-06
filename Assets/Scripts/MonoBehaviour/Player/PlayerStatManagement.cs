@@ -9,6 +9,7 @@ public class PlayerStatManagement : MonoBehaviour
 
     private float tempTick;
     private float staminaTick;
+    [SerializeField]private RespawnManageer respawnMan;
 
     void Start()
     {
@@ -58,5 +59,11 @@ public class PlayerStatManagement : MonoBehaviour
     public void setStaminaPlayer(float staminaAmount)
     {
         playerStamina -= staminaAmount;
+        if (playerStamina <= 0)
+        {
+            respawnMan.respawn();
+            playerStamina = 70f;
+            playerTemp = 35.0f;
+        }
     }
 }

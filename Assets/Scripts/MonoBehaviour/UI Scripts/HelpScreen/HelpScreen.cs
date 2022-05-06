@@ -26,7 +26,6 @@ public class HelpScreen : MonoBehaviour
     private void Update()
     {
         currentHit = sphereCast.currentHitObj;
-        print(currentHit);
         if (currentHit == null) return;
 
         if (currentHit.tag == "Chest")

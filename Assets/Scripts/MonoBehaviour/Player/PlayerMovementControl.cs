@@ -48,7 +48,7 @@ public class PlayerMovementControl : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    void Update()
+    void FixedUpdate()
     {
         maxSpeed = stats.playerTemp / 2;
         bool slow = playerInput.actions["Slow"].ReadValue<float>() > 0;
@@ -56,6 +56,7 @@ public class PlayerMovementControl : MonoBehaviour
         Vector2 moveDirection = playerInput.actions["Move"].ReadValue<Vector2>();
         float mV = moveDirection.x;
         float mH = moveDirection.y;
+
         
         if(boosting && !boostCoolDown)
         {
@@ -69,22 +70,28 @@ public class PlayerMovementControl : MonoBehaviour
             skatingCalculator(mV, mH, slow, boosting);
             skatingMove();
         }
-        else _characterController.Move(transform.forward * mH * Time.deltaTime * 3 + transform.right * mV * Time.deltaTime * 3);
+        else
+        {
+            
+            Vector3 tempVec = (transform.forward * mH * Time.deltaTime * 3 + transform.right * mV * Time.deltaTime * 3);
+            tempVec.y = -1 * Time.deltaTime;
+            _characterController.Move(tempVec);
+        }
     }
 
     void skatingCalculator(float mH, float mV, bool slow, bool boost)
     {
         if (!skating) return; //Guard Statement for Skating
-
+        if (skatingSpeed < 0.1) SkatingVector = new Vector3(0, 0, 0);
         Vector3 temp = (transform.forward * mV + transform.right * mH * 0.1f);
         SkatingVector.Normalize();
-        SkatingVector *= 30;
+        SkatingVector *= 32;
         SkatingVector += temp;
         
 
         if (boostCoolDown == false && boost == true && stats.playerStamina > 0)
         {
-            print("Boost");
+            SkatingVector = transform.forward * (mV + 1) + transform.right * (mH + 1);
             boostCoolDown = true;
             skatingSpeed += 10f;
             playerAudio.PlayOneShot(boostSound);
@@ -93,8 +100,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (skatingSpeed > 0 && slow) //Guard Statement for rapid Slow
         {
-            print("SLOW");
-            skatingSpeed -= 0.1f;
+            skatingSpeed -= 0.5f;
             return;
         } //if Shift pressed, slow down Quickly
 
@@ -131,12 +137,17 @@ public class PlayerMovementControl : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     { 
-            if (hit.gameObject.tag == "Snow")
+        if (hit.gameObject.tag == "Snow")
         {
             skating = false;
             skatingSpeed = 0;
         }
-        
+        if (hit.gameObject.tag == "Ice")
+        {
+            if (!skating) skatingSpeed = 3;
+            skating = true;      
+        }
+
         if (hit.gameObject.tag == "SnowBall")
         {
             Vector3 colliderTransform = hit.transform.position;
