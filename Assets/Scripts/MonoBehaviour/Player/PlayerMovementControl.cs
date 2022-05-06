@@ -13,6 +13,7 @@ public class PlayerMovementControl : MonoBehaviour
     private AudioClip iceSkate;
     private AudioClip boostSound;
     public AudioClip hitSound;
+    public AudioClip steam;
 
     protected CharacterController _characterController;
     [SerializeField] private PlayerStatManagement stats;
@@ -157,6 +158,7 @@ public class PlayerMovementControl : MonoBehaviour
         SkatingVector.y = 0.1f;
         skatingSpeed = 5;
         stats.playerTemp -= 2;
+        playerAudio.PlayOneShot(steam);
         startKnockBackCooldown();
     }
 
