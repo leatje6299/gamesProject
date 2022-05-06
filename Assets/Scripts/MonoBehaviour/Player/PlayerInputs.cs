@@ -81,7 +81,7 @@ public class PlayerInputs : MonoBehaviour
             }
             if (playerInput.actions["Use"].ReadValue<float>() > 0)
             {
-                stats.setStaminaPlayer(-20); //add 20 to stamina of player if eat
+                stats.setStaminaPlayer(-50); //add 20 to stamina of player if eat
                 Destroy(sphereCast.currentHitObj);
             }
         }
@@ -103,7 +103,7 @@ public class PlayerInputs : MonoBehaviour
             if (playerInput.actions["Interact"].triggered)
             {
                 inventory.Remove(currentItem.getCurrentSlot().item);
-                stats.setStaminaPlayer(-20);
+                stats.setStaminaPlayer(-50);
             }
         }
     }

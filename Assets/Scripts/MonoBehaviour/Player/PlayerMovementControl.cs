@@ -91,7 +91,7 @@ public class PlayerMovementControl : MonoBehaviour
 
         if (boostCoolDown == false && boost == true && stats.playerStamina > 0)
         {
-            SkatingVector = transform.forward * (mV + 1) + transform.right * (mH + 1);
+            SkatingVector = transform.forward + transform.right;
             boostCoolDown = true;
             skatingSpeed += 10f;
             playerAudio.PlayOneShot(boostSound);
@@ -136,9 +136,15 @@ public class PlayerMovementControl : MonoBehaviour
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
-    { 
+    {
+        if (hit.gameObject.tag == "Tree")
+        {
+            SkatingVector = new Vector3(0,0,0);
+            skatingSpeed = 0;
+        }
         if (hit.gameObject.tag == "Snow")
         {
+            SkatingVector = new Vector3(0, 0, 0);
             skating = false;
             skatingSpeed = 0;
         }

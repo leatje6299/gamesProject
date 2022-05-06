@@ -16,6 +16,7 @@ TagManager:
   - ResearchNote4
   - Snack
   - Geyser
+  - Tree
   layers:
   - Default
   - TransparentFX

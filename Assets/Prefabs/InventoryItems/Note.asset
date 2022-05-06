@@ -17,4 +17,4 @@ MonoBehaviour:
   stackable: 1
   sprite: {fileID: 21300000, guid: 9631829750271594b82ae3aee5c8136a, type: 3}
   isHighlighted: 0
-  order: 3
+  order: 2
