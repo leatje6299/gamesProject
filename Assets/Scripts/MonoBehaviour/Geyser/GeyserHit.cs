@@ -15,7 +15,10 @@ public class GeyserHit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject.GetComponent<Collider>());
-        playerMoveScript.geyserHit(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(gameObject.GetComponent<Collider>());
+            playerMoveScript.geyserHit(gameObject);
+        }
     }
 }
