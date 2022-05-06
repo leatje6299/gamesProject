@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameSceneManager : MonoBehaviour
 {
     private AudioSource source;
     public AudioClip click;
+
     [SerializeField] private ItemHolder inventory;
     [SerializeField] private ChoiceState state;
+
+    public AudioMixer audioMixer;
+
     public static void loadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -30,5 +35,10 @@ public class GameSceneManager : MonoBehaviour
             inventory.slots[i].Clear();
         }
         state.curState = 0.5f;
+    }
+
+    public void setVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
     }
 }
